@@ -14,19 +14,12 @@
     }
   },
   "require": {
-    "composer-plugin-api": "^1.1",
-    "pds/skeleton": "^1.0"
+    "composer-plugin-api": "^1.1"
   },
   "require-dev": {
     "composer/composer": "^1.6"
   },
   "extra": {
     "class": "Jawira\\Defaults\\Plugin"
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": ""
-    }
-  ]
+  }
 }
