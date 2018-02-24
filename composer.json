@@ -20,6 +20,6 @@
     "composer/composer": "^1.6"
   },
   "extra": {
-    "class": "Jawira\\Defaults\\Plugin"
+    "class": "Jawira\\Defaults\\DefaultFilesPlugin"
   }
 }

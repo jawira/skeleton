@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Jawira\Defaults;
 
@@ -10,8 +9,31 @@ use Composer\Installer\PackageEvents;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 
-class Plugin implements PluginInterface, EventSubscriberInterface
+/**
+ * Class CopyDefaultsPlugins
+ * When you to a require of this composer plug-in the following files are
+ * created in the root of the project:
+ * - README.md
+ * - phing.xml
+ * - Makefile
+ * - CONTRIBUTING.md
+ *
+ * @package Jawira\Defaults
+ */
+class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
 {
+    /**
+     * Must be the same package name as declared in ../composer.json
+     */
+    const PACKAGE_NAME = 'jawira/defaults';
+
+    /**
+     * Files to copy
+     */
+    const DEFAULT_FILES = [
+        '%s/jawira/defaults/resources/README.md',
+        '%s/jawira/defaults/resources/demo.xml',
+    ];
 
     /** @var  \Composer\Composer $composer */
     protected $composer;
@@ -25,9 +47,9 @@ class Plugin implements PluginInterface, EventSubscriberInterface
      * @param \Composer\Composer       $composer
      * @param \Composer\IO\IOInterface $io
      *
-     * @return \Jawira\Defaults\Plugin
+     * @return \Jawira\Defaults\DefaultFilesPlugin
      */
-    public function activate(Composer $composer, IOInterface $io): self
+    public function activate(Composer $composer, IOInterface $io)
     {
         $this->composer = $composer;
         $this->io       = $io;
@@ -43,7 +65,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            PackageEvents::POST_PACKAGE_INSTALL => 'prepareProject',
+            PackageEvents::POST_PACKAGE_INSTALL => 'start',
         ];
     }
 
@@ -52,22 +74,23 @@ class Plugin implements PluginInterface, EventSubscriberInterface
      *
      * @param \Composer\Installer\PackageEvent $event
      *
-     * @return \Jawira\Defaults\Plugin
+     * @return \Jawira\Defaults\DefaultFilesPlugin
      * @throws \RuntimeException
      */
-    public function prepareProject(PackageEvent $event)
+    public function start(PackageEvent $event)
     {
-
         $basePath    = $this->getBasePath();
         $packageName = $this->getPackageName($event);
+        $itsMe       = $packageName === self::PACKAGE_NAME;
 
-        $event->getOperations();
+        if (null === $basePath) {
+            $this->io->writeError("<error>⚠️ Cannot locate project's base path</error>");
+        }
 
-        $itsMe = $packageName === 'jawira/defaults';
-
-        if ($itsMe && is_dir($basePath)) {
+        if ($itsMe && $basePath) {
             $vendorDir = $this->composer->getConfig()->get('vendor-dir');
-            $this->copyResources($vendorDir, $basePath);
+            $this->copyResources($vendorDir, $basePath)
+                 ->finalMessage();
         }
 
         return $this;
@@ -81,14 +104,11 @@ class Plugin implements PluginInterface, EventSubscriberInterface
      *
      * @return $this
      */
-    public function copyResources($vendorDir, $basePath)
+    protected function copyResources($vendorDir, $basePath)
     {
-        foreach ($this->pathsProvider() as [$sourceFormat, $targetFormat]) {
-            $source = sprintf($sourceFormat, $vendorDir);
-            $target = sprintf($targetFormat, $basePath);
-
+        foreach ($this->pathsProvider($vendorDir, $basePath) as [$source, $target]) {
             if ($this->canICopyTo($target) && copy($source, $target)) {
-                $this->io->write("<info>Writing $target</info>");
+                $this->io->write("<info>💾 Writing $target</info>");
             }
         }
 
@@ -98,20 +118,19 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     /**
      * Provides patters for all files to copy
      *
-     * @return array
+     * @param $vendorDir
+     * @param $basePath
+     *
+     * @return \Generator
      */
-    public function pathsProvider()
+    protected function pathsProvider($vendorDir, $basePath)
     {
-        return [
-            [
-                '%s/jawira/defaults/resources/README.md',
-                '%s/README.md',
-            ],
-            [
-                '%s/jawira/defaults/resources/demo.xml',
-                '%s/demo.xml',
-            ],
-        ];
+        foreach (self::DEFAULT_FILES as $file) {
+            $source   = sprintf($file, $vendorDir);
+            $baseName = basename($source);
+            $target   = "$basePath/$baseName";
+            yield [$source, $target];
+        }
     }
 
     /**
@@ -121,7 +140,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
      *
      * @return bool
      */
-    public function canICopyTo($file)
+    protected function canICopyTo($file)
     {
         $fileExists = file_exists($file);
         $emptyFile  = $fileExists ? filesize($file) === 0 : false;
@@ -141,16 +160,29 @@ class Plugin implements PluginInterface, EventSubscriberInterface
         return $event->getOperation()->getReason()->job['packageName'];
     }
 
-
     /**
      * Retuns project's base dir (where composer.json is)
+     * This method assumes root contains composer.json
      *
-     * @return null|string
+     * @see https://github.com/mindplay-dk/composer-locator/ Original source of inspiration for this method
+     * @return null|string Root of project
      */
     protected function getBasePath()
     {
-        $basePath = realpath(realpath(getcwd()));
+        $basePath = dirname(__DIR__, 4);
         return is_file($basePath . '/composer.json') ? $basePath : null;
     }
 
+    /**
+     * Prints a last notification message to user
+     *
+     * @return $this
+     */
+    protected function finalMessage()
+    {
+        $package = self::PACKAGE_NAME;
+        $this->io->write("<comment>🏁 Done, please uninstall package with: composer remove $package</comment>");
+
+        return $this;
+    }
 }
