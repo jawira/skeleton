@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="Project name" description="Project description" default="diagnostics">
+
+    <target name="diagnostics">
+        <diagnostics/>
+    </target>
+
+</project>
