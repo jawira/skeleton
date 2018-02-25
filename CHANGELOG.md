@@ -6,9 +6,13 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+v0.0.0 - 2018-02-25
+-------------------
+
 ### Added
 
-- Added a change
+- First full working version
+- Final Production files are located in ./resources/
 
 
 
