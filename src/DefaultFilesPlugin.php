@@ -8,6 +8,7 @@ use Composer\Installer\PackageEvent;
 use Composer\Installer\PackageEvents;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
+use FilesystemIterator;
 
 /**
  * Class CopyDefaultsPlugins
@@ -28,20 +29,14 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
     const PACKAGE_NAME = 'jawira/defaults';
 
     /**
-     * Files to copy
+     * Dir where resources files are located
      */
-    const DEFAULT_FILES = [
-        '%s/jawira/defaults/resources/README.md',
-        '%s/jawira/defaults/resources/demo.xml',
-    ];
+    const RESOURCES_DIR = '%s/jawira/defaults/resources/';
 
     /** @var  \Composer\Composer $composer */
     protected $composer;
     /** @var  \Composer\IO\IOInterface $io */
     protected $io;
-    /** @var  \Composer\Util\Filesystem $filesystem */
-    protected $filesystem;
-
 
     /**
      * @param \Composer\Composer       $composer
@@ -80,7 +75,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
     public function start(PackageEvent $event)
     {
         $basePath    = $this->getBasePath();
-        $packageName = $this->getPackageName($event);
+        $packageName = $this->getCurrentPackageName($event);
         $itsMe       = $packageName === self::PACKAGE_NAME;
 
         if (null === $basePath) {
@@ -88,8 +83,9 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
         }
 
         if ($itsMe && $basePath) {
-            $vendorDir = $this->composer->getConfig()->get('vendor-dir');
-            $this->copyResources($vendorDir, $basePath)
+            $vendorDir = $this->composer->getConfig()
+                                        ->get('vendor-dir');
+            $this->copyFiles($vendorDir, $basePath)
                  ->finalMessage();
         }
 
@@ -104,7 +100,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      *
      * @return $this
      */
-    protected function copyResources($vendorDir, $basePath)
+    protected function copyFiles($vendorDir, $basePath)
     {
         foreach ($this->pathsProvider($vendorDir, $basePath) as [$source, $target]) {
             if ($this->canICopyTo($target) && copy($source, $target)) {
@@ -116,7 +112,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
     }
 
     /**
-     * Provides patters for all files to copy
+     * Provides source/target patterns for all files to be copied
      *
      * @param $vendorDir
      * @param $basePath
@@ -125,16 +121,23 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      */
     protected function pathsProvider($vendorDir, $basePath)
     {
-        foreach (self::DEFAULT_FILES as $file) {
-            $source   = sprintf($file, $vendorDir);
-            $baseName = basename($source);
-            $target   = "$basePath/$baseName";
-            yield [$source, $target];
+        $fs = new FilesystemIterator(sprintf(self::RESOURCES_DIR, $vendorDir), FilesystemIterator::SKIP_DOTS);
+
+        /** @var \SplFileInfo $file */
+        foreach ($fs as $file) {
+            if (!$file->isFile()) {
+                continue;
+            }
+
+            yield [
+                $file->getPathname(),
+                $basePath . DIRECTORY_SEPARATOR . $file->getFilename(),
+            ];
         }
     }
 
     /**
-     * Returns true if file doesn't exist or if it's empty
+     * Returns true if target file doesn't exist or if it's empty
      *
      * @param $file
      *
@@ -155,9 +158,10 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      *
      * @return string
      */
-    protected function getPackageName(PackageEvent $event)
+    protected function getCurrentPackageName(PackageEvent $event)
     {
-        return $event->getOperation()->getReason()->job['packageName'];
+        return $event->getOperation()
+                     ->getReason()->job['packageName'];
     }
 
     /**
@@ -170,6 +174,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
     protected function getBasePath()
     {
         $basePath = dirname(__DIR__, 4);
+
         return is_file($basePath . '/composer.json') ? $basePath : null;
     }
 
@@ -180,8 +185,8 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      */
     protected function finalMessage()
     {
-        $package = self::PACKAGE_NAME;
-        $this->io->write("<comment>🏁 Done, please uninstall package with: composer remove $package</comment>");
+        $this->io->write(sprintf('<comment>🏁 Done, please uninstall package with: composer remove %s</comment>',
+                                 self::PACKAGE_NAME));
 
         return $this;
     }
