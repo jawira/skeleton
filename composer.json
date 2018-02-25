@@ -1,6 +1,6 @@
 {
   "name": "jawira/defaults",
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
   "description": "Auto-install default project structure",
   "type": "composer-plugin",
   "authors": [
