@@ -31,7 +31,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
     /**
      * Dir where resources files are located
      */
-    const RESOURCES_DIR = '%s/jawira/defaults/resources/';
+    const RESOURCES_DIR = '%s/jawira/defaults/resources/defaults/';
 
     /** @var  \Composer\Composer $composer */
     protected $composer;

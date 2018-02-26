@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+### Added
+
+- Pugx Badges in [README.md](./README.md)
+- Added [GLPv3 LICENSE](./resources/defaults/LICENSE) 
+
+### Changed
+
+- Default files were moved to [./resources/defaults/](./resources/defaults/)
+
+v0.0.1 - 2018-02-26
+-------------------
+
+### Fixed
+
+- A valid SPDX license was added to [composer.json](./composer.json)
+
 v0.0.0 - 2018-02-25
 -------------------
 

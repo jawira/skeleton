@@ -1,28 +1,47 @@
 Defaults
 ========
 
-This package installs all the files located in ./resources when required.
+This package installs a series of template files useful in any new project.
 
-I use this for my personal projects.
+These templates are customized according to my personal needs.
+
+[![Latest Stable Version](https://poser.pugx.org/jawira/defaults/v/stable)](https://packagist.org/packages/jawira/defaults)
+[![License](https://poser.pugx.org/jawira/defaults/license)](https://packagist.org/packages/jawira/defaults)
+[![composer.lock](https://poser.pugx.org/jawira/defaults/composerlock)](https://packagist.org/packages/jawira/defaults)
 
 
 How to install
 --------------
 
-To install default files:
+1. Install package with Composer: 
 
-```bash
-$ composer require jawira/defaults
-...
-```
+    ```bash
+    $ composer require jawira/defaults
+    ```
 
-Once installed you can immediately uninstall this package:
+2. While Composer is running the following files will be created in the root of 
+the project:
 
-```bash
-$ composer remove jawira/defaults
-```
+    - [build.xml](./resources/defaults/build.xml)
+    - [CHANGELOG.md](./resources/defaults/CHANGELOG.md)
+    - [CONTRIBUTING.md](./resources/defaults/CONTRIBUTING.md)
+    - [LICENSE](./resources/defaults/LICENSE)
+    - [Makefile](./resources/defaults/Makefile)
+    - [README.md](./resources/defaults/README.md)
+
+3. Once installed you can immediately uninstall:
+
+    ```bash
+    $ composer remove jawira/defaults
+    ```
 
 Contributing
 ------------
 
 To contribute to this project please read [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+
+License
+-------
+
+[GNU GPLv3](./LICENSE)
