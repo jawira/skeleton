@@ -1,25 +1,28 @@
 {
-  "name": "jawira/defaults",
-  "license": "GPL-3.0-or-later",
-  "description": "Auto-install default project structure",
-  "type": "composer-plugin",
-  "authors": [
-    {
-      "name": "Jawira Portugal"
+    "name": "jawira/defaults",
+    "license": "GPL-3.0-or-later",
+    "description": "Generates default project files (README.md, CONTRIBUTING.md, LICENSE, etc) in the root of your project",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "Jawira Portugal"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jawira\\Defaults\\": "src/"
+        }
+    },
+    "require": {
+        "composer-plugin-api": "^1.1"
+    },
+    "require-dev": {
+        "composer/composer": "^1.6"
+    },
+    "extra": {
+        "class": "Jawira\\Defaults\\DefaultFilesPlugin"
+    },
+    "suggest": {
+        "pds/skeleton": "Generates default project structure"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Jawira\\Defaults\\": "src/"
-    }
-  },
-  "require": {
-    "composer-plugin-api": "^1.1"
-  },
-  "require-dev": {
-    "composer/composer": "^1.6"
-  },
-  "extra": {
-    "class": "Jawira\\Defaults\\DefaultFilesPlugin"
-  }
 }
