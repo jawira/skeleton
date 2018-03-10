@@ -27,12 +27,15 @@ root of the project:
 
     | File                                                      | Description                           |
     |-----------------------------------------------------------|---------------------------------------|
+    | [.gitignore](./resources/defaults/.gitignore)             | Git ignore file                       |
+    | [.makefile.dist](./resources/defaults/.makefile.dist)     | Make's distributable variables file   |
     | [build.xml](./resources/defaults/build.xml)               | Phing buildfile template              |
     | [CHANGELOG.md](./resources/defaults/CHANGELOG.md)         | a log of changes between releases     |
     | [CONTRIBUTING.md](./resources/defaults/CONTRIBUTING.md)   | guidelines for contributors           |
     | [LICENSE](./resources/defaults/LICENSE)                   | licensing information                 |
-    | [Makefile](./resources/defaults/Makefile)                 | GNU Make template                     |
+    | [Makefile](./resources/defaults/Makefile)                 | Makefile template                     |
     | [README.md](./resources/defaults/README.md)               | information about the package itself  |
+    | [resources/make/phar.mk](./resources/defaults/resources/make/phar.mk) | Makefile with phar rules  |
 
 3. Once installed you can immediately uninstall this package:
 

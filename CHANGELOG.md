@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+### Added
+
+- Simple `.gitignore` were created
+- Distributable `.make.dist` were created
+
+### Changed
+
+- `jawira/defaults` is going to copy all the content from `./resources/defaults/` 
+recursively
+- The creation of phar files were extracted from `Makefile` to `resources/make/phar.mk`
+
+
 v0.0.2 - 2018-08-28
 -------------------
 

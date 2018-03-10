@@ -23,6 +23,6 @@
         "class": "Jawira\\Defaults\\DefaultFilesPlugin"
     },
     "suggest": {
-        "pds/skeleton": "Generates default project structure"
+        "pds/skeleton": "Standard PHP package skeleton"
     }
 }
