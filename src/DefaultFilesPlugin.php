@@ -9,15 +9,18 @@ use Composer\Installer\PackageEvents;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 use FilesystemIterator;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 /**
  * Class CopyDefaultsPlugins
- * When you to a require of this composer plug-in the following files are
- * created in the root of the project:
+ * When you do a `composer require jawira/defautsl`, this composer plug-in will copy
+ * the following files at the root of your project:
  * - README.md
  * - phing.xml
  * - Makefile
  * - CONTRIBUTING.md
+ * - etc...
  *
  * @package Jawira\Defaults
  */
@@ -33,16 +36,21 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      */
     const RESOURCES_DIR = '%s/jawira/defaults/resources/defaults/';
 
-    /** @var  \Composer\Composer $composer */
+    /**
+     * @var  \Composer\Composer $composer
+     */
     protected $composer;
-    /** @var  \Composer\IO\IOInterface $io */
+
+    /**
+     * @var  \Composer\IO\IOInterface $io
+     */
     protected $io;
 
     /**
      * @param \Composer\Composer       $composer
      * @param \Composer\IO\IOInterface $io
      *
-     * @return \Jawira\Defaults\DefaultFilesPlugin
+     * @return $this
      */
     public function activate(Composer $composer, IOInterface $io)
     {
@@ -69,7 +77,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      *
      * @param \Composer\Installer\PackageEvent $event
      *
-     * @return \Jawira\Defaults\DefaultFilesPlugin
+     * @return $this
      * @throws \RuntimeException
      */
     public function start(PackageEvent $event)
@@ -103,8 +111,9 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
     protected function copyFiles($vendorDir, $basePath)
     {
         foreach ($this->pathsProvider($vendorDir, $basePath) as [$source, $target]) {
+            $this->makeDir($target);
             if ($this->canICopyTo($target) && copy($source, $target)) {
-                $this->io->write("<info>💾 Writing $target</info>");
+                $this->io->write("<info>💾</info> Writing <info>$target</info>");
             }
         }
 
@@ -121,7 +130,9 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      */
     protected function pathsProvider($vendorDir, $basePath)
     {
-        $fs = new FilesystemIterator(sprintf(self::RESOURCES_DIR, $vendorDir), FilesystemIterator::SKIP_DOTS);
+        $resourcesDir = sprintf(self::RESOURCES_DIR, $vendorDir);
+        $fs           = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($resourcesDir,
+                                                                                     FilesystemIterator::SKIP_DOTS));
 
         /** @var \SplFileInfo $file */
         foreach ($fs as $file) {
@@ -131,7 +142,7 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
 
             yield [
                 $file->getPathname(),
-                $basePath . DIRECTORY_SEPARATOR . $file->getFilename(),
+                $basePath . DIRECTORY_SEPARATOR . str_replace($resourcesDir, '', $file->getPathname()),
             ];
         }
     }
@@ -185,8 +196,24 @@ class DefaultFilesPlugin implements PluginInterface, EventSubscriberInterface
      */
     protected function finalMessage()
     {
-        $this->io->write(sprintf('<comment>🏁 Done, please uninstall package with: composer remove %s</comment>',
+        $this->io->write(sprintf('<comment>🏁</comment> Done, please uninstall package with: <comment>composer remove %s</comment>',
                                  self::PACKAGE_NAME));
+
+        return $this;
+    }
+
+    /**
+     * Create directory for $target file if required
+     *
+     * @param string $target Must be a path to a file
+     *
+     * @return $this
+     */
+    protected function makeDir($target)
+    {
+        if (!file_exists(dirname($target))) {
+            mkdir(dirname($target), 0777, true);
+        }
 
         return $this;
     }
