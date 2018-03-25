@@ -36,3 +36,9 @@ bin/phpbench.phar:	## PHPBench - http://phpbench.readthedocs.io/en/latest/instal
 	@wget --no-verbose -O $@.pubkey https://phpbench.github.io/phpbench/phpbench.phar.pubkey
 	@chmod +x $@
 	$@ --version
+
+bin/couscous.phar:	## Static site builder for documentation - http://couscous.io/docs/getting-started.html
+	@mkdir -p $(@D)
+	@wget --no-verbose -O $@ http://couscous.io/couscous.phar
+	@chmod +x $@
+	$@ --version
