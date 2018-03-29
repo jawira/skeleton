@@ -14,7 +14,7 @@
                 $ phing -f portainer.build.xml portainer:run
 
             Once launched, you can access to Portainer's web interface at
-            localhost:9090, you can directly open your browser using the
+            localhost:9000, you can directly open your browser using the
             following shortcut:
 
                 $ phing -f portainer.build.xml portainer:open
@@ -27,7 +27,7 @@
     </target>
 
     <target name="portainer:open" description="Open Portainer in your browser">
-        <exec command="xdg-open http://localhost:9090" passthru="true" checkreturn="false"/>
+        <exec command="xdg-open http://localhost:9000" passthru="true" checkreturn="false"/>
     </target>
 
     <target name="portainer:run" description="Start Portainer" depends="portainer:stop, portainer:rm">
@@ -36,7 +36,7 @@
             <arg value="--detach"/>
             <arg value="--restart=always"/>
             <arg value="--name=portainer"/>
-            <arg value="--publish=9090:9000"/>
+            <arg value="--publish=9000:9000"/>
             <arg value="--volume=/var/run/docker.sock:/var/run/docker.sock"/>
             <arg value="--volume=/opt/portainer:/data"/>
             <arg value="portainer/portainer"/>
