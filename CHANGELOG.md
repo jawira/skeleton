@@ -10,6 +10,7 @@ Unreleased
 
 - Simple `.gitignore` were created
 - Distributable `.make.dist` were created
+- New buildfiles added for Phing: apach2, composer and portainer
 
 ### Changed
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="Composer" description="Composer dependency manager" default="composer:version">
+
+    <!-- You can overwrite this value with command line or a property file: -->
+    <!-- $ phing -f composer.build.xml -Dcompose=bin/phing.phar -->
+    <!-- $ phing -f composer.build.xml -propertyfile properties.ini -->
+    <property name="composer" value="/usr/bin/composer" description="Composer's command or location"/>
+
+    <target name="composer:version" description="Version installed">
+        <exec command="${composer} --version --no-interaction"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+
+    <target name="composer:optimize" description="Optimize autoload for production">
+        <exec command="${composer} dump-autoload --optimize --no-interaction"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+
+    <target name="composer:validate" description="Validate composer.json">
+        <exec command="${composer} validate --no-interaction --profile --strict"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+
+    <target name="composer:install-dev" description="Development dependencies">
+        <exec command="${composer} install --no-suggest --no-interaction --profile"
+              passthru="true"
+              checkreturn="true"/>
+    </target>
+
+    <target name="composer:install" description="Production dependencies">
+        <exec command="${composer} install --no-dev --no-suggest --no-interaction --profile"
+              passthru="true"
+              checkreturn="true"/>
+        <phingcall target="composer:optimize"/>
+    </target>
+
+</project>
