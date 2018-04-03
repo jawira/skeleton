@@ -34,7 +34,7 @@
         <exec executable="${docker}" passthru="true" checkreturn="true">
             <arg value="run"/>
             <arg value="--detach"/>
-            <arg value="--restart=always"/>
+            <arg value="--restart=unless-stopped"/>
             <arg value="--name=portainer"/>
             <arg value="--publish=9000:9000"/>
             <arg value="--volume=/var/run/docker.sock:/var/run/docker.sock"/>
