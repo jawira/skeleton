@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Apache2" description="Apache HTTP Server" default="apache2:version">
+
+    <target name="apache2:version" description="Apache2 version">
+        <exec command="apachectl -v" passthru="true"/>
+    </target>
+
+    <target name="apache2:validate" description="Run syntax check for config files">
+        <exec command="apachectl -t" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="apache2:vhosts" description="Show parsed vhost settings">
+        <exec command="apachectl -t -D DUMP_VHOSTS" passthru="true"/>
+    </target>
+
+    <target name="apache2:reload" description="Reload config">
+        <exec command="service apache2 reload" passthru="true"/>
+    </target>
+
+    <target name="apache2:stop" description="Stop server">
+        <exec command="service apache2 stop" passthru="true"/>
+    </target>
+
+    <target name="apache2:start" description="Start server">
+        <exec command="service apache2 start" passthru="true"/>
+    </target>
+
+</project>

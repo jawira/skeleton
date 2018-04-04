@@ -6,7 +6,23 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
-v0.0.2 - 2018-08-28
+v0.1.0 - 2018-04-04
+-------------------
+
+### Added
+
+- Simple `.gitignore` were created
+- Distributable `.makerc.dist` were created
+- New buildfiles added for Phing: apach2, composer and portainer
+
+### Changed
+
+- `jawira/defaults` is going to copy all the content from `./resources/defaults/` 
+recursively
+- The creation of phar files were extracted from `Makefile` to `resources/make/phar.mk`
+
+
+v0.0.2 - 2018-02-28
 -------------------
 
 ### Added
