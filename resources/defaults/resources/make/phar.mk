@@ -42,3 +42,9 @@ bin/couscous.phar:	## Static site builder for documentation - http://couscous.io
 	@wget --no-verbose -O $@ http://couscous.io/couscous.phar
 	@chmod +x $@
 	$@ --version
+
+bin/wp-cli.phar:	## Command-line interface for WordPress - https://wp-cli.org/
+	@mkdir -p $(@D)
+	@wget --no-verbose -O $@ https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+	@chmod +x $@
+	$@ --info
