@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="open" description="Url shortcuts" default="open:localhost">
+
+    <!--Add your own links here-->
+    <target name="open:localhost" description="Open localhost in browser">
+        <exec command="xdg-open http://localhost"/>
+    </target>
+
+    <target name="open:mdn" description="MDN web docs">
+        <exec command="xdg-open https://developer.mozilla.org/en-US/"/>
+    </target>
+
+</project>
