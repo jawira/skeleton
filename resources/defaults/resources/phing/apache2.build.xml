@@ -3,7 +3,7 @@
 <project name="Apache2" description="Apache HTTP Server" default="apache2:version">
 
     <target name="apache2:version" description="Apache2 version">
-        <exec command="apachectl -v" passthru="true"/>
+        <exec command="apachectl -v" passthru="true" checkreturn="true"/>
     </target>
 
     <target name="apache2:validate" description="Run syntax check for config files">
