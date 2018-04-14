@@ -9,32 +9,27 @@
 
     <target name="composer:version" description="Version installed">
         <exec command="${composer} --version --no-interaction"
-              passthru="true"
-              checkreturn="true"/>
+              passthru="true" checkreturn="true"/>
     </target>
 
     <target name="composer:optimize" description="Optimize autoload for production">
         <exec command="${composer} dump-autoload --optimize --no-interaction"
-              passthru="true"
-              checkreturn="true"/>
+              passthru="true" checkreturn="true"/>
     </target>
 
     <target name="composer:validate" description="Validate composer.json">
         <exec command="${composer} validate --no-interaction --profile --strict"
-              passthru="true"
-              checkreturn="true"/>
+              passthru="true" checkreturn="true"/>
     </target>
 
     <target name="composer:install-dev" description="Development dependencies">
         <exec command="${composer} install --no-suggest --no-interaction --profile"
-              passthru="true"
-              checkreturn="true"/>
+              passthru="true" checkreturn="true"/>
     </target>
 
     <target name="composer:install" description="Production dependencies">
         <exec command="${composer} install --no-dev --no-suggest --no-interaction --profile"
-              passthru="true"
-              checkreturn="true"/>
+              passthru="true" checkreturn="true"/>
         <phingcall target="composer:optimize"/>
     </target>
 

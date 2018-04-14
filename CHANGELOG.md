@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+v0.2.0 - 2018-04-14
+-------------------
+
+### Added
+
+- Two new buildfiles for Phing
+- Added wp-cli to phar.mk
+
 v0.1.0 - 2018-04-04
 -------------------
 
