@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ClamAV" description="Scan files and directories for viruses" default="clamav:version">
+
+    <target name="clamav:version" description="ClamAV version">
+        <exec command="clamscan --version" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="clamav:scan" description="Scan files and directories for viruses">
+        <mkdir dir="${application.startdir}/resources/log/"/>
+        <exec command="clamscan -ir -l ${application.startdir}/resources/log/clamscan.log ${application.startdir}"
+              passthru="true" checkreturn="true"/>
+    </target>
+    
+</project>
