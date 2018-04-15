@@ -1,28 +1,22 @@
 {
-    "name": "jawira/defaults",
-    "type": "composer-plugin",
-    "description": "Generates default project files (README.md, CONTRIBUTING.md, LICENSE, etc) in the root of your project",
+    "name": "jawira/skeleton",
+    "type": "library",
+    "description": "Common files I use in all my projects",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Jawira Portugal"
         }
     ],
-    "require": {
-        "composer-plugin-api": "^1.1"
-    },
-    "require-dev": {
-        "composer/composer": "^1.6"
-    },
+    "require": {},
+    "require-dev": {},
     "suggest": {
-        "pds/skeleton": "Standard PHP package skeleton"
+        "pds/skeleton": "Use it to install standard files and directory structure"
     },
-    "extra": {
-        "class": "Jawira\\Defaults\\DefaultFilesPlugin"
-    },
+    "extra": {},
     "autoload": {
         "psr-4": {
-            "Jawira\\Defaults\\": "src/"
+            "Jawira\\Skeleton\\": "src/"
         }
     }
 }
