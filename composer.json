@@ -8,15 +8,18 @@
             "name": "Jawira Portugal"
         }
     ],
-    "require": {},
-    "require-dev": {},
-    "suggest": {
-        "pds/skeleton": "Use it to install standard files and directory structure"
+    "require": {
+        "league/climate": "^3.2"
     },
-    "extra": {},
+    "suggest": {
+        "pds/skeleton": "use it to install standard files and directory structure"
+    },
     "autoload": {
         "psr-4": {
             "Jawira\\Skeleton\\": "src/"
         }
-    }
+    },
+    "bin": [
+        "bin/jawira-skeleton"
+    ]
 }
