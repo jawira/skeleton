@@ -8,28 +8,33 @@
     <property name="composer" value="/usr/bin/composer" description="Composer's command or location"/>
 
     <target name="composer:version" description="Version installed">
-        <exec command="${composer} --version --no-interaction"
-              passthru="true" checkreturn="true"/>
+        <composer composer="${composer}">
+            <arg line="--version --no-interaction"/>
+        </composer>
     </target>
 
     <target name="composer:optimize" description="Optimize autoload for production">
-        <exec command="${composer} dump-autoload --optimize --no-interaction"
-              passthru="true" checkreturn="true"/>
+        <composer composer="${composer}">
+            <arg line="dump-autoload --optimize --no-interaction"/>
+        </composer>
     </target>
 
     <target name="composer:validate" description="Validate composer.json">
-        <exec command="${composer} validate --no-interaction --profile --strict"
-              passthru="true" checkreturn="true"/>
+        <composer composer="${composer}">
+            <arg line="validate --no-interaction --profile --strict"/>
+        </composer>
     </target>
 
     <target name="composer:install-dev" description="Development dependencies">
-        <exec command="${composer} install --no-suggest --no-interaction --profile"
-              passthru="true" checkreturn="true"/>
+        <composer composer="${composer}">
+            <arg line="${composer} install --no-suggest --no-interaction --profile"/>
+        </composer>
     </target>
 
     <target name="composer:install" description="Production dependencies">
-        <exec command="${composer} install --no-dev --no-suggest --no-interaction --profile"
-              passthru="true" checkreturn="true"/>
+        <composer composer="${composer}">
+            <arg line="install --no-dev --no-suggest --no-interaction --profile"/>
+        </composer>
         <phingcall target="composer:optimize"/>
     </target>
 

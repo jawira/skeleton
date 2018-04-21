@@ -4,28 +4,32 @@ Dev notes
 Testing the plugin
 ------------------
 
-To test the plugin while developing crate a new `dummy-app` project at the same level.
+To test the current library while developing it's useful to  crate a new 
+`dummy-app` project:
 
 ```
 Projects
-├── defaults
+├── skeleton (this project)
 │   └── ...
 └── dummy-app
     └── composer.json
 ```
 
-The content of `composer.json` is:
+The content of `composer.json` would be:
 
 ```json
 {
     "name": "jawira/dummy-app",
     "require": {
-        "jawira/defaults": "dev-master"
+        "jawira/skeleton": "*"
     },
     "repositories": [
         {
             "type": "path",
-            "url": "/home/jawira/Projects/defaults"
+            "url": "/home/jawira/PhpstormProjects/skeleton",
+            "options": {
+                "symlink": false
+            }
         }
     ],
     "minimum-stability": "dev",
@@ -39,5 +43,6 @@ Usually you will execute the following command to easily test the plugin.
 rm -rf vendor composer.lock README.md; composer install
 ```
 
-Source: [https://www.sitepoint.com/drunk-with-the-power-of-composer-plugins/]()
-
+Sources:
+ 
+- [https://getcomposer.org/doc/05-repositories.md#path]()
