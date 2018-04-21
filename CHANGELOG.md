@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+v1.0.0 - 2018-04-21
+-------------------
+
 ### Added
 
 - Since this project had become a library, the skeleton files are crated using 
