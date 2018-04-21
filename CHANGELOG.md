@@ -6,6 +6,24 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+v1.0.0 - 2018-04-21
+-------------------
+
+### Added
+
+- Since this project had become a library, the skeleton files are crated using 
+binary `bin/jawira-skeleton`
+
+### Changed
+
+- Readme file was updated with new project name
+- Repository changed its name from `defaults` to `skeleton`
+- Composer.json was modified to become a library
+
+### Removed
+
+- Since this project is a Composer library, the Composer plugin was removed
+
 v0.2.0 - 2018-04-14
 -------------------
 
@@ -36,7 +54,7 @@ v0.0.2 - 2018-02-28
 ### Added
 
 - Pugx Badges and gif animation in [README.md](./README.md)
-- Added [GLPv3 LICENSE](./resources/defaults/LICENSE) 
+- Added [GLPv3 LICENSE](resources/warehouse/LICENSE) 
 
 ### Changed
 
