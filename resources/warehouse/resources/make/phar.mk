@@ -20,7 +20,7 @@ bin/deployer.phar:	## Deployment Tool - https://deployer.org/download
 
 bin/phing.phar:	## Build tool - https://www.phing.info/
 	@mkdir -p $(@D)
-	@wget --no-verbose -O $@ https://www.phing.info/get/phing-2.16.1.phar
+	@wget --no-verbose -O $@ https://www.phing.info/get/phing-3.0.0-alpha1.phar
 	@chmod +x $@
 	$@ -v
 
