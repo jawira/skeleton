@@ -10,5 +10,9 @@
     <target name="open:mdn" description="MDN web docs">
         <exec command="xdg-open https://developer.mozilla.org/en-US/"/>
     </target>
+    
+    <target name="open:security-headers" description="Analyse http response headers">
+        <exec command="xdg-open https://securityheaders.com/"/>
+    </target>
 
 </project>
