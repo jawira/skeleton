@@ -48,3 +48,9 @@ bin/wp-cli.phar:	## Command-line interface for WordPress - https://wp-cli.org/
 	@wget --no-verbose -O $@ https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 	@chmod +x $@
 	$@ --info
+
+bin/phpmd.phar:	## Look for potential problems in source code - https://phpmd.org/
+	@mkdir -p $(@D)
+	@wget --no-verbose -O $@ http://static.phpmd.org/php/latest/phpmd.phar
+	@chmod +x $@
+	$@ --version
