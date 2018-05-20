@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+v1.1.0 - 2018-08-20
+-------------------
+
+### Added
+
+- PHP Mess Detector was added to phar.mk makefile
+
+### Changed
+
+- Improving clamav buildfile to install, add PHP malware signatures and update
+virus database.
+
 v1.0.0 - 2018-04-21
 -------------------
 

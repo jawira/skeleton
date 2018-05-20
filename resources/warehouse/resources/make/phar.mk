@@ -20,7 +20,7 @@ bin/deployer.phar:	## Deployment Tool - https://deployer.org/download
 
 bin/phing.phar:	## Build tool - https://www.phing.info/
 	@mkdir -p $(@D)
-	@wget --no-verbose -O $@ https://www.phing.info/get/phing-2.16.1.phar
+	@wget --no-verbose -O $@ https://www.phing.info/get/phing-3.0.0-alpha1.phar
 	@chmod +x $@
 	$@ -v
 
@@ -48,3 +48,9 @@ bin/wp-cli.phar:	## Command-line interface for WordPress - https://wp-cli.org/
 	@wget --no-verbose -O $@ https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 	@chmod +x $@
 	$@ --info
+
+bin/phpmd.phar:	## Look for potential problems in source code - https://phpmd.org/
+	@mkdir -p $(@D)
+	@wget --no-verbose -O $@ http://static.phpmd.org/php/latest/phpmd.phar
+	@chmod +x $@
+	$@ --version

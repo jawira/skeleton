@@ -27,7 +27,7 @@
 
     <target name="composer:install-dev" description="Development dependencies">
         <composer composer="${composer}">
-            <arg line="${composer} install --no-suggest --no-interaction --profile"/>
+            <arg line="install --no-suggest --no-interaction --profile"/>
         </composer>
     </target>
 
