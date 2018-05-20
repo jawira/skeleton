@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+v1.1.0 - 2018-08-20
+-------------------
+
 ### Added
 
 - PHP Mess Detector was added to phar.mk makefile
