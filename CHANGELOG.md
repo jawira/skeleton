@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 Unreleased
 ----------
 
+### Fixed
+
+- Fixing annotation namespaces in WarehouseManager.php
+
 v1.1.0 - 2018-08-20
 -------------------
 
