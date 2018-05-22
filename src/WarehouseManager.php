@@ -63,7 +63,7 @@ class WarehouseManager
     /**
      * @param array $catalog
      *
-     * @return Warehouse
+     * @return WarehouseManager
      */
     protected function setCatalog($catalog)
     {
@@ -83,7 +83,7 @@ class WarehouseManager
     /**
      * @param string $basePath
      *
-     * @return Warehouse
+     * @return WarehouseManager
      */
     protected function setBasePath($basePath)
     {
@@ -103,7 +103,7 @@ class WarehouseManager
     /**
      * @param mixed $warehousePath
      *
-     * @return Warehouse
+     * @return WarehouseManager
      */
     protected function setWarehousePath($warehousePath)
     {
@@ -117,7 +117,7 @@ class WarehouseManager
      *
      * @param string $source File located in warehouse dir
      *
-     * @return \Jawira\Skeleton\Warehouse
+     * @return \Jawira\Skeleton\WarehouseManager
      * @throws \Jawira\Skeleton\SkeletonException
      */
     public function copy($source)
