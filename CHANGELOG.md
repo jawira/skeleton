@@ -19,6 +19,7 @@ Unreleased
 ### Added
 
 - Add `localheinz/composer-normalize` as suggestion in composer.json
+- Add pds-skeleton badge in readme file
 
 v1.1.1 - 2018-05-22
 -------------------
