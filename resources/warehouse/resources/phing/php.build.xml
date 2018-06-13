@@ -8,4 +8,13 @@
         </exec>
     </target>
 
+    <target name="php:lint" description="Check PHP syntax">
+        <property name="phplint.dir" value="src" description="Based on pds/skeleton dirs"/>
+        <phplint haltonfailure="true">
+            <fileset dir="${phplint.dir}">
+                <include name="**/*.php"/>
+            </fileset>
+        </phplint>
+    </target>
+
 </project>
