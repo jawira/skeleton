@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="php" description="PHP related" default="php:version">
+    
+    <target name="php:version" description="Get current PHP version">
+        <exec executable="${php.interpreter}" passthru="true" checkreturn="true">
+            <arg value="--version"/>
+        </exec>
+    </target>
+
+</project>

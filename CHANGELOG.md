@@ -20,6 +20,7 @@ Unreleased
 
 - Add `localheinz/composer-normalize` as suggestion in composer.json
 - Add pds-skeleton badge in readme file
+- PHP buildfile
 
 v1.1.1 - 2018-05-22
 -------------------
