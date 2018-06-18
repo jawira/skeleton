@@ -12,6 +12,7 @@
         "league/climate": "^3.2"
     },
     "suggest": {
+        "localheinz/composer-normalize": "apply same format in all your composer.json files",
         "pds/skeleton": "use it to install standard files and directory structure"
     },
     "autoload": {

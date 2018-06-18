@@ -9,6 +9,7 @@ in projects (e.g. README.md, .gitignore, build.xml, etc).
 [![Latest Stable Version](https://poser.pugx.org/jawira/skeleton/v/stable)](https://packagist.org/packages/jawira/skeleton)
 [![License](https://poser.pugx.org/jawira/skeleton/license)](https://packagist.org/packages/jawira/skeleton)
 [![composer.lock](https://poser.pugx.org/jawira/skeleton/composerlock)](https://packagist.org/packages/jawira/skeleton)
+[![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
 
 How to install
 --------------
@@ -16,7 +17,7 @@ How to install
 Install this package with Composer: 
 
 ```bash
-$ composer require jawira/skeleton
+$ composer require jawira/skeleton:*
 ```
 
 Usage
@@ -28,7 +29,7 @@ Usage
     $ vendor/bin/jawira-skeleton
     ```
  
-2. Select files you want to create.
+2. Select files you want to create with _space_ and start copying with _enter_.
 
 Skeleton files
 --------------
