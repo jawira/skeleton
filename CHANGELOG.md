@@ -16,6 +16,9 @@ Types of changes:
 Unreleased
 ----------
 
+v1.2.0 - 2018-06-18
+-------------------
+
 ### Added
 
 - Add `localheinz/composer-normalize` as suggestion in composer.json
