@@ -17,7 +17,7 @@ How to install
 Install this package with Composer: 
 
 ```bash
-$ composer require jawira/skeleton
+$ composer require jawira/skeleton:*
 ```
 
 Usage
