@@ -29,7 +29,7 @@ Usage
     $ vendor/bin/jawira-skeleton
     ```
  
-2. Select files you want to create.
+2. Select files you want to create with _space_ and start copying with _enter_.
 
 Skeleton files
 --------------
