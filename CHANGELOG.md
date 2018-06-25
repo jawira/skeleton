@@ -16,6 +16,10 @@ Types of changes:
 Unreleased
 ----------
 
+
+v1.3.0 - 2018-06-25
+-------------------
+
 ### Added
 
 - `.gitattributes` added to warehouse
