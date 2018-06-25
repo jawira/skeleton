@@ -19,6 +19,7 @@ Unreleased
 ### Added
 
 - `.gitattributes` added to warehouse
+- `.editorconfig` added to warehouse
 
 ### Changed
 
