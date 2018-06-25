@@ -16,6 +16,19 @@ Types of changes:
 Unreleased
 ----------
 
+
+v1.3.0 - 2018-06-25
+-------------------
+
+### Added
+
+- `.gitattributes` added to warehouse
+- `.editorconfig` added to warehouse
+
+### Changed
+
+- Composer buildfiles does install/update with `--prefer-dist` option 
+
 v1.2.0 - 2018-06-18
 -------------------
 
