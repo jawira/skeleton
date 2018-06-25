@@ -16,6 +16,10 @@ Types of changes:
 Unreleased
 ----------
 
+### Changed
+
+- Composer buildfiles does install/update with `--prefer-dist` option 
+
 v1.2.0 - 2018-06-18
 -------------------
 

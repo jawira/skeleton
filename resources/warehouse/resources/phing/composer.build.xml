@@ -2,38 +2,44 @@
 
 <project name="Composer" description="Composer dependency manager" default="composer:version">
 
-    <!-- You can overwrite this value with command line or a property file: -->
-    <!-- $ phing -f composer.build.xml -Dcompose=bin/phing.phar -->
-    <!-- $ phing -f composer.build.xml -propertyfile properties.ini -->
-    <property name="composer" value="/usr/bin/composer" description="Composer's command or location"/>
-
     <target name="composer:version" description="Version installed">
-        <composer composer="${composer}">
-            <arg line="--version --no-interaction"/>
+        <composer>
+            <arg value="--no-interaction"/>
+            <arg value="--version"/>
         </composer>
     </target>
 
     <target name="composer:optimize" description="Optimize autoload for production">
-        <composer composer="${composer}">
-            <arg line="dump-autoload --optimize --no-interaction"/>
+        <composer command="dump-autoload">
+            <arg value="--optimize"/>
+            <arg value="--no-interaction"/>
         </composer>
     </target>
 
     <target name="composer:validate" description="Validate composer.json">
-        <composer composer="${composer}">
-            <arg line="validate --no-interaction --profile --strict"/>
+        <composer command="validate">
+            <arg value="--no-interaction"/>
+            <arg value="--profile"/>
+            <arg value="--strict"/>
         </composer>
     </target>
 
-    <target name="composer:install-dev" description="Development dependencies">
-        <composer composer="${composer}">
-            <arg line="install --no-suggest --no-interaction --profile"/>
+    <target name="composer:install-dev" description="Install for dev">
+        <composer command="install">
+            <arg value="--no-suggest"/>
+            <arg value="--no-interaction"/>
+            <arg value="--profile"/>
+            <arg value="--prefer-dist"/>
         </composer>
     </target>
 
-    <target name="composer:install" description="Production dependencies">
-        <composer composer="${composer}">
-            <arg line="install --no-dev --no-suggest --no-interaction --profile"/>
+    <target name="composer:install" description="Install for prod">
+        <composer command="install">
+            <arg value="--no-suggest"/>
+            <arg value="--no-interaction"/>
+            <arg value="--profile"/>
+            <arg value="--prefer-dist"/>
+            <arg value="--no-dev"/>
         </composer>
         <phingcall target="composer:optimize"/>
     </target>
