@@ -16,6 +16,10 @@ Types of changes:
 Unreleased
 ----------
 
+### Added
+
+- `.gitattributes` added to warehouse
+
 ### Changed
 
 - Composer buildfiles does install/update with `--prefer-dist` option 
