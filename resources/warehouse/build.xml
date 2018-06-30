@@ -2,6 +2,10 @@
 
 <project name="Project name" description="Project description" default="diagnostics">
 
+    <defaultexcludes default="true"/><!--Initializing default excludes-->
+    <defaultexcludes add="**/.idea"/>
+    <defaultexcludes add="**/.idea/**"/>
+
     <target name="diagnostics">
         <diagnostics/>
     </target>
