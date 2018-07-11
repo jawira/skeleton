@@ -16,6 +16,9 @@ Types of changes:
 Unreleased
 ----------
 
+### Changed
+
+- Improving CONTRIBUTING.md template
 
 v1.3.0 - 2018-06-25
 -------------------
