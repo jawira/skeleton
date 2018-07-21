@@ -16,6 +16,9 @@ Types of changes:
 Unreleased
 ----------
 
+v1.3.1 - 2018-07-21
+-------------------
+
 ### Changed
 
 - `.idea` folder was added to `DefaultExclude`, which is called every time in 
