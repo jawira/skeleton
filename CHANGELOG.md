@@ -20,6 +20,7 @@ Unreleased
 
 - `.idea` folder was added to `DefaultExclude`, which is called every time in 
 [resources/warehouse/build.xml]()
+- Improving CONTRIBUTING.md template
 
 v1.3.0 - 2018-06-25
 -------------------
