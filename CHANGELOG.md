@@ -16,6 +16,10 @@ Types of changes:
 Unreleased
 ----------
 
+### Added 
+
+- `docker-compose.build.xml` buildfile added to warehouse
+
 v1.3.1 - 2018-07-21
 -------------------
 
