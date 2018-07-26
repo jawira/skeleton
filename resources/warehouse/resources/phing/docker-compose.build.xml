@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="docker-compose" description="docker-compose shortcuts" default="dc:ps">
+
+    <property name="docker-compose" value="/usr/local/bin/docker-compose" description="docker-compose full path"/>
+
+    <target name="dc:up" description="Create and start containers" depends="dc:down">
+        <exec executable="${docker-compose}" passthru="true" checkreturn="true">
+            <!--<arg line="&#45;&#45;project-name custom_name"/>-->
+            <arg line="up -d --remove-orphans"/>
+        </exec>
+        <phingcall target="dc:ps"/>
+    </target>
+
+    <target name="dc:stop" description="Stop services">
+        <exec executable="${docker-compose}" passthru="true">
+            <arg value="stop"/>
+        </exec>
+    </target>
+
+    <target name="dc:down" description="Stop and remove containers, networks, images, and volumes">
+        <exec executable="${docker-compose}" passthru="true">
+            <arg value="down"/>
+            <arg value="--remove-orphans"/>
+        </exec>
+    </target>
+
+    <target name="dc:ps" description="List containers">
+        <exec executable="${docker-compose}" passthru="true">
+            <arg value="ps"/>
+        </exec>
+    </target>
+
+    <target name="dc:ip" description="List containers">
+        <exec command="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
+              passthru="true"/>
+    </target>
+
+    <target name="dc:rm" description="Remove stopped containers">
+        <exec executable="${docker-compose}" passthru="true">
+            <arg value="rm"/>
+            <arg value="--force"/>
+        </exec>
+    </target>
+
+    <target name="dc:top" description="Display the running processes">
+        <exec executable="${docker-compose}" passthru="true">
+            <arg value="top"/>
+        </exec>
+    </target>
+
+</project>
