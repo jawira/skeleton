@@ -20,8 +20,8 @@
 
     <target name="dc:down" description="Stop and remove containers, networks, images, and volumes">
         <exec executable="${docker-compose}" passthru="true">
-            <arg line="-p pm"/>
             <arg value="down"/>
+            <arg value="--remove-orphans"/>
         </exec>
     </target>
 
