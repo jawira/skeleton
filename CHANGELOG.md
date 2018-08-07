@@ -16,7 +16,14 @@ Types of changes:
 Unreleased
 ----------
 
+### Added
+
+- Dockerfile containing PHP and Apache
+- docker-compose.yml was added
+
 ### Changed
+
+- Added `phpcompatinfo.phar` into `phar.mk`
 
 v1.4.0 - 2018-07-26
 -------------------
