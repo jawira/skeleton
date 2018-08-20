@@ -65,7 +65,7 @@ resources/warehouse/
 ```
 <!--tree:end-->
 
-Note that the generated files are customized according to my personal needs.
+Note all files are customized according to my personal needs.
 
 Contributing
 ------------
