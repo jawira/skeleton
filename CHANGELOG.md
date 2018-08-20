@@ -20,7 +20,8 @@ Unreleased
 
 - Dockerfile containing PHP and Apache
 - docker-compose.yml was added
-- File tree in Readme file can be automatically updated in [README.MD]()
+- File tree in Readme file can be automatically updated using Phing's 
+`readme:update` target
 
 ### Changed
 
