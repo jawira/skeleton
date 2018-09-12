@@ -39,21 +39,29 @@ Skeleton files are located at [resources/warehouse/]().
 Currently the following files can be installed trough executable:
 
 ```
-.
-├── build.xml
+resources/warehouse/
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── .makerc.dist
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
+├── Dockerfile
 ├── LICENSE
 ├── Makefile
 ├── README.md
+├── build.xml
+├── docker-compose.yml
 └── resources
     ├── make
-    │   └── phar.mk
+    │   └── phar.mk
     └── phing
         ├── apache2.build.xml
         ├── clamav.build.xml
         ├── composer.build.xml
+        ├── docker-compose.build.xml
         ├── open.build.xml
+        ├── php.build.xml
         └── portainer.build.xml
 ```
 
