@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "league/climate": "^3.2"
+        "league/climate": "^3.2",
+        "ext-mbstring": "*"
     },
     "suggest": {
         "localheinz/composer-normalize": "apply same format in all your composer.json files",
