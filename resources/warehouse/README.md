@@ -1,8 +1,20 @@
 @todo Project name
 ==================
 
+Usage
+-----
+
+@todo
+
 How to install
 --------------
+
+@todo
+
+Requirements
+------------
+
+@todo
 
 Contributing
 ------------

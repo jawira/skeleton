@@ -26,6 +26,7 @@ Unreleased
 ### Changed
 
 - Added `phpcompatinfo.phar` into `phar.mk`
+- Added more subtitles to `README.md`
 
 v1.4.0 - 2018-07-26
 -------------------
