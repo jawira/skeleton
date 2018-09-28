@@ -28,6 +28,10 @@ Unreleased
 - Added `phpcompatinfo.phar` into `phar.mk`
 - Added more subtitles to `README.md`
 
+### Fixed
+
+- Composer has `ext-mbstring` as requirement, this is required by CLImate
+
 v1.4.0 - 2018-07-26
 -------------------
 
