@@ -22,6 +22,7 @@ Unreleased
 - docker-compose.yml was added
 - File tree in Readme file can be automatically updated using Phing's 
 `readme:update` target
+- Including badges links into `README.md`
 
 ### Changed
 
