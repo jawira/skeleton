@@ -41,28 +41,17 @@ Currently the following files can be installed trough executable:
 <!--tree:start-->
 ```
 resources/warehouse/
-<<<<<<< HEAD
 ├── build.xml
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
-=======
-├── .editorconfig
-├── .gitattributes
-├── .gitignore
-├── .makerc.dist
-├── CHANGELOG.md
-├── CONTRIBUTING.md
->>>>>>> feature/fix-mbstring
 ├── Dockerfile
 ├── LICENSE
 ├── Makefile
 ├── README.md
-├── build.xml
-├── docker-compose.yml
 └── resources
     ├── make
-    │   └── phar.mk
+    │   └── phar.mk
     └── phing
         ├── apache2.build.xml
         ├── clamav.build.xml
