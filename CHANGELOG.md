@@ -29,6 +29,7 @@ Unreleased
 
 - Added `phpcompatinfo.phar` into `phar.mk`
 - Added more subtitles to `README.md`
+- New subtitle in `resources/warehouse/CONTRIBUTING.md`
 
 ### Fixed
 
