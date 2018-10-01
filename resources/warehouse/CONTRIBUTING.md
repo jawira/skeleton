@@ -14,6 +14,8 @@ In order to contribute to this project:
 3. Once you have finished, create a **Pull Request** to merge your changes into 
 remote's develop branch 
 
+Do not forget to add your name at the end of this file.
+
 Recommendations
 ---------------
 
@@ -31,6 +33,13 @@ It's encouraged to use:
 Commit Message
 * [git-flow]: Git extensions to provide high-level repository operations for 
 Vincent Driessen's branching model  
+
+Contributors
+------------
+
+The following individuals have contributed to this project:
+
+- (add your name here)
 
 
 [Contributor Covenant]: https://www.contributor-covenant.org/
