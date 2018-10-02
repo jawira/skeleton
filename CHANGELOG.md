@@ -18,6 +18,13 @@ Unreleased
 
 ### Added
 
+- 
+
+v1.5.0 - 2018-10-02
+-------------------
+
+### Added
+
 - Dockerfile containing PHP and Apache
 - docker-compose.yml was added
 - File tree in Readme file can be automatically updated using Phing's 
