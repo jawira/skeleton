@@ -43,6 +43,7 @@ Currently the following files can be installed trough executable:
 resources/warehouse/
 ├── build.xml
 ├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
 ├── Dockerfile
@@ -61,7 +62,7 @@ resources/warehouse/
         ├── php.build.xml
         └── portainer.build.xml
 
-3 directories, 16 files
+3 directories, 17 files
 ```
 <!--tree:end-->
 
