@@ -16,7 +16,31 @@ Types of changes:
 Unreleased
 ----------
 
+### Added
+
+- 
+
+v1.5.0 - 2018-10-02
+-------------------
+
+### Added
+
+- Dockerfile containing PHP and Apache
+- docker-compose.yml was added
+- File tree in Readme file can be automatically updated using Phing's 
+`readme:update` target
+- Including badges links into `README.md`
+- Added `resources/warehouse/CODE_OF_CONDUCT.md`
+
 ### Changed
+
+- Added `phpcompatinfo.phar` into `phar.mk`
+- Added more subtitles to `README.md`
+- New subtitle in `resources/warehouse/CONTRIBUTING.md`
+
+### Fixed
+
+- Composer has `ext-mbstring` as requirement, this is required by CLImate
 
 v1.4.0 - 2018-07-26
 -------------------

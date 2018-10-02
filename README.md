@@ -38,11 +38,14 @@ Skeleton files are located at [resources/warehouse/]().
 
 Currently the following files can be installed trough executable:
 
+<!--tree:start-->
 ```
-.
+resources/warehouse/
 ├── build.xml
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
+├── docker-compose.yml
+├── Dockerfile
 ├── LICENSE
 ├── Makefile
 ├── README.md
@@ -53,11 +56,16 @@ Currently the following files can be installed trough executable:
         ├── apache2.build.xml
         ├── clamav.build.xml
         ├── composer.build.xml
+        ├── docker-compose.build.xml
         ├── open.build.xml
+        ├── php.build.xml
         └── portainer.build.xml
-```
 
-Note that the generated files are customized according to my personal needs.
+3 directories, 16 files
+```
+<!--tree:end-->
+
+Note all files are customized according to my personal needs.
 
 Contributing
 ------------

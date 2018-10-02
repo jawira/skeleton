@@ -54,3 +54,9 @@ bin/phpmd.phar:	## Look for potential problems in source code - https://phpmd.or
 	@wget --no-verbose -O $@ http://static.phpmd.org/php/latest/phpmd.phar
 	@chmod +x $@
 	$@ --version
+
+bin/phpcompatinfo.phar: ## find out the minimum version and extensions required - http://bartlett.laurent-laville.org/
+	@mkdir -p $(@D)
+	@wget --no-verbose -O $@ http://bartlett.laurent-laville.org/get/phpcompatinfo-5.0.12.phar
+	@chmod +x $@
+	$@ --version
