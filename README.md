@@ -47,8 +47,12 @@ resources/warehouse/
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
 ├── Dockerfile
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
 ├── LICENSE
 ├── Makefile
+├── .makerc.dist
 ├── README.md
 └── resources
     ├── make
@@ -62,7 +66,7 @@ resources/warehouse/
         ├── php.build.xml
         └── portainer.build.xml
 
-3 directories, 17 files
+3 directories, 21 files
 ```
 <!--tree:end-->
 
