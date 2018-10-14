@@ -18,7 +18,11 @@ Unreleased
 
 ### Added
 
-- 
+- New CONTRIBUTING.md file in the root of the project
+
+### Fixed
+
+- Added hidden files to tree in README.md (phing readme:update)
 
 v1.5.0 - 2018-10-02
 -------------------
