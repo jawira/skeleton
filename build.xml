@@ -10,6 +10,7 @@
     <target name="readme:update" description="Update readme file">
         <property name="tree.path" value="/usr/bin/tree"/>
         <exec executable="${tree.path}" outputProperty="tree">
+            <arg value="-a"/>
             <arg value="resources/warehouse/"/>
         </exec>
         <reflexive file="README.md">
