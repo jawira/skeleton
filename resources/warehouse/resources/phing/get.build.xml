@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="get" description="Download Phar files" default="get:behat">
+
+    <target name="get:behat" description="Download Behat">
+        <property name="get.behat.dir" value="bin"/>
+        <property name="get.behat.filename" value="behat.phar"/>
+        <if>
+            <not>
+                <available file="${get.behat.dir}/${get.behat.filename}"/>
+            </not>
+            <then>
+                <mkdir dir="${get.behat.dir}"/>
+                <httpget url="https://github.com/Behat/Behat/releases/download/v3.3.0/behat.phar"
+                         dir="${get.behat.dir}"
+                         filename="${get.behat.filename}"
+                         followRedirects="true"/>
+            </then>
+        </if>
+        <chmod file="${get.behat.dir}/${get.behat.filename}" mode="0775"/>
+        <exec executable="${get.behat.dir}/${get.behat.filename}" passthru="true" checkreturn="true">
+            <arg value="--version"/>
+        </exec>
+    </target>
+
+    <target name="get:composer" description="Download Composer">
+        <property name="get.composer.dir" value="bin"/>
+        <property name="get.composer.filename" value="composer.phar"/>
+        <if>
+            <not>
+                <available file="${get.composer.dir}/${get.composer.filename}"/>
+            </not>
+            <then>
+                <mkdir dir="${get.composer.dir}"/>
+                <httpget url="https://getcomposer.org/installer"
+                         dir="${project.basedir}"
+                         filename="composer-setup.php"
+                         followRedirects="true"/>
+                <exec command="php composer-setup.php --install-dir=${get.composer.dir} --filename=${get.composer.filename}"
+                      checkreturn="true"/>
+            </then>
+        </if>
+        <delete file="composer-setup.php"/>
+        <chmod file="${get.composer.dir}/${get.composer.filename}" mode="0775"/>
+        <composer composer="${get.composer.dir}/${get.composer.filename}" command="self-update"/>
+    </target>
+
+    <target name="get:phpunit">
+        <property name="get.phpunit.dir" value="bin"/>
+        <property name="get.phpunit.filename" value="phpunit.phar"/>
+        <if>
+            <not>
+                <available file="${get.phpunit.dir}/${get.phpunit.filename}"/>
+            </not>
+            <then>
+                <mkdir dir="${get.phpunit.dir}"/>
+                <httpget dir="${get.phpunit.dir}"
+                         filename="${get.phpunit.filename}"
+                         followRedirects="true"
+                         url="https://phar.phpunit.de/phpunit-7.phar"/>
+            </then>
+        </if>
+        <chmod file="${get.phpunit.dir}/${get.phpunit.filename}" mode="0775"/>
+        <exec executable="${get.phpunit.dir}/${get.phpunit.filename}" passthru="true" checkreturn="true">
+            <arg value="--version"/>
+        </exec>
+    </target>
+</project>
