@@ -21,10 +21,15 @@ Unreleased
 - New CONTRIBUTING.md file in the root of the project
 - New buildfile [resources/warehouse/resources/phing/get.build.xml](), this 
 buildfile allows to download well known Phar files: composer, behat, phpunit.
+- Versioning dictionary [.idea/dictionaries/jawira.xml]()
 
 ### Fixed
 
 - Added hidden files to tree in README.md (phing readme:update)
+
+### Changed
+
+- Added `.idea` dir in [resources/warehouse/.gitattributes]()
 
 v1.5.0 - 2018-10-02
 -------------------
