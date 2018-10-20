@@ -16,6 +16,9 @@ Types of changes:
 Unreleased
 ----------
 
+v1.6.0 - 2018-10-20
+-------------------
+
 ### Added
 
 - New CONTRIBUTING.md file in the root of the project
