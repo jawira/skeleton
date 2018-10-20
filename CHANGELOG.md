@@ -16,9 +16,23 @@ Types of changes:
 Unreleased
 ----------
 
+v1.6.0 - 2018-10-20
+-------------------
+
 ### Added
 
-- 
+- New CONTRIBUTING.md file in the root of the project
+- New buildfile [resources/warehouse/resources/phing/get.build.xml](), this 
+buildfile allows to download well known Phar files: composer, behat, phpunit.
+- Versioning dictionary [.idea/dictionaries/jawira.xml]()
+
+### Fixed
+
+- Added hidden files to tree in README.md (phing readme:update)
+
+### Changed
+
+- Added `.idea` dir in [resources/warehouse/.gitattributes]()
 
 v1.5.0 - 2018-10-02
 -------------------
@@ -40,7 +54,7 @@ v1.5.0 - 2018-10-02
 
 ### Fixed
 
-- Composer has `ext-mbstring` as requirement, this is required by CLImate
+- Composer has `ext-mbstring` as requirement, this is required by Climate
 
 v1.4.0 - 2018-07-26
 -------------------
@@ -131,7 +145,7 @@ v0.1.0 - 2018-04-04
 
 - Simple `.gitignore` were created
 - Distributable `.makerc.dist` were created
-- New buildfiles added for Phing: apach2, composer and portainer
+- New buildfiles added for Phing: apache2, composer and portainer
 
 ### Changed
 

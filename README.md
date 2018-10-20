@@ -47,8 +47,12 @@ resources/warehouse/
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
 ├── Dockerfile
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
 ├── LICENSE
 ├── Makefile
+├── .makerc.dist
 ├── README.md
 └── resources
     ├── make
@@ -58,11 +62,12 @@ resources/warehouse/
         ├── clamav.build.xml
         ├── composer.build.xml
         ├── docker-compose.build.xml
+        ├── get.build.xml
         ├── open.build.xml
         ├── php.build.xml
         └── portainer.build.xml
 
-3 directories, 17 files
+3 directories, 22 files
 ```
 <!--tree:end-->
 
