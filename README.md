@@ -31,7 +31,7 @@ Usage
  
 2. Select the files you want to create with `␣` (space key).
  
-3. Start copying with selected files with `⏎` (enter key).
+3. Start copying selected files with `⏎` (enter key).
 
 Skeleton files
 --------------
