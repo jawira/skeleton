@@ -4,12 +4,15 @@
       <w>buildfile</w>
       <w>buildfiles</w>
       <w>clamav</w>
+      <w>gitattributes</w>
       <w>gitignore</w>
+      <w>jawira</w>
       <w>malware</w>
       <w>phing</w>
       <w>portainer</w>
       <w>pugx</w>
       <w>spdx</w>
+      <w>versioning</w>
     </words>
   </dictionary>
 </component>
