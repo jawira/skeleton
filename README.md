@@ -23,13 +23,15 @@ $ composer require jawira/skeleton:*
 Usage
 -----
 
-1. Run executable:
+1. Run the executable:
 
     ```bash
     $ vendor/bin/jawira-skeleton
     ```
  
-2. Select files you want to create with _space_ and start copying with _enter_.
+2. Select the files you want to create with `␣` (space key).
+ 
+3. Start copying with selected files with `⏎` (enter key).
 
 Skeleton files
 --------------
