@@ -16,6 +16,10 @@ Types of changes:
 Unreleased
 ----------
 
+### Changed
+
+- Small change in Readme
+
 v1.6.0 - 2018-10-20
 -------------------
 
