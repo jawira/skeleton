@@ -3,7 +3,7 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
-<!---
+<!--
 Types of changes:
 ### Added       for new features.
 ### Changed     for changes in existing functionality.
