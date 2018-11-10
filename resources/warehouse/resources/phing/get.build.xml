@@ -2,8 +2,10 @@
 
 <project name="get" description="Download Phar files" default="get:behat">
 
+    <property name="get.default.dir" value="bin"/>
+
     <target name="get:behat" description="Download Behat - http://behat.org/en/latest/guides.html">
-        <property name="get.behat.dir" value="bin"/>
+        <propertycopy property="get.behat.dir" from="get.default.dir"/>
         <property name="get.behat.filename" value="behat.phar"/>
         <if>
             <not>
@@ -24,7 +26,7 @@
     </target>
 
     <target name="get:composer" description="Download Composer - https://getcomposer.org/doc/">
-        <property name="get.composer.dir" value="bin"/>
+        <propertycopy property="get.composer.dir" from="get.default.dir"/>
         <property name="get.composer.filename" value="composer.phar"/>
         <if>
             <not>
@@ -46,7 +48,7 @@
     </target>
 
     <target name="get:phpunit" description="Download PHPUnit - https://phpunit.readthedocs.io/en/7.4/">
-        <property name="get.phpunit.dir" value="bin"/>
+        <propertycopy property="get.phpunit.dir" from="get.default.dir"/>
         <property name="get.phpunit.filename" value="phpunit.phar"/>
         <if>
             <not>
@@ -67,7 +69,7 @@
     </target>
 
     <target name="get:hostess" description="Download hostess - https://github.com/cbednarski/hostess">
-        <property name="get.hostess.dir" value="bin"/>
+        <propertycopy property="get.hostess.dir" from="get.default.dir"/>
         <property name="get.hostess.filename" value="hostess"/>
         <if>
             <not>
@@ -83,6 +85,29 @@
         </if>
         <chmod file="${get.hostess.dir}/${get.hostess.filename}" mode="0775"/>
         <exec executable="${get.hostess.dir}/${get.hostess.filename}" passthru="true" checkreturn="true">
+            <arg value="--version"/>
+        </exec>
+    </target>
+
+    <target name="get:phpstan" description="PHP Static Analysis Tool - https://github.com/phpstan/phpstan">
+        <propertycopy property="get.phpstan.dir" from="get.default.dir"/>
+        <property name="get.phpstan.filename" value="phpstan.php"/>
+
+        <if>
+            <not>
+                <available file="${get.phpstan.dir}/${get.phpstan.filename}"/>
+            </not>
+            <then>
+                <mkdir dir="${get.phpstan.dir}"/>
+                <httpget dir="${get.phpstan.dir}"
+                         filename="${get.phpstan.filename}"
+                         followRedirects="true"
+                         url="https://github.com/phpstan/phpstan/releases/download/0.10.5/phpstan.phar"/>
+
+            </then>
+        </if>
+        <chmod file="${get.phpstan.dir}/${get.phpstan.filename}" mode="0775"/>
+        <exec executable="${get.phpstan.dir}/${get.phpstan.filename}" passthru="true" checkreturn="true">
             <arg value="--version"/>
         </exec>
     </target>
