@@ -91,7 +91,7 @@
 
     <target name="get:phpstan" description="PHP Static Analysis Tool - https://github.com/phpstan/phpstan">
         <propertycopy property="get.phpstan.dir" from="get.default.dir"/>
-        <property name="get.phpstan.filename" value="phpstan.php"/>
+        <property name="get.phpstan.filename" value="phpstan.phar"/>
 
         <if>
             <not>
