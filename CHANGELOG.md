@@ -20,6 +20,11 @@ Unreleased
 
 - Small change in Readme
 
+### Added
+
+- New file [composer.json](resources/warehouse/composer.json) to be used as 
+template. This file will never appear when using `bin/jawira-skeleton`.
+
 v1.6.0 - 2018-10-20
 -------------------
 
