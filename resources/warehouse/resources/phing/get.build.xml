@@ -89,4 +89,27 @@
         </exec>
     </target>
 
+    <target name="get:phpstan" description="PHP Static Analysis Tool - https://github.com/phpstan/phpstan">
+        <propertycopy property="get.phpstan.dir" from="get.default.dir"/>
+        <property name="get.phpstan.filename" value="phpstan.php"/>
+
+        <if>
+            <not>
+                <available file="${get.phpstan.dir}/${get.phpstan.filename}"/>
+            </not>
+            <then>
+                <mkdir dir="${get.phpstan.dir}"/>
+                <httpget dir="${get.phpstan.dir}"
+                         filename="${get.phpstan.filename}"
+                         followRedirects="true"
+                         url="https://github.com/phpstan/phpstan/releases/download/0.10.5/phpstan.phar"/>
+
+            </then>
+        </if>
+        <chmod file="${get.phpstan.dir}/${get.phpstan.filename}" mode="0775"/>
+        <exec executable="${get.phpstan.dir}/${get.phpstan.filename}" passthru="true" checkreturn="true">
+            <arg value="--version"/>
+        </exec>
+    </target>
+
 </project>
