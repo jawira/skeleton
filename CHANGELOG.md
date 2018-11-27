@@ -1,5 +1,4 @@
-Changelog
-=========
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -13,8 +12,7 @@ Types of changes:
 ### Security    in case of vulnerabilities.
 -->
 
-Unreleased
-----------
+## Unreleased
 
 ### Changed
 
@@ -25,8 +23,7 @@ Unreleased
 - New file [composer.json](resources/warehouse/composer.json) to be used as 
 template. This file will never appear when using `bin/jawira-skeleton`.
 
-v1.6.0 - 2018-10-20
--------------------
+## [v1.6.0] - 2018-10-20
 
 ### Added
 
@@ -43,8 +40,7 @@ buildfile allows to download well known Phar files: composer, behat, phpunit.
 
 - Added `.idea` dir in [resources/warehouse/.gitattributes]()
 
-v1.5.0 - 2018-10-02
--------------------
+## [v1.5.0] - 2018-10-02
 
 ### Added
 
@@ -65,15 +61,13 @@ v1.5.0 - 2018-10-02
 
 - Composer has `ext-mbstring` as requirement, this is required by Climate
 
-v1.4.0 - 2018-07-26
--------------------
+## [v1.4.0] - 2018-07-26
 
 ### Added 
 
 - `docker-compose.build.xml` buildfile added to warehouse
 
-v1.3.1 - 2018-07-21
--------------------
+## [v1.3.1] - 2018-07-21
 
 ### Changed
 
@@ -81,8 +75,7 @@ v1.3.1 - 2018-07-21
 [resources/warehouse/build.xml]()
 - Improving CONTRIBUTING.md template
 
-v1.3.0 - 2018-06-25
--------------------
+## [v1.3.0] - 2018-06-25
 
 ### Added
 
@@ -93,8 +86,7 @@ v1.3.0 - 2018-06-25
 
 - Composer buildfiles does install/update with `--prefer-dist` option 
 
-v1.2.0 - 2018-06-18
--------------------
+## [v1.2.0] - 2018-06-18
 
 ### Added
 
@@ -102,15 +94,13 @@ v1.2.0 - 2018-06-18
 - Add pds-skeleton badge in readme file
 - PHP buildfile
 
-v1.1.1 - 2018-05-22
--------------------
+## [v1.1.1] - 2018-05-22
 
 ### Fixed
 
 - Fixing annotation namespaces in WarehouseManager.php
 
-v1.1.0 - 2018-05-18
--------------------
+## [v1.1.0] - 2018-05-18
 
 ### Added
 
@@ -121,8 +111,7 @@ v1.1.0 - 2018-05-18
 - Improving clamav buildfile to install, add PHP malware signatures and update
 virus database.
 
-v1.0.0 - 2018-04-21
--------------------
+## [v1.0.0] - 2018-04-21
 
 ### Added
 
@@ -139,16 +128,14 @@ binary `bin/jawira-skeleton`
 
 - Since this project is a Composer library, the Composer plugin was removed
 
-v0.2.0 - 2018-04-14
--------------------
+## [v0.2.0] - 2018-04-14
 
 ### Added
 
 - Two new buildfiles for Phing
 - Added wp-cli to phar.mk
 
-v0.1.0 - 2018-04-04
--------------------
+## [v0.1.0] - 2018-04-04
 
 ### Added
 
@@ -163,8 +150,7 @@ recursively
 - The creation of phar files were extracted from `Makefile` to `resources/make/phar.mk`
 
 
-v0.0.2 - 2018-02-28
--------------------
+## [v0.0.2] - 2018-02-28
 
 ### Added
 
@@ -175,17 +161,29 @@ v0.0.2 - 2018-02-28
 
 - Default files were moved to `./resources/defaults/` dir
 
-v0.0.1 - 2018-02-26
--------------------
+## [v0.0.1] - 2018-02-26
 
 ### Fixed
 
 - A valid SPDX license was added to [composer.json](./composer.json)
 
-v0.0.0 - 2018-02-25
--------------------
+## [v0.0.0] - 2018-02-25
 
 ### Added
 
 - First full working version
 - Final Production files are located in ./resources/
+
+[v1.6.0]: https://github.com/jawira/skeleton/compare/v1.5.0...v1.6.0
+[v1.5.0]: https://github.com/jawira/skeleton/compare/v1.4.0...v1.5.0
+[v1.4.0]: https://github.com/jawira/skeleton/compare/v1.3.1...v1.4.0
+[v1.3.1]: https://github.com/jawira/skeleton/compare/v1.3.0...v1.3.1
+[v1.3.0]: https://github.com/jawira/skeleton/compare/v1.2.0...v1.3.0
+[v1.2.0]: https://github.com/jawira/skeleton/compare/v1.1.1...v1.2.0
+[v1.1.1]: https://github.com/jawira/skeleton/compare/v1.1.0...v1.1.1
+[v1.1.0]: https://github.com/jawira/skeleton/compare/v1.0.0...v1.1.0
+[v1.0.0]: https://github.com/jawira/skeleton/compare/v0.2.0...v1.0.0
+[v0.2.0]: https://github.com/jawira/skeleton/compare/v0.1.0...v0.2.0
+[v0.1.0]: https://github.com/jawira/skeleton/compare/v0.0.2...v0.1.0
+[v0.0.2]: https://github.com/jawira/skeleton/compare/v0.0.1...v0.0.2
+[v0.0.1]: https://github.com/jawira/skeleton/compare/v0.0.0...v0.0.1
