@@ -24,6 +24,8 @@ Unreleased
 
 - New file [composer.json](resources/warehouse/composer.json) to be used as 
 template. This file will never appear when using `bin/jawira-skeleton`.
+- The task `composer:outdated` was added in 
+[resources/warehouse/resources/phing/composer.build.xml]()
 
 v1.6.0 - 2018-10-20
 -------------------
