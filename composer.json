@@ -1,27 +1,30 @@
 {
-    "name": "jawira/skeleton",
-    "type": "library",
-    "description": "Common files I use in all my projects",
-    "license": "GPL-3.0-or-later",
-    "authors": [
-        {
-            "name": "Jawira Portugal"
-        }
-    ],
-    "require": {
-        "league/climate": "^3.2",
-        "ext-mbstring": "*"
-    },
-    "suggest": {
-        "localheinz/composer-normalize": "apply same format in all your composer.json files",
-        "pds/skeleton": "use it to install standard files and directory structure"
-    },
-    "autoload": {
-        "psr-4": {
-            "Jawira\\Skeleton\\": "src/"
-        }
-    },
-    "bin": [
-        "bin/jawira-skeleton"
-    ]
+  "name": "jawira/skeleton",
+  "type": "library",
+  "description": "Common files I use in all my projects",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Jawira Portugal"
+    }
+  ],
+  "require": {
+    "ext-mbstring": "*",
+    "league/climate": "^3.2"
+  },
+  "suggest": {
+    "hirak/prestissimo": "Composer parallel install plugin",
+    "localheinz/composer-normalize": "Apply same format in all your composer.json files",
+    "malukenho/mcbumpface": "Sync composer.lock and composer.json versions",
+    "pds/skeleton": "Use it to install standard files and directory structure",
+    "symplify/changelog-linker": "Generates beautiful CHANGELOG.md with links"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jawira\\Skeleton\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/jawira-skeleton"
+  ]
 }
