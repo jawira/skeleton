@@ -44,4 +44,12 @@
         <phingcall target="composer:optimize"/>
     </target>
 
+    <target name="composer:outdated" description="Checks if any dependency can be updated">
+        <composer command="outdated">
+            <arg value="--strict"/>
+            <arg value="--direct"/>
+            <arg value="--minor-only"/>
+        </composer>
+    </target>
+
 </project>
