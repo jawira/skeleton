@@ -16,9 +16,9 @@ class WarehouseManager
     /**
      * Dir template where warehouse dir should be located
      */
-    const WAREHOUSE_DIR = [
-        '%s/vendor/jawira/skeleton/resources/warehouse/',   // prod
-        '%s/resources/warehouse/',                          // dev
+    const WAREHOUSE_DIRS = [
+        'prod' => '%s/vendor/jawira/skeleton/resources/warehouse/',
+        'dev'  => '%s/resources/warehouse/',
     ];
 
     /**
@@ -96,7 +96,7 @@ class WarehouseManager
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     protected function getWarehousePath()
     {
@@ -104,7 +104,7 @@ class WarehouseManager
     }
 
     /**
-     * @param mixed $warehousePath
+     * @param string $warehousePath
      *
      * @return WarehouseManager
      */
@@ -252,12 +252,14 @@ class WarehouseManager
     }
 
     /**
+     * Returns the location of warehouse directory
+     *
      * @return string
      * @throws \Jawira\Skeleton\SkeletonException
      */
     protected function retrieveWarehousePath()
     {
-        foreach (self::WAREHOUSE_DIR as $candidate) {
+        foreach (self::WAREHOUSE_DIRS as $candidate) {
             $warehousePath = sprintf($candidate, $this->getBasePath());
             if (is_dir($warehousePath)) {
                 return $warehousePath;
