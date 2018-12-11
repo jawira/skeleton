@@ -18,6 +18,7 @@ Types of changes:
 
 - Small change in Readme
 - [#17] Adding prefix to avoid problems with git's dot files
+- [#18] `jawira-skeleton` works in dev environment
 
 ### Added
 
@@ -191,3 +192,4 @@ recursively
 [v0.0.2]: https://github.com/jawira/skeleton/compare/v0.0.1...v0.0.2
 [v0.0.1]: https://github.com/jawira/skeleton/compare/v0.0.0...v0.0.1
 [#17]: https://github.com/jawira/skeleton/pull/17
+[#18]: https://github.com/jawira/skeleton/pull/18

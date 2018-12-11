@@ -16,7 +16,10 @@ class WarehouseManager
     /**
      * Dir template where warehouse dir should be located
      */
-    const WAREHOUSE_DIR = '%s/vendor/jawira/skeleton/resources/warehouse/';
+    const WAREHOUSE_DIR = [
+        '%s/vendor/jawira/skeleton/resources/warehouse/',   // prod
+        '%s/resources/warehouse/',                          // dev
+    ];
 
     /**
      * Project's base dir
@@ -238,12 +241,14 @@ class WarehouseManager
      */
     protected function retrieveBasePath()
     {
-        $basePath = dirname(__DIR__, 4);
-        if (!is_file($basePath . '/composer.json')) {
-            throw new SkeletonException("Cannot locate project's base path");
+        foreach (range(1, 4) as $level) {
+            $basePath = dirname(__DIR__, $level);
+            if (is_file($basePath . '/composer.json')) {
+                return $basePath;
+            }
         }
 
-        return $basePath;
+        throw new SkeletonException("Cannot locate project's base path");
     }
 
     /**
@@ -252,12 +257,14 @@ class WarehouseManager
      */
     protected function retrieveWarehousePath()
     {
-        $warehousePath = sprintf(self::WAREHOUSE_DIR, $this->getBasePath());
-        if (!is_dir($warehousePath)) {
-            throw new SkeletonException('Cannot locate warehouse dir');
+        foreach (self::WAREHOUSE_DIR as $candidate) {
+            $warehousePath = sprintf($candidate, $this->getBasePath());
+            if (is_dir($warehousePath)) {
+                return $warehousePath;
+            }
         }
 
-        return $warehousePath;
+        throw new SkeletonException('Cannot locate warehouse dir');
     }
 
     /**
