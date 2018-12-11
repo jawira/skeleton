@@ -46,12 +46,13 @@ resources/warehouse/
 ├── build.xml
 ├── CHANGELOG.md
 ├── CODE_OF_CONDUCT.md
+├── composer.json
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
 ├── Dockerfile
 ├── .editorconfig
-├── .gitattributes
-├── .gitignore
+├── gitattributes
+├── gitignore
 ├── LICENSE
 ├── Makefile
 ├── .makerc.dist
@@ -69,7 +70,7 @@ resources/warehouse/
         ├── php.build.xml
         └── portainer.build.xml
 
-3 directories, 22 files
+3 directories, 23 files
 ```
 <!--tree:end-->
 

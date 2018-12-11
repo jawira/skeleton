@@ -18,6 +18,7 @@
     "localheinz/composer-normalize": "Apply same format in all your composer.json files",
     "malukenho/mcbumpface": "Sync composer.lock and composer.json versions",
     "pds/skeleton": "Use it to install standard files and directory structure",
+    "phing/phing": "A PHP build tool",
     "symplify/changelog-linker": "Generates beautiful CHANGELOG.md with links"
   },
   "autoload": {
