@@ -14,6 +14,8 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.7.0] - 2018-12-14
+
 ### Changed
 
 - Small change in Readme
@@ -193,3 +195,4 @@ recursively
 [v0.0.1]: https://github.com/jawira/skeleton/compare/v0.0.0...v0.0.1
 [#17]: https://github.com/jawira/skeleton/pull/17
 [#18]: https://github.com/jawira/skeleton/pull/18
+[v1.7.0]: https://github.com/jawira/skeleton/compare/v1.6.0...v1.7.0
