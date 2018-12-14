@@ -1,14 +1,19 @@
 ;https://EditorConfig.org
-;https://devhints.io/editorconfig
+;https://github.com/editorconfig/editorconfig/wiki
 
 root = true
 
 [*]
 charset = utf-8
-end_of_line = lf
 
 [*.php]
 indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{yml,yaml}]
+indent_size = 2
 indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true

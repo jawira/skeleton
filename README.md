@@ -23,13 +23,15 @@ $ composer require jawira/skeleton:*
 Usage
 -----
 
-1. Run executable:
+1. Run the executable:
 
     ```bash
     $ vendor/bin/jawira-skeleton
     ```
  
-2. Select files you want to create with _space_ and start copying with _enter_.
+2. Select the files you want to create with `␣` (space key).
+ 
+3. Start copying selected files with `⏎` (enter key).
 
 Skeleton files
 --------------
@@ -44,12 +46,13 @@ resources/warehouse/
 ├── build.xml
 ├── CHANGELOG.md
 ├── CODE_OF_CONDUCT.md
+├── composer.json
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
 ├── Dockerfile
 ├── .editorconfig
-├── .gitattributes
-├── .gitignore
+├── gitattributes
+├── gitignore
 ├── LICENSE
 ├── Makefile
 ├── .makerc.dist
@@ -67,7 +70,7 @@ resources/warehouse/
         ├── php.build.xml
         └── portainer.build.xml
 
-3 directories, 22 files
+3 directories, 23 files
 ```
 <!--tree:end-->
 

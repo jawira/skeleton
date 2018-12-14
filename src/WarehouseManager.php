@@ -16,7 +16,10 @@ class WarehouseManager
     /**
      * Dir template where warehouse dir should be located
      */
-    const WAREHOUSE_DIR = '%s/vendor/jawira/skeleton/resources/warehouse/';
+    const WAREHOUSE_DIRS = [
+        'prod' => '%s/vendor/jawira/skeleton/resources/warehouse/',
+        'dev'  => '%s/resources/warehouse/',
+    ];
 
     /**
      * Project's base dir
@@ -93,7 +96,7 @@ class WarehouseManager
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     protected function getWarehousePath()
     {
@@ -101,7 +104,7 @@ class WarehouseManager
     }
 
     /**
-     * @param mixed $warehousePath
+     * @param string $warehousePath
      *
      * @return WarehouseManager
      */
@@ -238,26 +241,32 @@ class WarehouseManager
      */
     protected function retrieveBasePath()
     {
-        $basePath = dirname(__DIR__, 4);
-        if (!is_file($basePath . '/composer.json')) {
-            throw new SkeletonException("Cannot locate project's base path");
+        foreach (range(1, 4) as $level) {
+            $basePath = dirname(__DIR__, $level);
+            if (is_file($basePath . '/composer.json')) {
+                return $basePath;
+            }
         }
 
-        return $basePath;
+        throw new SkeletonException("Cannot locate project's base path");
     }
 
     /**
+     * Returns the location of warehouse directory
+     *
      * @return string
      * @throws \Jawira\Skeleton\SkeletonException
      */
     protected function retrieveWarehousePath()
     {
-        $warehousePath = sprintf(self::WAREHOUSE_DIR, $this->getBasePath());
-        if (!is_dir($warehousePath)) {
-            throw new SkeletonException('Cannot locate warehouse dir');
+        foreach (self::WAREHOUSE_DIRS as $candidate) {
+            $warehousePath = sprintf($candidate, $this->getBasePath());
+            if (is_dir($warehousePath)) {
+                return $warehousePath;
+            }
         }
 
-        return $warehousePath;
+        throw new SkeletonException('Cannot locate warehouse dir');
     }
 
     /**
