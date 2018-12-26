@@ -14,6 +14,10 @@ Types of changes:
 
 ## Unreleased
 
+### Added
+
+- Added [phive.xml](resources/warehouse/phive.xml) to skeleton files.
+
 ## [v1.7.0] - 2018-12-14
 
 ### Changed
