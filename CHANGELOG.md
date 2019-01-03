@@ -14,6 +14,8 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.8.0] - 2019-01-03
+
 ### Added
 
 - Added [phive.xml](resources/warehouse/phive.xml) to skeleton files.
@@ -205,3 +207,4 @@ recursively
 [#18]: https://github.com/jawira/skeleton/pull/18
 [v1.7.0]: https://github.com/jawira/skeleton/compare/v1.6.0...v1.7.0
 [#19]: https://github.com/jawira/skeleton/pull/19
+[v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
