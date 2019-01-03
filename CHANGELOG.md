@@ -18,6 +18,10 @@ Types of changes:
 
 - Added [phive.xml](resources/warehouse/phive.xml) to skeleton files.
 
+### Fixed
+
+- [#19] Files from _warehouse_ were copied in wrong _resources_ directory.
+
 ## [v1.7.0] - 2018-12-14
 
 ### Changed
@@ -200,3 +204,4 @@ recursively
 [#17]: https://github.com/jawira/skeleton/pull/17
 [#18]: https://github.com/jawira/skeleton/pull/18
 [v1.7.0]: https://github.com/jawira/skeleton/compare/v1.6.0...v1.7.0
+[#19]: https://github.com/jawira/skeleton/pull/19

@@ -241,7 +241,7 @@ class WarehouseManager
      */
     protected function retrieveBasePath()
     {
-        foreach (range(1, 4) as $level) {
+        foreach (range(4, 1) as $level) {
             $basePath = dirname(__DIR__, $level);
             if (is_file($basePath . '/composer.json')) {
                 return $basePath;
