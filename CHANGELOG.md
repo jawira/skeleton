@@ -17,6 +17,7 @@ Types of changes:
 ### Added
 
 - [#21] Add waffle.io badge to readme file
+- [#20] Add automatic proxy configuration to buildfile
 
 ## [v1.8.0] - 2019-01-03
 
@@ -213,3 +214,4 @@ recursively
 [#19]: https://github.com/jawira/skeleton/pull/19
 [v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
 [#21]: https://github.com/jawira/skeleton/pull/21
+[#20]: https://github.com/jawira/skeleton/pull/20
