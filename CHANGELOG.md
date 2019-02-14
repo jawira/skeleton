@@ -18,6 +18,7 @@ Types of changes:
 
 - [#21] Add waffle.io badge to readme file
 - [#20] Add automatic proxy configuration to buildfile
+- Updating [resources/warehouse/phive.xml]() with default directory.
 
 ## [v1.8.0] - 2019-01-03
 
