@@ -19,6 +19,7 @@ Types of changes:
 - [#21] Add waffle.io badge to readme file
 - [#20] Add automatic proxy configuration to buildfile
 - Updating [resources/warehouse/phive.xml]() with default directory.
+- [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
 
 ## [v1.8.0] - 2019-01-03
 
@@ -216,3 +217,4 @@ recursively
 [v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
 [#21]: https://github.com/jawira/skeleton/pull/21
 [#20]: https://github.com/jawira/skeleton/pull/20
+[#23]: https://github.com/jawira/skeleton/pull/23
