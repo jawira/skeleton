@@ -20,6 +20,7 @@ Types of changes:
 - [#20] Add automatic proxy configuration to buildfile
 - Updating [resources/warehouse/phive.xml]() with default directory.
 - [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
+- [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
 
 ## [v1.8.0] - 2019-01-03
 
@@ -218,3 +219,5 @@ recursively
 [#21]: https://github.com/jawira/skeleton/pull/21
 [#20]: https://github.com/jawira/skeleton/pull/20
 [#23]: https://github.com/jawira/skeleton/pull/23
+
+[#24]: https://github.com/jawira/skeleton/pull/24
