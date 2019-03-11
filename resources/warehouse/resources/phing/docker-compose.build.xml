@@ -37,8 +37,10 @@
 
   <target name="dc:ips" description="List containers IP addresses">
     <exec
-      command="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
-      passthru="true"/>
+      executable="docker" passthru="true">
+      <arg
+        line="ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"/>
+    </exec>
   </target>
 
   <target name="dc:rm" description="Remove stopped containers">
