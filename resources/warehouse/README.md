@@ -4,6 +4,7 @@
 <!--
 https://github.com/php-pds/badges
 https://poser.pugx.org/
+https://php-eye.com/about#badges
 -->
 
 Usage

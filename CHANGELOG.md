@@ -14,6 +14,14 @@ Types of changes:
 
 ## Unreleased
 
+### Added
+
+- [#21] Add waffle.io badge to readme file
+- [#20] Add automatic proxy configuration to buildfile
+- Updating [resources/warehouse/phive.xml]() with default directory.
+- [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
+- [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
+
 ## [v1.8.0] - 2019-01-03
 
 ### Added
@@ -208,3 +216,8 @@ recursively
 [v1.7.0]: https://github.com/jawira/skeleton/compare/v1.6.0...v1.7.0
 [#19]: https://github.com/jawira/skeleton/pull/19
 [v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
+[#21]: https://github.com/jawira/skeleton/pull/21
+[#20]: https://github.com/jawira/skeleton/pull/20
+[#23]: https://github.com/jawira/skeleton/pull/23
+
+[#24]: https://github.com/jawira/skeleton/pull/24

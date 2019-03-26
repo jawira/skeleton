@@ -10,6 +10,8 @@ in projects (e.g. README.md, .gitignore, build.xml, etc).
 [![License](https://poser.pugx.org/jawira/skeleton/license)](https://packagist.org/packages/jawira/skeleton)
 [![composer.lock](https://poser.pugx.org/jawira/skeleton/composerlock)](https://packagist.org/packages/jawira/skeleton)
 [![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/jawira/skeleton.svg?columns=all)](https://waffle.io/jawira/skeleton)
+
 
 How to install
 --------------
@@ -56,6 +58,7 @@ resources/warehouse/
 ├── LICENSE
 ├── Makefile
 ├── .makerc.dist
+├── phive.xml
 ├── README.md
 └── resources
     ├── make
@@ -70,7 +73,7 @@ resources/warehouse/
         ├── php.build.xml
         └── portainer.build.xml
 
-3 directories, 23 files
+3 directories, 24 files
 ```
 <!--tree:end-->
 

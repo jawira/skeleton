@@ -6,6 +6,8 @@
     <defaultexcludes add="**/.idea"/>
     <defaultexcludes add="**/.idea/**"/>
 
+    <property name="phing.http.proxy" value="${env.http_proxy}"/>
+
     <target name="diagnostics">
         <diagnostics/>
     </target>
