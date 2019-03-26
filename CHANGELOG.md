@@ -16,6 +16,7 @@ Types of changes:
 
 ### Added
 
+- Add `composer:diagnose` target
 - [#21] Add waffle.io badge to readme file
 - [#20] Add automatic proxy configuration to buildfile
 - Updating [resources/warehouse/phive.xml]() with default directory.
