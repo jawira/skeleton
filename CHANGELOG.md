@@ -24,6 +24,10 @@ Types of changes:
 - [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
 - Add link for PHPPackages badges
 
+### Removed
+
+- resources/warehouse/resources/phing/get.build.xml - use Phive instead
+
 ## [v1.8.0] - 2019-01-03
 
 ### Added
