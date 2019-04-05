@@ -7,7 +7,7 @@
         <diagnostics/>
     </target>
 
-    <target name="readme:update" description="Update readme file">
+    <target name="readme:update" description="Update tree from readme file">
         <property name="tree.path" value="/usr/bin/tree"/>
         <exec executable="${tree.path}" outputProperty="tree">
             <arg value="-a"/>
@@ -22,6 +22,18 @@
                 </replaceregexp>
             </filterchain>
         </reflexive>
+    </target>
+
+    <target name="changelog:links" description="Update links in composer.json">
+        <composer command="require">
+            <arg value="symplify/changelog-linker"/>
+        </composer>
+        <exec executable="vendor/bin/changelog-linker">
+            <arg value="link"/>
+        </exec>
+        <composer command="remove">
+            <arg value="symplify/changelog-linker"/>
+        </composer>
     </target>
 
 </project>

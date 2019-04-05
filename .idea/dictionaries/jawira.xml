@@ -6,6 +6,7 @@
       <w>buildfile</w>
       <w>buildfiles</w>
       <w>clamav</w>
+      <w>codeclimate</w>
       <w>gitattributes</w>
       <w>gitignore</w>
       <w>jawira</w>
@@ -16,6 +17,7 @@
       <w>portainer</w>
       <w>pugx</w>
       <w>spdx</w>
+      <w>symplify</w>
       <w>versioning</w>
     </words>
   </dictionary>
