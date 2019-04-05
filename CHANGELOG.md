@@ -23,6 +23,17 @@ Types of changes:
 - [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
 - [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
 - Add link for PHPPackages badges
+- resources/warehouse/.codeclimate.yml
+- resources/warehouse/.travis.yml
+- resources/warehouse/resources/phing/changelog.build.xml
+- resources/warehouse/resources/phing/changelog.build.xml
+- resources/warehouse/resources/phing/code-climate.build.xml
+- resources/warehouse/resources/phing/git.build.xml
+- resources/warehouse/resources/phing/phpstan.build.xml
+
+### Updated
+
+- resources/warehouse/phive.xml
 
 ### Removed
 
