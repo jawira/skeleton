@@ -24,6 +24,13 @@
         </composer>
     </target>
 
+    <target name="composer:diagnose" description="The diagnose command checks common errors to help debugging problems.">
+        <!--The process exit code will be 1 in case of warnings and 2 for errors.-->
+        <composer>
+            <arg value="diagnose"/>
+        </composer>
+    </target>
+
     <target name="composer:install-dev" description="Install for dev">
         <composer command="install">
             <arg value="--no-suggest"/>

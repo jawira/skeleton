@@ -1,0 +1,11 @@
+#https://github.com/codeclimate/codeclimate-sonar-php
+plugins:
+  sonar-php:
+    enabled: true
+    config:
+      tests_patterns:
+        - tests/**
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true

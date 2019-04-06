@@ -2,8 +2,11 @@
 ==================
 
 <!--
+BADGES:
 https://github.com/php-pds/badges
 https://poser.pugx.org/
+https://php-eye.com/about#badges
+https://phppackages.org/p/jawira/case-converter
 -->
 
 Usage

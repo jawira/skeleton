@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="Changelog" description="Changelog related targets" default="changelog:links">
+
+  <target name="changelog:links" description="Update links in composer.json">
+    <composer command="require">
+      <arg value="symplify/changelog-linker"/>
+    </composer>
+    <exec executable="vendor/bin/changelog-linker">
+      <arg value="link"/>
+    </exec>
+    <composer command="remove">
+      <arg value="symplify/changelog-linker"/>
+    </composer>
+  </target>
+
+</project>
