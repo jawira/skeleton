@@ -14,6 +14,10 @@ Types of changes:
 
 ## Unreleased
 
+### Added
+
+- Phive: `bin/phpcs` & `bin/phpcbf`
+
 ## [v1.9.0] - 2019-04-06
 
 ### Added
