@@ -17,6 +17,7 @@ Types of changes:
 ### Added
 
 - Phive: `bin/phpcs` & `bin/phpcbf`
+- xdebug buildfiles
 
 ## [v1.9.0] - 2019-04-06
 
