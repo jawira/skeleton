@@ -44,9 +44,4 @@ services:
       - project_default
 
 networks:
-  project_default:
-    ipam:
-      driver: default
-      config:
-        - subnet: 10.13.0.0/16
-
+  default:
