@@ -14,6 +14,8 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.9.1] - 2019-06-23
+
 ### Added
 
 - Phive: `bin/phpcs` & `bin/phpcbf`
@@ -250,3 +252,4 @@ recursively
 [#23]: https://github.com/jawira/skeleton/pull/23
 [#24]: https://github.com/jawira/skeleton/pull/24
 [v1.9.0]: https://github.com/jawira/skeleton/compare/v1.8.0...v1.9.0
+[v1.9.1]: https://github.com/jawira/skeleton/compare/v1.9.0...v1.9.1
