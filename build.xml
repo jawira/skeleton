@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="Skeleton" default="diagnostics">
+<project name="Skeleton" default="refresh">
 
-    <!--TARGETS-->
-    <target name="diagnostics">
-        <diagnostics/>
-    </target>
+    <target name="refresh"
+            description="Update generated files, run this before committing"
+            depends="changelog:links, readme:update"/>
 
     <target name="readme:update" description="Update tree from readme file">
         <property name="tree.path" value="/usr/bin/tree"/>
@@ -34,6 +33,14 @@
         <composer command="remove">
             <arg value="symplify/changelog-linker"/>
         </composer>
+    </target>
+
+    <target name="git:tags" description="List all git tags">
+        <!--https://stackoverflow.com/a/34239190/4345061-->
+        <exec executable="git" passthru="true">
+            <arg value="log"/>
+            <arg line="--graph --all --decorate --oneline --simplify-by-decoration"/>
+        </exec>
     </target>
 
 </project>

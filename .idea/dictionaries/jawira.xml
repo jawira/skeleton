@@ -13,6 +13,11 @@
       <w>malware</w>
       <w>phing</w>
       <w>phive</w>
+      <w>phpcbf</w>
+      <w>phpcs</w>
+      <w>phpdismod</w>
+      <w>phpenmod</w>
+      <w>phploc</w>
       <w>phpstan</w>
       <w>portainer</w>
       <w>pugx</w>
