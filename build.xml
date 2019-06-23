@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="Skeleton" default="diagnostics">
+<project name="Skeleton" default="refresh">
 
-    <!--TARGETS-->
-    <target name="diagnostics">
-        <diagnostics/>
-    </target>
+    <target name="refresh"
+            description="Update generated files, run this before committing"
+            depends="changelog:links, readme:update"/>
 
     <target name="readme:update" description="Update tree from readme file">
         <property name="tree.path" value="/usr/bin/tree"/>
