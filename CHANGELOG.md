@@ -19,6 +19,11 @@ Types of changes:
 - Phive: `bin/phpcs` & `bin/phpcbf`
 - xdebug buildfiles
 
+### Changed
+
+- Improved `.travis.yml` and `Dockerfile`
+- Changing default license to MIT
+
 ## [v1.9.0] - 2019-04-06
 
 ### Added

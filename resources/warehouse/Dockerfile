@@ -13,7 +13,9 @@ COPY ./resources/docker/my-site.local.conf /etc/apache2/sites-available/
 COPY resources/docker/99-php-custom.ini /usr/local/etc/php/conf.d/
 
 #https://github.com/docker-library/php/issues/75#issuecomment-82075678
-RUN echo "### Apache configuration" \
+#https://www.peterbe.com/plog/set-ex
+RUN set -xe \
+    && echo "### Apache configuration ###" \
     && a2enmod \
         rewrite \
         vhost_alias \
@@ -21,7 +23,7 @@ RUN echo "### Apache configuration" \
         expires \
     && a2dissite *.conf \
     && a2ensite my-site.local.conf \
-    && echo "### apt-get" \
+    && echo "### apt-get ###" \
     && apt-get update \
     && apt-get --yes --no-install-recommends install \
         composer \
@@ -31,11 +33,11 @@ RUN echo "### Apache configuration" \
     && echo "### Composer ###" \
     && composer self-update \
     && composer global require hirak/prestissimo
-    && echo "### Install sendmail replacement" \
+    && echo "### Install sendmail replacement ###" \
     && mkdir /opt/mailhog \
     && wget -O /opt/mailhog/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64 \
     && chmod +x /opt/mailhog/mhsendmail \
-    && echo "### PHP extensions" \
+    && echo "### PHP extensions ###" \
     && docker-php-source extract \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
@@ -47,7 +49,7 @@ RUN echo "### Apache configuration" \
        pdo \
        pdo_mysql \
        soap \
-    && echo "### Cleaning" \
+    && echo "### Cleaning ###" \
     && composer cache-clear \
     && docker-php-source delete \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
