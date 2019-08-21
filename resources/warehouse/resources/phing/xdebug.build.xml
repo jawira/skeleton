@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="xdebug" description="Enable/disable Xdebug module" default="xdebug:help">
+
+  <!--https://salsa.debian.org/php-team/php-defaults-->
+
+  <target name="xdebug:enable" description="Enable Xdebug module">
+    <exec executable="phpenmod" checkreturn="true">
+      <arg line="-v ALL"/>
+      <arg line="-s ALL"/>
+      <arg value="xdebug"/>
+    </exec>
+  </target>
+
+  <target name="xdebug:disable" description="Disable Xdebug module">
+    <exec executable="phpdismod" checkreturn="true">
+      <arg line="-v ALL"/>
+      <arg line="-s ALL"/>
+      <arg value="xdebug"/>
+    </exec>
+  </target>
+
+  <target name="xdebug:help" description="Help">
+    <echo>
+      Run with sudo
+    </echo>
+  </target>
+
+</project>

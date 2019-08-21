@@ -14,13 +14,44 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.9.1] - 2019-06-23
+
 ### Added
 
+- Phive: `bin/phpcs` & `bin/phpcbf`
+- xdebug buildfiles
+
+### Changed
+
+- Improved `.travis.yml` and `Dockerfile`
+- Changing default license to MIT
+
+## [v1.9.0] - 2019-04-06
+
+### Added
+
+- Add `composer:diagnose` target
 - [#21] Add waffle.io badge to readme file
 - [#20] Add automatic proxy configuration to buildfile
 - Updating [resources/warehouse/phive.xml]() with default directory.
 - [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
 - [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
+- Add link for PHPPackages badges
+- resources/warehouse/.codeclimate.yml
+- resources/warehouse/.travis.yml
+- resources/warehouse/resources/phing/changelog.build.xml
+- resources/warehouse/resources/phing/changelog.build.xml
+- resources/warehouse/resources/phing/code-climate.build.xml
+- resources/warehouse/resources/phing/git.build.xml
+- resources/warehouse/resources/phing/phpstan.build.xml
+
+### Updated
+
+- resources/warehouse/phive.xml
+
+### Removed
+
+- resources/warehouse/resources/phing/get.build.xml - use Phive instead
 - Update listing of Phar files in [resources/warehouse/phive.xml]()
 - Add preferred install into composer.json
 
@@ -221,5 +252,6 @@ recursively
 [#21]: https://github.com/jawira/skeleton/pull/21
 [#20]: https://github.com/jawira/skeleton/pull/20
 [#23]: https://github.com/jawira/skeleton/pull/23
-
 [#24]: https://github.com/jawira/skeleton/pull/24
+[v1.9.0]: https://github.com/jawira/skeleton/compare/v1.8.0...v1.9.0
+[v1.9.1]: https://github.com/jawira/skeleton/compare/v1.9.0...v1.9.1

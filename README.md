@@ -45,35 +45,54 @@ Currently the following files can be installed trough executable:
 <!--tree:start-->
 ```
 resources/warehouse/
+├── bin
 ├── build.xml
 ├── CHANGELOG.md
+├── .codeclimate.yml
 ├── CODE_OF_CONDUCT.md
-├── composer.json
+├── .composer.json
 ├── CONTRIBUTING.md
 ├── docker-compose.yml
 ├── Dockerfile
 ├── .editorconfig
 ├── gitattributes
 ├── gitignore
-├── LICENSE
+├── LICENSE.md
 ├── Makefile
 ├── .makerc.dist
 ├── phive.xml
-├── README.md
-└── resources
-    ├── make
-    │   └── phar.mk
-    └── phing
-        ├── apache2.build.xml
-        ├── clamav.build.xml
-        ├── composer.build.xml
-        ├── docker-compose.build.xml
-        ├── get.build.xml
-        ├── open.build.xml
-        ├── php.build.xml
-        └── portainer.build.xml
+├── .README.md
+├── resources
+│   ├── make
+│   │   └── phar.mk
+│   └── phing
+│       ├── apache2.build.xml
+│       ├── changelog.build.xml
+│       ├── clamav.build.xml
+│       ├── code-climate.build.xml
+│       ├── composer.build.xml
+│       ├── docker-compose.build.xml
+│       ├── git.build.xml
+│       ├── open.build.xml
+│       ├── php.build.xml
+│       ├── phpstan.build.xml
+│       ├── portainer.build.xml
+│       └── xdebug.build.xml
+├── .travis.yml
+└── vendor
+    ├── autoload.php
+    ├── bin
+    └── composer
+        ├── autoload_classmap.php
+        ├── autoload_namespaces.php
+        ├── autoload_psr4.php
+        ├── autoload_real.php
+        ├── autoload_static.php
+        ├── ClassLoader.php
+        ├── installed.json
+        └── LICENSE
 
-3 directories, 24 files
+7 directories, 39 files
 ```
 <!--tree:end-->
 
