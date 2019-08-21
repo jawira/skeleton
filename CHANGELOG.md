@@ -17,6 +17,8 @@ Types of changes:
 ## Changed
 
 - You can add Symfony CLI with make
+- Add own projects to Readme file
+- Add more extensions to editorconfig
 
 ## [v1.10.0] - 2019-08-21
 
