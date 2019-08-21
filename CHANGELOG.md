@@ -21,6 +21,7 @@ Types of changes:
 - Updating [resources/warehouse/phive.xml]() with default directory.
 - [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
 - [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
+- Update listing of Phar files in [resources/warehouse/phive.xml]()
 
 ## [v1.8.0] - 2019-01-03
 
