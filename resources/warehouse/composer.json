@@ -14,10 +14,11 @@
     "malukenho/mcbumpface": "^0.1.2",
     "pds/skeleton": "^1.0.0",
     "phing/phing": "^2.16.1",
-    "symplify/changelog-linker": "^5.2.17",
-    "povils/phpmnd": "^2.0.0"
+    "povils/phpmnd": "^2.0.0",
+    "symplify/changelog-linker": "^5.2.17"
   },
   "config": {
+    "preferred-install": "dist",
     "sort-packages": true
   }
 }
