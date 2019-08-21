@@ -14,6 +14,13 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.10.0] - 2019-08-21
+
+### Changed
+
+- Add preferred install in composer.json
+- Add more phar files to download
+
 ## [v1.9.1] - 2019-06-23
 
 ### Added
@@ -52,8 +59,6 @@ Types of changes:
 ### Removed
 
 - resources/warehouse/resources/phing/get.build.xml - use Phive instead
-- Update listing of Phar files in [resources/warehouse/phive.xml]()
-- Add preferred install into composer.json
 
 ## [v1.8.0] - 2019-01-03
 
