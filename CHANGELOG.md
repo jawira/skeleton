@@ -14,6 +14,8 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.11.0] - 2019-08-21
+
 ## Changed
 
 - You can add Symfony CLI with make
@@ -242,27 +244,29 @@ recursively
 - First full working version
 - Final Production files are located in ./resources/
 
-[v1.6.0]: https://github.com/jawira/skeleton/compare/v1.5.0...v1.6.0
-[v1.5.0]: https://github.com/jawira/skeleton/compare/v1.4.0...v1.5.0
-[v1.4.0]: https://github.com/jawira/skeleton/compare/v1.3.1...v1.4.0
-[v1.3.1]: https://github.com/jawira/skeleton/compare/v1.3.0...v1.3.1
-[v1.3.0]: https://github.com/jawira/skeleton/compare/v1.2.0...v1.3.0
-[v1.2.0]: https://github.com/jawira/skeleton/compare/v1.1.1...v1.2.0
-[v1.1.1]: https://github.com/jawira/skeleton/compare/v1.1.0...v1.1.1
-[v1.1.0]: https://github.com/jawira/skeleton/compare/v1.0.0...v1.1.0
-[v1.0.0]: https://github.com/jawira/skeleton/compare/v0.2.0...v1.0.0
-[v0.2.0]: https://github.com/jawira/skeleton/compare/v0.1.0...v0.2.0
-[v0.1.0]: https://github.com/jawira/skeleton/compare/v0.0.2...v0.1.0
-[v0.0.2]: https://github.com/jawira/skeleton/compare/v0.0.1...v0.0.2
-[v0.0.1]: https://github.com/jawira/skeleton/compare/v0.0.0...v0.0.1
 [#17]: https://github.com/jawira/skeleton/pull/17
 [#18]: https://github.com/jawira/skeleton/pull/18
-[v1.7.0]: https://github.com/jawira/skeleton/compare/v1.6.0...v1.7.0
 [#19]: https://github.com/jawira/skeleton/pull/19
-[v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
-[#21]: https://github.com/jawira/skeleton/pull/21
 [#20]: https://github.com/jawira/skeleton/pull/20
+[#21]: https://github.com/jawira/skeleton/pull/21
 [#23]: https://github.com/jawira/skeleton/pull/23
 [#24]: https://github.com/jawira/skeleton/pull/24
+[v0.0.1]: https://github.com/jawira/skeleton/compare/v0.0.0...v0.0.1
+[v0.0.2]: https://github.com/jawira/skeleton/compare/v0.0.1...v0.0.2
+[v0.1.0]: https://github.com/jawira/skeleton/compare/v0.0.2...v0.1.0
+[v0.2.0]: https://github.com/jawira/skeleton/compare/v0.1.0...v0.2.0
+[v1.0.0]: https://github.com/jawira/skeleton/compare/v0.2.0...v1.0.0
+[v1.1.0]: https://github.com/jawira/skeleton/compare/v1.0.0...v1.1.0
+[v1.1.1]: https://github.com/jawira/skeleton/compare/v1.1.0...v1.1.1
+[v1.10.0]: https://github.com/jawira/skeleton/compare/v1.9.1...v1.10.0
+[v1.11.0]: https://github.com/jawira/skeleton/compare/v1.10.0...v1.11.0
+[v1.2.0]: https://github.com/jawira/skeleton/compare/v1.1.1...v1.2.0
+[v1.3.0]: https://github.com/jawira/skeleton/compare/v1.2.0...v1.3.0
+[v1.3.1]: https://github.com/jawira/skeleton/compare/v1.3.0...v1.3.1
+[v1.4.0]: https://github.com/jawira/skeleton/compare/v1.3.1...v1.4.0
+[v1.5.0]: https://github.com/jawira/skeleton/compare/v1.4.0...v1.5.0
+[v1.6.0]: https://github.com/jawira/skeleton/compare/v1.5.0...v1.6.0
+[v1.7.0]: https://github.com/jawira/skeleton/compare/v1.6.0...v1.7.0
+[v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
 [v1.9.0]: https://github.com/jawira/skeleton/compare/v1.8.0...v1.9.0
 [v1.9.1]: https://github.com/jawira/skeleton/compare/v1.9.0...v1.9.1
