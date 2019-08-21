@@ -14,6 +14,10 @@ Types of changes:
 
 ## Unreleased
 
+## Changed
+
+- You can add Symfony CLI with make
+
 ## [v1.10.0] - 2019-08-21
 
 ### Changed

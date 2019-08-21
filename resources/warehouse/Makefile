@@ -9,3 +9,8 @@ help:	## Print this help
 
 .makerc:	## Create variables' file
 	cp .makerc.dist .makerc
+
+/usr/local/bin/symfony:	## Symfony CLI tool
+	wget https://get.symfony.com/cli/installer -O - | bash
+	mv ~/.symfony/bin/symfony /usr/local/bin/symfony
+	chmod +x /usr/local/bin/symfony
