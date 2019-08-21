@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="jawira">
     <words>
+      <w>alnum</w>
       <w>asciicast</w>
       <w>bugfix</w>
       <w>buildfile</w>
@@ -10,6 +11,7 @@
       <w>gitattributes</w>
       <w>gitignore</w>
       <w>jawira</w>
+      <w>makerc</w>
       <w>malware</w>
       <w>phing</w>
       <w>phive</w>
@@ -20,10 +22,12 @@
       <w>phploc</w>
       <w>phpstan</w>
       <w>portainer</w>
+      <w>printf</w>
       <w>pugx</w>
       <w>spdx</w>
       <w>symplify</w>
       <w>versioning</w>
+      <w>wget</w>
     </words>
   </dictionary>
 </component>
