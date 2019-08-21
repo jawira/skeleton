@@ -14,6 +14,13 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.10.0] - 2019-08-21
+
+### Changed
+
+- Add preferred install in composer.json
+- Add more phar files to download
+
 ## [v1.9.1] - 2019-06-23
 
 ### Added

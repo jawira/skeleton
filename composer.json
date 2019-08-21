@@ -21,6 +21,10 @@
     "phing/phing": "A PHP build tool",
     "symplify/changelog-linker": "Generates beautiful CHANGELOG.md with links"
   },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
   "autoload": {
     "psr-4": {
       "Jawira\\Skeleton\\": "src/"
