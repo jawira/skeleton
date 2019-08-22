@@ -1,5 +1,4 @@
-Changelog
-=========
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -12,13 +11,11 @@ All notable changes to this project will be documented in this file.
 ### Security
 -->
 
-Unreleased
-----------
+## Unreleased
 
 ### Added
 
-- Added a change
-
+- Initial commit
 
 
 <!---

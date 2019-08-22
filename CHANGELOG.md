@@ -14,9 +14,13 @@ Types of changes:
 
 ## Unreleased
 
+### Changed
+
+- Updated changlog file to be compatible with `symplify/changelog-linker`
+
 ## [v1.11.0] - 2019-08-21
 
-## Changed
+### Changed
 
 - You can add Symfony CLI with make
 - Add own projects to Readme file
