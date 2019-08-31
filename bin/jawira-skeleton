@@ -1,6 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+use Jawira\EmojiCatalog\Emoji;
+use Jawira\Skeleton\WarehouseManager;
+use League\CLImate\CLImate;
+
 function loadAutoload()
 {
     $autoload      = null;
@@ -23,18 +27,18 @@ function loadAutoload()
 
 loadAutoload();
 
-$climate   = new \League\CLImate\CLImate();
-$warehouse = new \Jawira\Skeleton\WarehouseManager();
+$climate   = new CLImate();
+$warehouse = new WarehouseManager();
 $showcase  = $warehouse->generateShowcase();
 $files     = $climate->checkboxes('Select the files you want to install:', $showcase)->prompt();
 
 foreach ($files as $f) {
     try {
         $warehouse->copy($f);
-        $climate->out('💾 ' . $showcase[$f]);
+        $climate->out(sprintf('%s %s', Emoji::FLOPPY_DISK, $showcase[$f]));
     } catch (Exception $ex) {
-        $climate->to('error')->out('⚠ ' . $ex->getMessage());
+        $climate->to('error')->out(sprintf('%s %s', Emoji::WARNING, $ex->getMessage()));
     }
 }
-$climate->out('🏁 Done');
+$climate->out(sprintf('%s %s', Emoji::CHEQUERED_FLAG, 'Done'));
 
