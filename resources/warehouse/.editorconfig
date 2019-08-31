@@ -13,7 +13,7 @@ insert_final_newline = true
 indent_size = 4
 indent_style = space
 
-[*.{yml, yaml, neon, xml, json}]
+[*.{yml, yaml, neon, xml, xsl, json}]
 indent_size = 2
 indent_style = space
 
