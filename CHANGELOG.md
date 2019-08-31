@@ -16,6 +16,10 @@ Types of changes:
 
 ### Changed
 
+## [v1.12.0] - 2019-08-31
+
+### Changed
+
 - Updated changelog file to be compatible with `symplify/changelog-linker`
 - Added `git:identity` target into `git.build.xml`
 - Added `jawira/emoji-catalog` reference into `README.md`
@@ -278,3 +282,4 @@ recursively
 [v1.8.0]: https://github.com/jawira/skeleton/compare/v1.7.0...v1.8.0
 [v1.9.0]: https://github.com/jawira/skeleton/compare/v1.8.0...v1.9.0
 [v1.9.1]: https://github.com/jawira/skeleton/compare/v1.9.0...v1.9.1
+[v1.12.0]: https://github.com/jawira/skeleton/compare/v1.11.0...v1.12.0
