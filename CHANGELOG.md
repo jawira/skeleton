@@ -19,6 +19,7 @@ Types of changes:
 - Updated changelog file to be compatible with `symplify/changelog-linker`
 - Added `git:identity` target into `git.build.xml`
 - Added `jawira/emoji-catalog` reference into `README.md`
+- Update `.editorconfig` with `.xsl` format
 
 ## [v1.11.0] - 2019-08-21
 
