@@ -24,3 +24,7 @@ indent_style = space
 
 [{Makefile, *.mk}]
 indent_style = tab
+
+[{Dockerfile, *.Dockerfile}]
+indent_size = 2
+indent_style = space
