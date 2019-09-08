@@ -8,6 +8,7 @@
       <w>buildfiles</w>
       <w>clamav</w>
       <w>codeclimate</w>
+      <w>emojis</w>
       <w>gitattributes</w>
       <w>gitignore</w>
       <w>jawira</w>
@@ -21,6 +22,7 @@
       <w>phpenmod</w>
       <w>phploc</w>
       <w>phpstan</w>
+      <w>plantuml</w>
       <w>portainer</w>
       <w>printf</w>
       <w>pugx</w>
