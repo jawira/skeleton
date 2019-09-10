@@ -17,6 +17,7 @@ Types of changes:
 ### Changed
 
 - Adding `wp-cli` phar
+- Adding `https://isitmaintained.com/` into readme
 
 ## [v1.12.0] - 2019-08-31
 
