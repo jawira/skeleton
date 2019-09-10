@@ -16,6 +16,8 @@ Types of changes:
 
 ### Changed
 
+- Adding `wp-cli` phar
+
 ## [v1.12.0] - 2019-08-31
 
 ### Changed
