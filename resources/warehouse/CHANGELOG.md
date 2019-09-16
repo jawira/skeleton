@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 - Initial commit
 
 
-<!---
+<!--
 Guiding Principles
 
     Changelogs are for humans, not machines.
