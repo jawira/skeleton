@@ -20,7 +20,7 @@
     </exec>
   </target>
 
-  <target name="changelog:links" description="Update links in composer.json">
+  <target name="changelog:links" description="Update links in changelog">
     <composer command="require">
       <arg value="symplify/changelog-linker"/>
     </composer>
