@@ -14,7 +14,16 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.13.0] - 2019-11-26
+
 ### Changed
+
+- Adding `wp-cli` phar
+- Adding `https://isitmaintained.com/` into readme
+
+### Fixed
+
+- [#27] Fixing target description
 
 ## [v1.12.0] - 2019-08-31
 
@@ -283,3 +292,5 @@ recursively
 [v1.9.0]: https://github.com/jawira/skeleton/compare/v1.8.0...v1.9.0
 [v1.9.1]: https://github.com/jawira/skeleton/compare/v1.9.0...v1.9.1
 [v1.12.0]: https://github.com/jawira/skeleton/compare/v1.11.0...v1.12.0
+[#27]: https://github.com/jawira/skeleton/pull/27
+[v1.13.0]: https://github.com/jawira/skeleton/compare/v1.12.0...v1.13.0

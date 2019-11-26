@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="Skeleton" default="refresh">
+<project name="Skeleton" default="refresh" phingVersion="3">
 
     <target name="refresh"
             description="Update generated files, run this before committing"
@@ -23,7 +23,7 @@
         </reflexive>
     </target>
 
-    <target name="changelog:links" description="Update links in composer.json">
+    <target name="changelog:links" description="Update links in changelog">
         <composer command="require">
             <arg value="symplify/changelog-linker"/>
         </composer>
