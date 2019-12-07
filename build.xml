@@ -4,7 +4,11 @@
 
     <target name="refresh"
             description="Update generated files, run this before committing"
-            depends="changelog:links, readme:update"/>
+            depends="changelog:links, readme:update, phing:visualize"/>
+
+  <target name="phing:visualize">
+    <visualizer destination="docs"/>
+  </target>
 
     <target name="readme:update" description="Update tree from readme file">
         <property name="tree.path" value="/usr/bin/tree"/>

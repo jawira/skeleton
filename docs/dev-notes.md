@@ -1,6 +1,8 @@
 Dev notes
 =========
 
+![phing](./build.png)
+
 Testing the plugin
 ------------------
 
