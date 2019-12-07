@@ -14,6 +14,10 @@ Types of changes:
 
 ## Unreleased
 
+### Fixed 
+
+- Typo in changelog.build.xml
+
 ## [v1.13.0] - 2019-11-26
 
 ### Changed
