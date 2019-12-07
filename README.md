@@ -11,6 +11,7 @@ in projects (e.g. README.md, .gitignore, build.xml, etc).
 [![composer.lock](https://poser.pugx.org/jawira/skeleton/composerlock)](https://packagist.org/packages/jawira/skeleton)
 [![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
 [![Issues](https://img.shields.io/github/issues/jawira/skeleton.svg?label=HuBoard&color=694DC2)](https://huboard.com/jawira/skeleton)
+[![HitCount](http://hits.dwyl.io/jawira/skeleton.svg)](http://hits.dwyl.io/jawira/skeleton)
 
 How to install
 --------------
@@ -44,7 +45,6 @@ Currently the following files can be installed trough executable:
 <!--tree:start-->
 ```
 resources/warehouse/
-├── bin
 ├── build.xml
 ├── CHANGELOG.md
 ├── .codeclimate.yml
@@ -77,21 +77,9 @@ resources/warehouse/
 │       ├── phpstan.build.xml
 │       ├── portainer.build.xml
 │       └── xdebug.build.xml
-├── .travis.yml
-└── vendor
-    ├── autoload.php
-    ├── bin
-    └── composer
-        ├── autoload_classmap.php
-        ├── autoload_namespaces.php
-        ├── autoload_psr4.php
-        ├── autoload_real.php
-        ├── autoload_static.php
-        ├── ClassLoader.php
-        ├── installed.json
-        └── LICENSE
+└── .travis.yml
 
-7 directories, 39 files
+3 directories, 30 files
 ```
 <!--tree:end-->
 
