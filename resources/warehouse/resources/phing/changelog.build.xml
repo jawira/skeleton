@@ -2,7 +2,7 @@
 
 <project name="Changelog" description="Changelog related targets" default="changelog:links">
 
-  <target name="changelog:links" description="Update links in composer.json">
+  <target name="changelog:links" description="Update links in Changelog">
     <composer command="require">
       <arg value="symplify/changelog-linker"/>
     </composer>

@@ -10,7 +10,7 @@
     </exec>
   </target>
 
-  <target name="git:identity" description="Prints user name and email address">
+  <target name="git:user" description="Prints user name and email address">
     <exec executable="git" passthru="true" checkreturn="true">
       <arg value="config"/>
       <arg value="user.name"/>
