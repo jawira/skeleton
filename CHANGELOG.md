@@ -14,9 +14,13 @@ Types of changes:
 
 ## Unreleased
 
+## [v1.14.0] - 2019-12-09
+
 ### Fixed 
 
 - Typo in changelog.build.xml
+- [#15] Add placehodlers in md files
+- [#26] Rename target to `git:user`
 
 ## [v1.13.0] - 2019-11-26
 
@@ -298,3 +302,6 @@ recursively
 [v1.12.0]: https://github.com/jawira/skeleton/compare/v1.11.0...v1.12.0
 [#27]: https://github.com/jawira/skeleton/pull/27
 [v1.13.0]: https://github.com/jawira/skeleton/compare/v1.12.0...v1.13.0
+[#26]: https://github.com/jawira/skeleton/pull/26
+[#15]: https://github.com/jawira/skeleton/pull/15
+[v1.14.0]: https://github.com/jawira/skeleton/compare/v1.13.0...v1.14.0
