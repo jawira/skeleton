@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="Project name" description="Project description" default="diagnostics">
+<project name="Project name" description="Project description" default="diagnostics" phingVersion="3">
 
   <defaultexcludes default="true"/><!--Initializing default excludes-->
   <defaultexcludes add="**/.idea"/>
