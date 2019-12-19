@@ -58,4 +58,19 @@
     </exec>
   </target>
 
+  <target name="dc:config" description="Validate and parse docker-compose file">
+    <exec executable="docker-compose" passthru="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="config"/>
+    </exec>
+    <echo>${dc.config}</echo>
+  </target>
+
+  <target name="dc:version">
+    <exec executable="docker-compose" checkreturn="true" outputProperty="dc.version">
+      <arg value="--version"/>
+    </exec>
+    <echo>${dc.version}</echo>
+  </target>
+
 </project>
