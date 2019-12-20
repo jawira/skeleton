@@ -32,7 +32,7 @@ RUN set -xe \
         wget \
     && echo "### Composer ###" \
     && composer self-update \
-    && composer global require hirak/prestissimo
+    && composer global require hirak/prestissimo \
     && echo "### Install sendmail replacement ###" \
     && mkdir /opt/mailhog \
     && wget -O /opt/mailhog/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64 \
@@ -50,6 +50,7 @@ RUN set -xe \
        pdo_mysql \
        soap \
     && echo "### Cleaning ###" \
-    && composer cache-clear \
+    && composer clear-cache \
     && docker-php-source delete \
-    && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
