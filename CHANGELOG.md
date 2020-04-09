@@ -14,6 +14,10 @@ Types of changes:
 
 ## Unreleased
 
+### Added
+
+- [#39] Added mysql command in docker-compose.yml
+
 ## [v1.14.0] - 2019-12-09
 
 ### Fixed 
