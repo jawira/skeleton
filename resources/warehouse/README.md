@@ -32,8 +32,6 @@ Contributing
 
 If you liked this project, ⭐ star it on GitHub.
 
-To contribute with code please read [CONTRIBUTING.md](./CONTRIBUTING.md)
-
 License
 -------
 
