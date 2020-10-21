@@ -10,9 +10,9 @@
     }
   ],
   "require": {
-    "php": ">=5.6",
+    "php": ">=7.4",
     "ext-mbstring": "*",
-    "jawira/emoji-catalog": "^0.0.0",
+    "jawira/emoji-catalog": "^v3.0.1",
     "league/climate": "^3.5.0"
   },
   "suggest": {

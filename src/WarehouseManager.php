@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Jawira\Skeleton;
 
@@ -42,7 +42,6 @@ class WarehouseManager
      */
     protected $catalog;
 
-
     /**
      * WarehouseManager constructor.
      *
@@ -55,60 +54,36 @@ class WarehouseManager
         $this->setCatalog($this->generateCatalog());
     }
 
-    /**
-     * @return array
-     */
-    protected function getCatalog()
+    protected function getCatalog(): array
     {
         return $this->catalog;
     }
 
-    /**
-     * @param array $catalog
-     *
-     * @return WarehouseManager
-     */
-    protected function setCatalog($catalog)
+    protected function setCatalog(array $catalog): self
     {
         $this->catalog = $catalog;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    protected function getBasePath()
+    protected function getBasePath(): string
     {
         return $this->basePath;
     }
 
-    /**
-     * @param string $basePath
-     *
-     * @return WarehouseManager
-     */
-    protected function setBasePath($basePath)
+    protected function setBasePath(string $basePath): self
     {
         $this->basePath = $basePath;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    protected function getWarehousePath()
+    protected function getWarehousePath(): string
     {
         return $this->warehousePath;
     }
 
-    /**
-     * @param string $warehousePath
-     *
-     * @return WarehouseManager
-     */
-    protected function setWarehousePath($warehousePath)
+    protected function setWarehousePath(string $warehousePath): self
     {
         $this->warehousePath = $warehousePath;
 
@@ -123,15 +98,12 @@ class WarehouseManager
      * @return \Jawira\Skeleton\WarehouseManager
      * @throws \Jawira\Skeleton\SkeletonException
      */
-    public function copy($source)
+    public function copy(string $source): self
     {
         if (!array_key_exists($source, $this->getCatalog())) {
             throw new SkeletonException('Invalid source file');
         }
         $target = $this->getCatalog()[$source];
-        if (!$this->canICopyTo($target)) {
-            throw new SkeletonException('Target is not writable');
-        }
         $this->makeDir($target);
         if (!copy($source, $target)) {
             throw new SkeletonException('Error while copying file');
@@ -168,21 +140,19 @@ class WarehouseManager
         $catalog = array_filter($catalog, 'is_file');
         $catalog = array_combine($catalog, $catalog);
         $catalog = array_map([$this, 'toBasePath'], $catalog);
+        sort($catalog, SORT_NATURAL | SORT_FLAG_CASE);
 
         return $catalog;
     }
 
     /**
-     * Provides "source/short-name" array of all files that can be copied
+     * Provides "full-path => relative-path" array of all files that can be copied
      *
      * @return array
      */
-    public function generateShowcase()
+    public function generateShowcase(): array
     {
-        $showcase = array_filter($this->getCatalog(), [$this, 'canICopyTo']);
-        $showcase = array_map([$this, 'toNicePath'], $showcase);
-
-        return $showcase;
+        return array_map([$this, 'toNicePath'], $this->getCatalog());
     }
 
     /**
@@ -193,9 +163,10 @@ class WarehouseManager
      *
      * @return string
      */
-    protected function toNicePath($fullPath)
+    protected function toNicePath($fullPath): string
     {
-        return str_replace($this->getBasePath() . DIRECTORY_SEPARATOR, '', $fullPath);
+        $icon = $this->fileNonExistentOrEmpty($fullPath) ? '' : "\u{2203} ";
+        return str_replace($this->getBasePath() . DIRECTORY_SEPARATOR, $icon, $fullPath);
     }
 
     /**
@@ -206,7 +177,7 @@ class WarehouseManager
      *
      * @return string
      */
-    protected function toBasePath($warehouseFilePath)
+    protected function toBasePath(string $warehouseFilePath): string
     {
         $target = $this->getBasePath();
         $target .= DIRECTORY_SEPARATOR;
@@ -219,14 +190,14 @@ class WarehouseManager
      * Returns true if target file doesn't exist or if it's empty, therefore
      * the file can be safely written or overwritten.
      *
-     * @param string $target File's target path
+     * @param string $target File's target absolute path
      *
      * @return bool
      */
-    protected function canICopyTo($target)
+    protected function fileNonExistentOrEmpty(string $target): bool
     {
         $fileExists = file_exists($target);
-        $emptyFile  = $fileExists ? filesize($target) === 0 : false;
+        $emptyFile = $fileExists ? filesize($target) === 0 : false;
 
         return (!$fileExists || $emptyFile);
     }
@@ -239,7 +210,7 @@ class WarehouseManager
      * @return string Root of project
      * @throws \Jawira\Skeleton\SkeletonException
      */
-    protected function retrieveBasePath()
+    protected function retrieveBasePath(): string
     {
         foreach (range(4, 1) as $level) {
             $basePath = dirname(__DIR__, $level);
@@ -257,7 +228,7 @@ class WarehouseManager
      * @return string
      * @throws \Jawira\Skeleton\SkeletonException
      */
-    protected function retrieveWarehousePath()
+    protected function retrieveWarehousePath(): string
     {
         foreach (self::WAREHOUSE_DIRS as $candidate) {
             $warehousePath = sprintf($candidate, $this->getBasePath());
@@ -276,7 +247,7 @@ class WarehouseManager
      *
      * @return $this
      */
-    protected function makeDir($target)
+    protected function makeDir(string $target): self
     {
         if (!file_exists(dirname($target))) {
             mkdir(dirname($target), 0777, true);

@@ -40,7 +40,7 @@ Skeleton files
 
 Skeleton files are located at [resources/warehouse/](). 
 
-Currently the following files can be installed trough executable:
+Currently, the following files can be installed trough executable:
 
 <!--tree:start-->
 ```
@@ -49,18 +49,16 @@ resources/warehouse/
 ├── CHANGELOG.md
 ├── .codeclimate.yml
 ├── CODE_OF_CONDUCT.md
-├── .composer.json
-├── CONTRIBUTING.md
+├── composer.json
 ├── docker-compose.yml
 ├── Dockerfile
 ├── .editorconfig
-├── gitattributes
-├── gitignore
+├── .gitattributes
+├── .gitignore
 ├── LICENSE.md
 ├── Makefile
-├── .makerc.dist
 ├── phive.xml
-├── .README.md
+├── README.md
 ├── resources
 │   ├── make
 │   │   └── phar.mk
@@ -75,21 +73,14 @@ resources/warehouse/
 │       ├── open.build.xml
 │       ├── php.build.xml
 │       ├── phpstan.build.xml
-│       ├── portainer.build.xml
 │       └── xdebug.build.xml
 └── .travis.yml
 
-3 directories, 30 files
+3 directories, 27 files
 ```
 <!--tree:end-->
 
 Note all files are customized according to my personal needs.
-
-Contributing
-------------
-
-To contribute to this project please read [CONTRIBUTING.md](./CONTRIBUTING.md) 
-first.
 
 License
 -------

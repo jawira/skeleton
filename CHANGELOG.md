@@ -309,3 +309,4 @@ recursively
 [#26]: https://github.com/jawira/skeleton/pull/26
 [#15]: https://github.com/jawira/skeleton/pull/15
 [v1.14.0]: https://github.com/jawira/skeleton/compare/v1.13.0...v1.14.0
+[#39]: https://github.com/jawira/skeleton/pull/39
