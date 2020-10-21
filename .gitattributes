@@ -1,8 +1,17 @@
-# https://madewithlove.be/gitattributes/
+/.gitattributes   export-ignore
+/.github          export-ignore
+/.gitignore       export-ignore
+/.idea            export-ignore
+/.phive           export-ignore
+/.psalm           export-ignore
+/build            export-ignore
+/docs             export-ignore
+/examples         export-ignore
+/phpstan          export-ignore
+/phpunit.xml      export-ignore
+/phpunit.xml.dist export-ignore
+/tests            export-ignore
 
-# Ignore all test and documentation with "export-ignore".
-/.idea              export-ignore
-/docs               export-ignore
-/phpunit.xml        export-ignore
-/phpunit.xml.dist   export-ignore
-/tests              export-ignore
+# Configure diff output for .php and .phar files.
+*.php   diff=php
+*.phar  -diff
