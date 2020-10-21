@@ -14,9 +14,16 @@ Types of changes:
 
 ## Unreleased
 
-### Added
+## [v1.15.0] - 2020-10-21
 
 - [#39] Added mysql command in docker-compose.yml
+- [#34] Add phingVersion to buildfile
+- [#36] Update docker-compose buildfile
+- [#37] Fix wrong composer command
+- [#39] Add mysql command in docker-compose.yaml
+- [#41] Update readme links
+- [#43] Update .gitattribute
+- [#44] Add a symbol to existing files
 
 ## [v1.14.0] - 2019-12-09
 
@@ -310,3 +317,10 @@ recursively
 [#15]: https://github.com/jawira/skeleton/pull/15
 [v1.14.0]: https://github.com/jawira/skeleton/compare/v1.13.0...v1.14.0
 [#39]: https://github.com/jawira/skeleton/pull/39
+[#44]: https://github.com/jawira/skeleton/pull/44
+[#43]: https://github.com/jawira/skeleton/pull/43
+[#41]: https://github.com/jawira/skeleton/pull/41
+[#37]: https://github.com/jawira/skeleton/pull/37
+[#36]: https://github.com/jawira/skeleton/pull/36
+[#34]: https://github.com/jawira/skeleton/pull/34
+[v1.15.0]: https://github.com/jawira/skeleton/compare/v1.14.0...v1.15.0
