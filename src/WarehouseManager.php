@@ -138,9 +138,9 @@ class WarehouseManager
     {
         $catalog = $this->allWarehouseContent();
         $catalog = array_filter($catalog, 'is_file');
+        sort($catalog, SORT_NATURAL | SORT_FLAG_CASE);
         $catalog = array_combine($catalog, $catalog);
         $catalog = array_map([$this, 'toBasePath'], $catalog);
-        sort($catalog, SORT_NATURAL | SORT_FLAG_CASE);
 
         return $catalog;
     }
@@ -197,7 +197,7 @@ class WarehouseManager
     protected function fileNonExistentOrEmpty(string $target): bool
     {
         $fileExists = file_exists($target);
-        $emptyFile = $fileExists ? filesize($target) === 0 : false;
+        $emptyFile  = $fileExists ? filesize($target) === 0 : false;
 
         return (!$fileExists || $emptyFile);
     }
