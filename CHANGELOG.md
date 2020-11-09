@@ -14,6 +14,10 @@ Types of changes:
 
 ## Unreleased
 
+## v1.15.1 - 2020-11-09
+
+- [#45] Fix "Invalid source file" bug
+
 ## [v1.15.0] - 2020-10-21
 
 - [#39] Added mysql command in docker-compose.yml
