@@ -3,4 +3,3 @@
 /vendor/
 /.makerc
 /composer-setup.php
-/composer.lock

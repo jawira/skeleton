@@ -94,7 +94,7 @@ Types of changes:
 - [#20] Add automatic proxy configuration to buildfile
 - Updating [resources/warehouse/phive.xml]() with default directory.
 - [#23] Adding `php-eye` link to [resources/warehouse/README.md]()
-- [#24] Setting default name in [docker compose buildfile](resources/warehouse/resources/phing/docker-compose.build.xml)
+- [#24] Setting default name in [docker compose buildfile](resources/legacy/resources/phing/docker-compose.build.xml)
 - Add link for PHPPackages badges
 - resources/warehouse/.codeclimate.yml
 - resources/warehouse/.travis.yml
@@ -116,7 +116,7 @@ Types of changes:
 
 ### Added
 
-- Added [phive.xml](resources/warehouse/phive.xml) to skeleton files.
+- Added [phive.xml](resources/legacy/phive.xml) to skeleton files.
 
 ### Fixed
 
@@ -132,7 +132,7 @@ Types of changes:
 
 ### Added
 
-- New file [composer.json](resources/warehouse/composer.json) to be used as 
+- New file [composer.json](resources/legacy/composer.json) to be used as 
 template. This file will never appear when using `bin/jawira-skeleton`.
 - The task `composer:outdated` was added in 
 [resources/warehouse/resources/phing/composer.build.xml]()
@@ -269,7 +269,7 @@ recursively
 ### Added
 
 - Pugx Badges and gif animation in [README.md](./README.md)
-- Added [GLPv3 LICENSE](resources/warehouse/LICENSE) 
+- Added [GLPv3 LICENSE](resources/legacy/LICENSE) 
 
 ### Changed
 
