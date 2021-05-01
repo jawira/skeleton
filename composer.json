@@ -2,37 +2,18 @@
   "name": "jawira/skeleton",
   "type": "library",
   "description": "Common files I use in all my projects",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "authors": [
     {
       "name": "Jawira Portugal",
       "email": "dev@tugal.be"
     }
   ],
-  "require": {
-    "php": ">=7.4",
-    "ext-mbstring": "*",
-    "jawira/emoji-catalog": "^v3.0.1",
-    "league/climate": "^3.5.0"
-  },
   "suggest": {
-    "hirak/prestissimo": "Composer parallel install plugin",
-    "localheinz/composer-normalize": "Apply same format in all your composer.json files",
-    "malukenho/mcbumpface": "Sync composer.lock and composer.json versions",
-    "pds/skeleton": "Use it to install standard files and directory structure",
-    "phing/phing": "A PHP build tool",
-    "symplify/changelog-linker": "Generates beautiful CHANGELOG.md with links"
+    "pds/skeleton": "Standard PHP package skeleton",
+    "phing/phing": "PHP build tool"
   },
   "config": {
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
-  "autoload": {
-    "psr-4": {
-      "Jawira\\Skeleton\\": "src/"
-    }
-  },
-  "bin": [
-    "bin/jawira-skeleton"
-  ]
+    "preferred-install": "dist"
+  }
 }

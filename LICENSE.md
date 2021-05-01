@@ -1,7 +1,7 @@
 The MIT License (MIT)
 =====================
 
-Copyright © `@YEAR@` `@COPYRIGHT_HOLDER@`
+Copyright © `2021` `Jawira Portugal`
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

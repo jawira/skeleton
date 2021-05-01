@@ -1,55 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="Skeleton" default="help" phingVersion="3">
+<project name="jawira/skeleton" default="help" phingVersion="3">
 
-  <target name="refresh"
-          description="Update generated files, run this before committing"
-          depends="changelog:links, readme:update, phing:visualize"/>
+  <target name="gitignore" description="Create .gitignore">
+    <copy file="resources/gitignore.txt" tofile="${application.startdir}/.gitignore" overwrite="false"/>
+  </target>
+
+  <target name="gitattributes" description="Create .gitattributes">
+    <copy file="resources/gitattributes.txt" tofile="${application.startdir}/.gitattributes" overwrite="false"/>
+  </target>
+
+  <target name="editorconfig" description="Create .editorconfig">
+    <copy file="resources/.editorconfig" tofile="${application.startdir}/.editorconfig" overwrite="false"/>
+  </target>
+
+  <target name="buildfile" description="Create Phing buildfile">
+    <copy file="resources/build.xml" tofile="${application.startdir}/build.xml" overwrite="false"/>
+  </target>
+
+  <target name="readme" description="Create Phing buildfile">
+    <copy file="resources/README.md" tofile="${application.startdir}/README.md" overwrite="false"/>
+  </target>
+
+  <target name="license" description="Create MIT license file">
+    <php returnProperty="license.year" expression="date('Y')"/>
+    <copy file="resources/LICENSE.md" tofile="${application.startdir}/LICENSE.md" overwrite="false">
+      <filterchain>
+        <replacetokens>
+          <token key="YEAR" value="${license.year}"/>
+        </replacetokens>
+      </filterchain>
+    </copy>
+  </target>
 
   <target name="help">
+    <visualizer/>
     <exec executable="xdg-open" spawn="true">
-      <arg file="docs/build.png"/>
-    </exec>
-  </target>
-
-  <target name="phing:visualize">
-    <visualizer destination="docs"/>
-  </target>
-
-  <target name="readme:update" description="Update tree from readme file">
-    <property name="tree.path" value="/usr/bin/tree"/>
-    <exec executable="${tree.path}" outputProperty="tree">
-      <arg value="-a"/>
-      <arg value="resources/warehouse/"/>
-    </exec>
-    <reflexive file="README.md">
-      <filterchain>
-        <replaceregexp>
-          <regexp pattern="&lt;!--tree:start--&gt;.*&lt;!--tree:end--&gt;"
-                  replace="&lt;!--tree:start--&gt;${line.separator}```${line.separator}${tree}${line.separator}```${line.separator}&lt;!--tree:end--&gt;"
-                  modifiers="Us"/>
-        </replaceregexp>
-      </filterchain>
-    </reflexive>
-  </target>
-
-  <target name="changelog:links" description="Update links in changelog">
-    <composer command="require">
-      <arg value="symplify/changelog-linker"/>
-    </composer>
-    <exec executable="vendor/bin/changelog-linker">
-      <arg value="link"/>
-    </exec>
-    <composer command="remove">
-      <arg value="symplify/changelog-linker"/>
-    </composer>
-  </target>
-
-  <target name="git:tag-listing" description="List all git tags">
-    <!--https://stackoverflow.com/a/34239190/4345061-->
-    <exec executable="git" passthru="true">
-      <arg value="log"/>
-      <arg line="--graph --all --decorate --oneline --simplify-by-decoration"/>
+      <arg file="build.png"/>
     </exec>
   </target>
 
