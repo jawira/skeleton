@@ -42,8 +42,20 @@
     </exec>
   </target>
 
-  <target name="help">
-    <visualizer/>
+  <target name="visualizer" description="Create buildfile diagrams when required">
+    <uptodate property="visualizer.up-to-date" srcfile="build.xml" targetfile="build.png"/>
+    <if>
+      <not>
+        <isset property="visualizer.up-to-date"/>
+      </not>
+      <then>
+        <visualizer format="png"/>
+        <visualizer format="svg"/>
+      </then>
+    </if>
+  </target>
+
+  <target name="help" depends="visualizer">
     <exec executable="xdg-open" spawn="true">
       <arg file="build.png"/>
     </exec>
