@@ -13,13 +13,19 @@ Install
 $ composer require jawira/skeleton --dev
 ```
 
-Usage
------
+Examples
+--------
 
-Example: create `.gitignore`:
+Install `PHPUnit`:
 
 ```console
-$ phing -f vendor/jawira/skeleton/build.xml gitignore
+$ phing -f vendor/jawira/skeleton/build.xml phpunit
+```
+
+Create `.gitignore` (overwrite if exists):
+
+```console
+$ phing -f vendor/jawira/skeleton/build.xml gitignore -Doverwrite=true
 ```
 
 List available targets:
