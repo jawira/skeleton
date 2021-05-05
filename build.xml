@@ -17,9 +17,9 @@
     <exec executable="vendor/bin/phpunit" passthru="true">
       <arg value="--migrate-configuration"/>
     </exec>
-    <echo level="warning">Composer: Add 'tests' dir to 'autoload-dev'</echo>
-    <!-- todo: add phpunit.xml to gitignore -->
-    <!-- todo: add .phpunit.cache to gitignore -->
+    <echo level="warning">todo: Add 'tests' dir to 'autoload-dev'</echo>
+    <echo level="warning">todo: Add 'phpunit.xml' to '.gitignore'</echo>
+    <echo level="warning">todo: Add '.phpunit.cache' to '.gitignore'</echo>
   </target>
 
   <target name="gitignore" description="Create .gitignore">
