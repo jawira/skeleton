@@ -2,6 +2,26 @@
 
 <project name="jawira/skeleton" default="help" phingVersion="3">
 
+  <target name="phpunit" description="Install PHPUnit">
+    <composer command="require">
+      <arg value="--no-interaction"/>
+      <arg value="--no-progress"/>
+      <arg value="phpunit/phpunit"/>
+      <arg value="--dev"/>
+    </composer>
+    <mkdir dir=".phpunit.cache"/>
+    <mkdir dir="tests"/>
+    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php" overwrite="false"/>
+    <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist"
+          overwrite="false"/>
+    <exec executable="vendor/bin/phpunit" passthru="true">
+      <arg value="--migrate-configuration"/>
+    </exec>
+    <echo level="warning">Composer: Add 'tests' dir to 'autoload-dev'</echo>
+    <!-- todo: add phpunit.xml to gitignore -->
+    <!-- todo: add .phpunit.cache to gitignore -->
+  </target>
+
   <target name="gitignore" description="Create .gitignore">
     <copy file="resources/gitignore.txt" tofile="${application.startdir}/.gitignore" overwrite="false"/>
   </target>
