@@ -1,6 +1,3 @@
 /.idea/
-/site/
 /vendor/
-/.makerc
-/composer-setup.php
 /composer.lock
