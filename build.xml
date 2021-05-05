@@ -2,6 +2,8 @@
 
 <project name="jawira/skeleton" default="help" phingVersion="3">
 
+  <property name="overwrite" value="false"/>
+
   <target name="phpunit" description="Install PHPUnit">
     <composer command="require">
       <arg value="--no-interaction"/>
@@ -11,9 +13,9 @@
     </composer>
     <mkdir dir=".phpunit.cache"/>
     <mkdir dir="tests"/>
-    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php" overwrite="false"/>
+    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php" overwrite="${overwrite}"/>
     <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist"
-          overwrite="false"/>
+          overwrite="${overwrite}"/>
     <exec executable="vendor/bin/phpunit" passthru="true">
       <arg value="--migrate-configuration"/>
     </exec>
@@ -23,28 +25,28 @@
   </target>
 
   <target name="gitignore" description="Create .gitignore">
-    <copy file="resources/gitignore.txt" tofile="${application.startdir}/.gitignore" overwrite="false"/>
+    <copy file="resources/gitignore.txt" tofile="${application.startdir}/.gitignore" overwrite="${overwrite}"/>
   </target>
 
   <target name="gitattributes" description="Create .gitattributes">
-    <copy file="resources/gitattributes.txt" tofile="${application.startdir}/.gitattributes" overwrite="false"/>
+    <copy file="resources/gitattributes.txt" tofile="${application.startdir}/.gitattributes" overwrite="${overwrite}"/>
   </target>
 
   <target name="editorconfig" description="Create .editorconfig">
-    <copy file="resources/.editorconfig" tofile="${application.startdir}/.editorconfig" overwrite="false"/>
+    <copy file="resources/.editorconfig" tofile="${application.startdir}/.editorconfig" overwrite="${overwrite}"/>
   </target>
 
   <target name="buildfile" description="Create Phing buildfile">
-    <copy file="resources/build.xml" tofile="${application.startdir}/build.xml" overwrite="false"/>
+    <copy file="resources/build.xml" tofile="${application.startdir}/build.xml" overwrite="${overwrite}"/>
   </target>
 
-  <target name="readme" description="Create Phing buildfile">
-    <copy file="resources/README.md" tofile="${application.startdir}/README.md" overwrite="false"/>
+  <target name="readme" description="Create README.md">
+    <copy file="resources/README.md" tofile="${application.startdir}/README.md" overwrite="${overwrite}"/>
   </target>
 
   <target name="license" description="Create MIT license file">
     <php returnProperty="license.year" expression="date('Y')"/>
-    <copy file="resources/LICENSE.md" tofile="${application.startdir}/LICENSE.md" overwrite="false">
+    <copy file="resources/LICENSE.md" tofile="${application.startdir}/LICENSE.md" overwrite="${overwrite}">
       <filterchain>
         <replacetokens>
           <token key="YEAR" value="${license.year}"/>
