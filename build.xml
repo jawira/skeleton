@@ -54,7 +54,15 @@
   </target>
 
   <target name="help">
-    <visualizer/>
+    <uptodate property="uptodate" srcfile="build.xml" targetfile="build.png"/>
+    <if>
+      <not>
+        <isset property="uptodate"/>
+      </not>
+      <then>
+        <visualizer/>
+      </then>
+    </if>
     <exec executable="xdg-open" spawn="true">
       <arg file="build.png"/>
     </exec>
