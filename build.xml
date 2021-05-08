@@ -20,8 +20,9 @@
       <arg value="--migrate-configuration"/>
     </exec>
     <echo level="warning">todo: Add 'tests' dir to 'autoload-dev'</echo>
-    <echo level="warning">todo: Add 'phpunit.xml' to '.gitignore'</echo>
-    <echo level="warning">todo: Add '.phpunit.cache' to '.gitignore'</echo>
+    <echo level="warning">todo: Add '/phpunit.xml' to '.gitignore'</echo>
+    <echo level="warning">todo: Add '/.phpunit.cache' to '.gitignore'</echo>
+    <echo level="warning">todo: Add '/.phpunit.result.cache' to '.gitignore'</echo>
   </target>
 
   <target name="gitignore" description="Create .gitignore">
