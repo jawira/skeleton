@@ -78,5 +78,11 @@ Packages from jawira
 </dt>
 <dd>PlantUML encoding functions.</dd>
 
+<dt>
+    <a href="https://packagist.org/packages/jawira/plantuml-client"> jawira/plantuml-client
+    <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/plantuml-client?icon=github"/></a>
+</dt>
+<dd>Convert PlantUML diagrams into images (svg, png, ...).</dd>
+
 <dt><a href="https://packagist.org/packages/jawira/">more...</a></dt>
 </dl>
