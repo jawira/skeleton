@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="LibreOffice targets" default="cv:open">
+<project name="LibreOffice targets" default="lo:open">
 
   <target name="lo:open" description="Open LibreOffice for edition">
     <exec executable="xdg-open" checkreturn="true" spawn="true">
