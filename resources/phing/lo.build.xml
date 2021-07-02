@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="LibreOffice targets" default="cv:open">
+
+  <target name="lo:open" description="Open LibreOffice for edition">
+    <exec executable="xdg-open" checkreturn="true" spawn="true">
+      <arg file="src/my-file.fodt"/>
+    </exec>
+  </target>
+
+  <target name="lo:pdf" description="Convert LibreOffice to PDF">
+    <!-- https://ask.libreoffice.org/en/question/228911/converting-to-pdf-via-cli-with-parameters/ -->
+    <exec executable="soffice" passthru="true" checkreturn="true" spawn="true">
+      <arg line="--headless --nologo --nofirststartwizard --norestore"/>
+      <arg line="--convert-to pdf"/>
+      <arg value="--outdir"/>
+      <arg path="src"/><!-- destination -->
+      <arg file="src/my-file.fodt"/><!-- source -->
+    </exec>
+  </target>
+
+</project>
