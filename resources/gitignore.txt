@@ -3,3 +3,4 @@
 /vendor/
 /.makerc
 /composer-setup.php
+/side-suite-*
