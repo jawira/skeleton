@@ -1,11 +1,14 @@
 FROM php:7.2-apache
 
-WORKDIR /var/www/my-site
-
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
 
-COPY . /var/www/my-site/
+WORKDIR /app
+COPY . /app/
+
+# Composer
+ENV COMPOSER_ALLOW_SUPERUSER=1
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 COPY ./resources/docker/my-site.local.conf /etc/apache2/sites-available/
 
@@ -26,13 +29,9 @@ RUN set -xe \
     && echo "### apt-get ###" \
     && apt-get update \
     && apt-get --yes --no-install-recommends install \
-        composer \
         phing \
         make \
         wget \
-    && echo "### Composer ###" \
-    && composer self-update \
-    && composer global require hirak/prestissimo \
     && echo "### Install sendmail replacement ###" \
     && mkdir /opt/mailhog \
     && wget -O /opt/mailhog/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64 \
