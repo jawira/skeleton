@@ -50,15 +50,16 @@
     <copy file="resources/.editorconfig" tofile="${application.startdir}/.editorconfig" overwrite="${force}"/>
   </target>
 
-  <target name="buildfile" description="Create Phing buildfile">
+  <target name="buildfile" description="Create Phing buildfile template">
     <copy file="resources/build.xml" tofile="${application.startdir}/build.xml" overwrite="${force}"/>
   </target>
 
-  <target name="readme" description="Create README.md">
+  <target name="readme" description="Create README.md template">
     <copy file="resources/README.md" tofile="${application.startdir}/README.md" overwrite="${force}"/>
   </target>
 
   <target name="license" description="Create MIT license file">
+    <!-- Create license file -->
     <php returnProperty="license.year" expression="date('Y')"/>
     <copy file="resources/LICENSE.md" tofile="${application.startdir}/LICENSE.md" overwrite="${force}">
       <filterchain>
@@ -67,6 +68,13 @@
         </replacetokens>
       </filterchain>
     </copy>
+    <!--Update composer.json-->
+    <composer command="config">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="license"/>
+      <arg value="MIT"/>
+    </composer>
   </target>
 
   <target name="help">
