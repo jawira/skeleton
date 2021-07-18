@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="LibreOffice targets" default="lo:open">
+<project name="LibreOffice targets" default="libre-office:open">
 
-  <target name="lo:open" description="Open LibreOffice for edition">
+  <target name="libre-office:open" description="Open LibreOffice file for edition">
     <exec executable="xdg-open" checkreturn="true" spawn="true">
       <arg file="src/my-file.fodt"/>
     </exec>
   </target>
 
-  <target name="lo:pdf" description="Convert LibreOffice to PDF">
+  <target name="libre-office:pdf" description="Convert LibreOffice file to PDF">
     <!-- https://ask.libreoffice.org/en/question/228911/converting-to-pdf-via-cli-with-parameters/ -->
     <exec executable="soffice" passthru="true" checkreturn="true" spawn="true">
       <arg line="--headless --nologo --nofirststartwizard --norestore"/>
