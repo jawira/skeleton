@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="PHPUnit" description="PHPUnit targets" default="phpunit:run">
+
+  <target name="phpunit:run">
+    <exec executable="vendor/bin/phpunit" checkreturn="true" passthru="true">
+      <arg value="--coverage-text"/>
+      <arg value="--colors=always"/>
+    </exec>
+  </target>
+
+</project>
