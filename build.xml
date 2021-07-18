@@ -5,24 +5,37 @@
   <property name="overwrite" value="false"/>
 
   <target name="phpunit" description="Install PHPUnit">
+    <!-- Install with Composer -->
     <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
       <arg value="--no-interaction"/>
       <arg value="--no-progress"/>
       <arg value="phpunit/phpunit"/>
       <arg value="--dev"/>
     </composer>
+    <!-- Create files -->
+    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php" overwrite="${overwrite}"/>
+    <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist" overwrite="${overwrite}"/>
+    <!-- Create dirs -->
     <mkdir dir=".phpunit.cache"/>
     <mkdir dir="tests"/>
-    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php" overwrite="${overwrite}"/>
-    <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist"
-          overwrite="${overwrite}"/>
-    <exec executable="vendor/bin/phpunit" passthru="true">
-      <arg value="--migrate-configuration"/>
+    <!-- Update .gitignore -->
+    <echo append="true" file="${application.startdir}/.gitignore" message="/.phpunit.cache${line.separator}"/>
+    <echo append="true" file="${application.startdir}/.gitignore" message="/phpunit.xml${line.separator}"/>
+    <echo append="true" file="${application.startdir}/.gitignore" message="/phpunit.result.cache${line.separator}"/>
+    <echo level="warning">@todo: composer.json add 'tests' dir to 'autoload-dev'</echo>
+    <!--Smoke-->
+    <exec executable="vendor/bin/phpunit" passthru="true" dir="${application.startdir}">
+      <arg value="--version"/>
     </exec>
-    <echo level="warning">todo: Add 'tests' dir to 'autoload-dev'</echo>
-    <echo level="warning">todo: Add '/phpunit.xml' to '.gitignore'</echo>
-    <echo level="warning">todo: Add '/.phpunit.cache' to '.gitignore'</echo>
-    <echo level="warning">todo: Add '/.phpunit.result.cache' to '.gitignore'</echo>
+    <!--Update buildfile-->
+    <tempfile property="buildfile.copy"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/phpunit/phpunit.build.xml"/>
+    </xslt>
+    <delete file="${buildfile.copy}"/>
   </target>
 
   <target name="gitignore" description="Create .gitignore">
