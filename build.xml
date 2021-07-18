@@ -102,4 +102,43 @@
     <delete file="${buildfile.copy}"/>
   </target>
 
+  <target name="composer" description="Add composer targets &amp; config">
+    <!--composer.json config-->
+    <composer command="config">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="platform-check"/>
+      <arg value="true"/>
+    </composer>
+    <composer command="config">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="preferred-install"/>
+      <arg value="dist"/>
+    </composer>
+    <composer command="config">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="sort-packages"/>
+      <arg value="true"/>
+    </composer>
+    <!--Install dependencies-->
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="--no-interaction"/>
+      <arg value="--no-progress"/>
+      <arg value="--ansi"/>
+      <arg value="ergebnis/composer-normalize"/>
+      <arg value="--dev"/>
+    </composer>
+    <!--Update buildfile-->
+    <tempfile property="buildfile.copy"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/composer.build.xml"/>
+    </xslt>
+    <delete file="${buildfile.copy}"/>
+  </target>
+
 </project>

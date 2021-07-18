@@ -3,7 +3,7 @@
   <xsl:param name="buildfile.source" select="'resources/xslt/bar.xml'"/>
   <xsl:param name="updates" select="document($buildfile.source)"/>
 
-  <xsl:variable name="newTargets" select="$updates/project/target"/>
+  <xsl:variable name="newElements" select="$updates/project/property | $updates/project/target"/>
 
   <xsl:template match="@* | node()">
     <xsl:copy>
@@ -14,7 +14,7 @@
   <xsl:template match="project">
     <xsl:copy>
       <xsl:apply-templates select="@* | node()"/>
-      <xsl:apply-templates select="$newTargets"/>
+      <xsl:apply-templates select="$newElements"/>
     </xsl:copy>
   </xsl:template>
 
