@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="Composer" description="Composer dependency manager" default="composer:validate">
+
+  <property name="composer.flag" value="--dev"/>
+
+  <target name="composer:install" description="PHP dependencies">
+    <!-- Use &#45;&#45;no-dev for prod -->
+    <composer command="install">
+      <arg value="--no-interaction"/>
+      <arg value="--prefer-dist"/>
+      <arg value="--no-progress"/>
+      <arg value="--ansi"/>
+      <arg value="${composer.flag}"/>
+    </composer>
+  </target>
+
+  <target name="composer:validate" description="Validate composer.json">
+    <composer command="validate">
+      <arg value="--ansi"/>
+    </composer>
+  </target>
+
+  <target name="composer:normalize" description="Normalize composer.json">
+    <composer command="normalize">
+      <arg value="--ansi"/>
+      <arg value="--diff"/>
+      <arg value="--indent-size=2"/>
+      <arg value="--indent-style=space"/>
+    </composer>
+  </target>
+
+</project>
