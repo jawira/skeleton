@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="PHP Coding Standards Fixer" description="" default="">
+
+  <target name="php-cs-fixer:fix" description="Validate code style (ideal for CI)">
+    <!--https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/doc/usage.rst-->
+    <exec executable="vendor/bin/php-cs-fixer" passthru="true" checkreturn="true">
+      <arg value="--ansi"/>
+      <arg value="--no-interaction"/>
+      <arg value="fix"/>
+      <arg file="src"/>
+    </exec>
+  </target>
+
+</project>

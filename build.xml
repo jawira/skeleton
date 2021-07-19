@@ -15,8 +15,10 @@
       <arg value="--dev"/>
     </composer>
     <!-- Create files -->
-    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php" overwrite="${force}"/>
-    <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist" overwrite="${force}"/>
+    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php"
+          overwrite="${force}"/>
+    <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist"
+          overwrite="${force}"/>
     <!-- Create dirs -->
     <mkdir dir=".phpunit.cache"/>
     <mkdir dir="tests"/>
@@ -141,4 +143,27 @@
     <delete file="${buildfile.copy}"/>
   </target>
 
+
+  <target name="php-cs-fixer" description="Install PHP Coding Standards Fixer">
+    <!--Copy config file-->
+    <copy file="resources/php-cs-fixer/.php-cs-fixer.dist.php" todir="${application.startdir}" overwrite="${force}"/>
+    <!--Update .gitignore-->
+    <echo append="true" file="${application.startdir}/.gitignore" message="/.php-cs-fixer.php${line.separator}"/>
+    <echo append="true" file="${application.startdir}/.gitignore" message="/.php-cs-fixer.cache${line.separator}"/>
+    <!--Install dependencies-->
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg line="--no-interaction --no-progress --ansi"/>
+      <arg value="friendsofphp/php-cs-fixer"/>
+      <arg value="--dev"/>
+    </composer>
+    <!--Add target-->
+    <tempfile property="buildfile.copy"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/php-cs-fixer/php-cs-fixer.build.xml"/>
+    </xslt>
+    <delete file="${buildfile.copy}"/>
+  </target>
 </project>
