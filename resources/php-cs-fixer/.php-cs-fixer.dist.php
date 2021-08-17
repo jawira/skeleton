@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-
+$finder = PhpCsFixer\Finder::create()->in(__DIR__ . DIRECTORY_SEPARATOR . 'src');
 $config = new PhpCsFixer\Config();
 
 return $config->setRules(['no_unused_imports'                 => true,
