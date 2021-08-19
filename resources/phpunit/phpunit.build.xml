@@ -3,10 +3,8 @@
 <project name="PHPUnit" description="PHPUnit targets" default="phpunit:run">
 
   <target name="phpunit:run">
-    <exec executable="vendor/bin/phpunit" checkreturn="true" passthru="true">
-      <arg value="--coverage-text"/>
-      <arg value="--colors=always"/>
-    </exec>
+    <!-- All config is located in phpunit.xml -->
+    <exec executable="vendor/bin/phpunit" checkreturn="true" passthru="true"/>
   </target>
 
 </project>
