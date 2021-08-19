@@ -14,18 +14,19 @@
       <arg value="phpunit/phpunit"/>
       <arg value="--dev"/>
     </composer>
-    <!-- Create files -->
-    <copy file="resources/phpunit/demoTest.php" tofile="${application.startdir}/tests/demoTest.php"
-          overwrite="${force}"/>
-    <copy file="resources/phpunit/phpunit.xml.dist" tofile="${application.startdir}/phpunit.xml.dist"
-          overwrite="${force}"/>
     <!-- Create dirs -->
     <mkdir dir=".phpunit.cache"/>
     <mkdir dir="tests"/>
+    <!-- Create files -->
+    <copy file="resources/phpunit/demoTest.php" todir="${application.startdir}/tests"
+          overwrite="${force}"/>
+    <copy file="resources/phpunit/phpunit.xml" todir="${application.startdir}"
+          overwrite="${force}"/>
     <!-- Update .gitignore -->
     <echo append="true" file="${application.startdir}/.gitignore" message="/.phpunit.cache${line.separator}"/>
-    <echo append="true" file="${application.startdir}/.gitignore" message="/phpunit.xml${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/phpunit.result.cache${line.separator}"/>
+    <echo append="true" file="${application.startdir}/.gitignore" message="/resources/report${line.separator}"/>
+    <echo append="true" file="${application.startdir}/.gitignore" message="/cobertura.xml${line.separator}"/>
     <echo level="warning">@todo: composer.json add 'tests' dir to 'autoload-dev'</echo>
     <!--Smoke-->
     <exec executable="vendor/bin/phpunit" passthru="true" dir="${application.startdir}">

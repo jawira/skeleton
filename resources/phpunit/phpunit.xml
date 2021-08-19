@@ -10,17 +10,26 @@
          beStrictAboutTodoAnnotatedTests="true"
          failOnRisky="true"
          failOnWarning="true"
-         verbose="true">
-    <testsuites>
-        <testsuite name="default">
-            <directory suffix="Test.php">tests</directory>
-        </testsuite>
-    </testsuites>
+         verbose="true"
+         colors="true"
+         noInteraction="true">
 
-    <coverage cacheDirectory=".phpunit.cache/code-coverage"
-              processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-    </coverage>
+  <testsuites>
+    <testsuite name="default">
+      <directory suffix="Test.php">tests</directory>
+    </testsuite>
+  </testsuites>
+
+  <coverage cacheDirectory=".phpunit.cache/code-coverage"
+            processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">src</directory>
+    </include>
+    <report>
+      <text outputFile="php://stdout"/>
+      <cobertura outputFile="cobertura.xml"/>
+      <html outputDirectory="resources/report"/>
+    </report>
+  </coverage>
+
 </phpunit>
