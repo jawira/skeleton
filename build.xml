@@ -81,18 +81,15 @@
   </target>
 
   <target name="help">
-    <uptodate property="uptodate" srcfile="build.xml" targetfile="build.png"/>
-    <if>
-      <not>
-        <isset property="uptodate"/>
-      </not>
-      <then>
-        <visualizer/>
-      </then>
-    </if>
+    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
+    <runtarget target="visualizer"/>
     <exec executable="xdg-open" spawn="true">
       <arg file="build.png"/>
     </exec>
+  </target>
+
+  <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
+    <visualizer/>
   </target>
 
   <target name="libre-office" description="Install target to create pdf with libre-office">
