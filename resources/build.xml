@@ -42,31 +42,16 @@
     </exec>
   </target>
 
-  <target name="visualizer" description="Create buildfile diagrams when required">
-    <uptodate property="visualizer.up-to-date" srcfile="build.xml" targetfile="build.png"/>
-    <if>
-      <not>
-        <isset property="visualizer.up-to-date"/>
-      </not>
-      <then>
-        <visualizer format="png"/>
-        <visualizer format="svg"/>
-      </then>
-    </if>
-  </target>
-
   <target name="help">
-    <uptodate property="uptodate" srcfile="build.xml" targetfile="build.png"/>
-    <if>
-      <not>
-        <isset property="uptodate"/>
-      </not>
-      <then>
-        <visualizer/>
-      </then>
-    </if>
+    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
+    <runtarget target="visualizer"/>
     <exec executable="xdg-open" spawn="true">
       <arg file="build.png"/>
     </exec>
   </target>
+
+  <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
+    <visualizer/>
+  </target>
+
 </project>
