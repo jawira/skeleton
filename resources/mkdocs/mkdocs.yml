@@ -1,0 +1,6 @@
+site_name: !ENV [ SITE_NAME, 'My Docs' ]
+theme: readthedocs
+copyright: © 2020-2021 Jawira Portugal
+site_author: Jawira Portugal
+strict: true
+use_directory_urls: false
