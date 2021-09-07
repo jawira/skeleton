@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="PHPUnit" description="PHPUnit targets" default="phpunit:run">
+
+  <target name="phpunit:run" description="Run unitary tests">
+    <exec executable="vendor/bin/phpunit" checkreturn="true" passthru="true">
+      <env key="XDEBUG_MODE" value="coverage"/>
+    </exec>
+  </target>
+
+  <target name="phpunit:testdox" description="Run unitary tests with testdox">
+    <exec executable="vendor/bin/phpunit" checkreturn="true" passthru="true">
+      <env key="XDEBUG_MODE" value="coverage"/>
+      <arg value="--testdox"/>
+    </exec>
+  </target>
+
+</project>
