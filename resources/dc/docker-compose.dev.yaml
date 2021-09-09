@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  web:
+    labels:
+      - 'traefik.docker.network=traefik_default'
+      - 'traefik.enable=true'
+    networks:
+      - traefik_default
+      - default
+
+  fpm:
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - traefik_default
+      - default
+
+  db:
+    networks:
+      - default
+
+networks:
+  default:
+  traefik_default:
+    external: true

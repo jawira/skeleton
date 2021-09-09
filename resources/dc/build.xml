@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="docker-compose targets" default="dc:ip" phingVersion="3">
+
+  <property name="dc.project-name" value="foobar"/>
+  <property name="dc.override" value="docker-compose.dev.yaml"/>
+  <property name="app.env" value="dev"/>
+  <property name="app.url" value="http://web.${dc.project-name}.test"/>
+  <property name="db.database" value="${dc.project-name}"/>
+  <property name="db.password" value="groot"/>
+  <property name="db.user" value="groot"/>
+
+  <target name="dc:override" description="Create override file">
+    <copy file="${dc.override}" tofile="docker-compose.override.yaml" overwrite="true"/>
+  </target>
+
+  <target name="dc:up" description="Launch containers">
+    <exec executable="docker-compose" passthru="true" checkreturn="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="up"/>
+      <arg value="--detach"/>
+      <arg value="--remove-orphans"/>
+    </exec>
+  </target>
+
+  <target name="dc:stop" description="Stop containers">
+    <exec executable="docker-compose" passthru="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="stop"/>
+    </exec>
+  </target>
+
+  <target name="dc:down" description="Take down containers, networks, images, and volumes">
+    <exec executable="docker-compose" passthru="true">
+      <arg line="--project-name ${dc.project-name}"/>
+      <arg value="down"/>
+      <arg value="--volumes"/>
+      <arg value="--remove-orphans"/>
+      <arg value="--rmi=local"/>
+    </exec>
+  </target>
+
+  <target name="dc:open" description="Open dev sites">
+    <exec executable="xdg-open" spawn="true">
+      <arg value="${app.url}"/>
+    </exec>
+  </target>
+
+  <target name="dc:shell" description="Tunnel to container">
+    <exec executable="docker" passthru="true">
+      <arg value="exec"/>
+      <arg value="-it"/>
+      <arg value="${dc.project-name}_fpm_1"/>
+      <arg value="/bin/bash"/>
+    </exec>
+  </target>
+
+  <target name="dc:ip" description="Reveal containers ip addresses">
+    <property name="dc.format"
+              value="--format='{{ .Name }}{{&quot;\t&quot;}}{{range .NetworkSettings.Networks}}{{.IPAddress}}{{&quot;\t&quot;}}{{end}}'"/>
+    <exec executable="docker" checkreturn="true" passthru="true">
+      <arg value="inspect"/>
+      <arg line="${dc.format}"/>
+      <arg value="${dc.project-name}_web_1"/>
+      <arg value="${dc.project-name}_fpm_1"/>
+      <arg value="${dc.project-name}_db_1"/>
+    </exec>
+  </target>
+
+  <target name="db:wait" description="Wait for DB">
+    <echo>Waiting for database.</echo>
+    <waitfor timeoutproperty="db.timeout" maxwait="300" maxwaitunit="second">
+      <pdosqlexec url="mysql:host=db;dbname=${db.database};port=3306"
+                  userid="${db.user}"
+                  password="${db.password}"/>
+    </waitfor>
+    <fail if="db.timeout">Cannot reach ${db.database} database</fail>
+  </target>
+
+  <target name="db:remote-refresh" description="Diff on docker container">
+    <exec executable="docker" passthru="true" checkreturn="true">
+      <arg value="exec"/>
+      <arg value="${dc.project-name}_fpm_1"/>
+      <arg line="phing -longtargets -logger \\Phing\\Listener\\AnsiColorLogger db:refresh"/>
+    </exec>
+  </target>
+
+  <target name="db:refresh" description="Update DB structure">
+    <runtarget target="db:migrate"/>
+    <runtarget target="db:diff"/>
+    <runtarget target="db:migrate"/>
+    <runtarget target="db:fixtures"/>
+  </target>
+
+  <target name="db:fixtures" description="Fill DB with dummy data" depends="db:wait">
+    <SymfonyConsole command="hautelook:fixtures:load" checkReturn="true">
+      <arg value="--purge-with-truncate"/>
+      <arg value="--no-interaction"/>
+      <arg value="--ansi"/>
+    </SymfonyConsole>
+  </target>
+
+  <target name="db:migrate" description="Update DB structure" depends="db:wait">
+    <SymfonyConsole command="doctrine:migrations:migrate" checkReturn="true">
+      <arg value="--allow-no-migration"/>
+      <arg value="--no-interaction"/>
+      <arg value="--ansi"/>
+    </SymfonyConsole>
+  </target>
+
+  <target name="db:diff" description="Checks if DB has changed" depends="db:wait">
+    <SymfonyConsole command="doctrine:migrations:diff" checkReturn="true">
+      <arg value="--allow-empty-diff"/>
+      <arg value="--no-interaction"/>
+      <arg value="--formatted"/>
+      <arg value="--ansi"/>
+    </SymfonyConsole>
+  </target>
+
+</project>

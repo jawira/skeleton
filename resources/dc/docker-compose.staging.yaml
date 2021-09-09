@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  web:
+    labels:
+      - 'traefik.http.routers.${CI_ENVIRONMENT_SLUG}-web.rule=Host(`${CI_COMMIT_REF_SLUG}.web.${CI_PROJECT_NAME}.${CI_PROJECT_NAMESPACE}.devel.lan`)'
+      - 'traefik.docker.network=services_default'
+      - 'traefik.enable=true'
+    networks:
+      - services_default
+      - default
+
+  fpm:
+    networks:
+      - default
+
+  db:
+    networks:
+      - default
+
+networks:
+  default:
+  services_default:
+    external: true

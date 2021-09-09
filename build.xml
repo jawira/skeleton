@@ -15,8 +15,8 @@
       <arg value="--dev"/>
     </composer>
     <!-- Create dirs -->
-    <mkdir dir=".phpunit.cache"/>
-    <mkdir dir="tests"/>
+    <mkdir dir="${application.startdir}/.phpunit.cache"/>
+    <mkdir dir="${application.startdir}/tests"/>
     <!-- Create files -->
     <copy file="resources/phpunit/demoTest.php" todir="${application.startdir}/tests"
           overwrite="${force}"/>
@@ -166,7 +166,7 @@
   </target>
 
   <target name="mkdocs" description="Mkdocs targets and config file">
-    <mkdir dir="docs"/>
+    <mkdir dir="${application.startdir}/docs"/>
     <!-- Copy config file -->
     <copy file="resources/mkdocs/mkdocs.yml" todir="${application.startdir}" overwrite="${force}"/>
     <!-- Update gitignore -->
@@ -180,4 +180,24 @@
     <delete file="${buildfile.copy}"/>
   </target>
 
+  <target name="dc" description="Install docker-compose files">
+    <!-- Update gitignore -->
+    <echo append="true" file="${application.startdir}/.gitignore" message="/docker-compose.override.yaml${line.separator}"/>
+    <!-- Copy files -->
+    <mkdir dir="${application.startdir}/resources/dc/fpm"/>
+    <mkdir dir="${application.startdir}/resources/dc/web"/>
+    <copy todir="${application.startdir}" overwrite="${force}">
+      <fileset dir="resources/dc">
+        <include name="docker-compose.*"/>
+        <include name="resources/**/*"/>
+      </fileset>
+    </copy>
+    <!-- Add targets -->
+    <tempfile property="buildfile.copy"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/dc/build.xml"/>
+    </xslt>
+    <delete file="${buildfile.copy}"/>
+  </target>
 </project>

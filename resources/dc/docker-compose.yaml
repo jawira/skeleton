@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: resources/dc/web/Dockerfile
+    volumes:
+      - '.:/app'
+    environment:
+      TZ: 'Europe/Brussels'
+    working_dir: /app
+    depends_on:
+      - db
+
+  fpm:
+    build:
+      context: .
+      dockerfile: resources/dc/fpm/Dockerfile
+    volumes:
+      - '.:/app'
+    environment:
+      TZ: 'Europe/Brussels'
+    working_dir: /app
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.3
+    environment:
+      MYSQL_DATABASE: foobar
+      MYSQL_USER: groot
+      MYSQL_PASSWORD: groot
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      TZ: 'Europe/Brussels'
