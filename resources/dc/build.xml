@@ -69,7 +69,7 @@
 
   <target name="db:wait" description="Wait for DB">
     <echo>Waiting for database.</echo>
-    <waitfor timeoutproperty="db.timeout" maxwait="300" maxwaitunit="second">
+    <waitfor timeoutproperty="db.timeout" maxwait="60" maxwaitunit="second">
       <pdosqlexec url="mysql:host=db;dbname=${db.database};port=3306"
                   userid="${db.user}"
                   password="${db.password}"/>
