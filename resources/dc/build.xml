@@ -117,4 +117,7 @@
     </SymfonyConsole>
   </target>
 
+  <target name="xdebug:clean" description="Empty xdebug.log">
+    <truncate file="xdebug.log" length="0" create="true"/>
+  </target>
 </project>
