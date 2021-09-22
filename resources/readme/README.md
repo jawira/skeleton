@@ -1,5 +1,5 @@
-@todo Project name
-==================
+# @todo Project name
+
 
 <!--
 BADGES:
@@ -12,36 +12,30 @@ http://hits.dwyl.io/
 [![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
 [![Issues](https://img.shields.io/github/issues/@username@/@repository@.svg?label=HuBoard&color=694DC2)](https://huboard.com/@username@/@repository@)
 
-Usage
------
+## Usage
 
 @todo
 
-How to install
---------------
+## How to install
 
 @todo
 
-Requirements
-------------
+## Requirements
 
 @todo
 
-Contributing
-------------
+## Contributing
 
 If you liked this project, ⭐ star it on GitHub.
 
-License
--------
+## License
 
 This library is licensed under the [MIT license](LICENSE.md).
 
 
 ***
 
-Packages from jawira
---------------------
+## Packages from jawira
 
 <dl>
 

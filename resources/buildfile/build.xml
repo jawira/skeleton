@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Project name" description="Project description" default="help" phingVersion="3">
 
@@ -7,30 +7,6 @@
   <defaultexcludes add="**/.idea/**"/>
 
   <property name="phing.http.proxy" value="${env.http_proxy}"/>
-
-  <target name="diagnostics">
-    <diagnostics/>
-  </target>
-
-  <target name="git:tags" description="List all git tags">
-    <!--https://stackoverflow.com/a/34239190/4345061-->
-    <exec executable="git" passthru="true">
-      <arg value="log"/>
-      <arg line="--graph --all --decorate --oneline --simplify-by-decoration"/>
-    </exec>
-  </target>
-
-  <target name="changelog:links" description="Update links in changelog">
-    <composer command="require">
-      <arg value="symplify/changelog-linker"/>
-    </composer>
-    <exec executable="vendor/bin/changelog-linker">
-      <arg value="link"/>
-    </exec>
-    <composer command="remove">
-      <arg value="symplify/changelog-linker"/>
-    </composer>
-  </target>
 
   <target name="phive:install" description="Install phar files">
     <exec executable="phive" checkreturn="true" passthru="true">
@@ -45,9 +21,7 @@
   <target name="help">
     <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
     <runtarget target="visualizer"/>
-    <exec executable="xdg-open" spawn="true">
-      <arg file="build.png"/>
-    </exec>
+    <open path="build.png"/>
   </target>
 
   <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
