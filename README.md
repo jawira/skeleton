@@ -1,20 +1,15 @@
-jawira/skeleton
-===============
+# jawira/skeleton
 
 **Common files I use in all my projects**
 
 [![Latest Stable Version](https://poser.pugx.org/jawira/skeleton/v/stable)](https://packagist.org/packages/jawira/skeleton)
 [![License](https://poser.pugx.org/jawira/skeleton/license)](https://packagist.org/packages/jawira/skeleton)
 
-Install
--------
+## Phing targets
 
-```console
-$ composer require jawira/skeleton --dev
-```
+![targets](build.png)
 
-Examples
---------
+## Examples
 
 Install `PHPUnit`:
 
@@ -34,16 +29,14 @@ List available targets:
 $ phing -f vendor/jawira/skeleton/build.xml -l
 ```
 
-License
--------
+## License
 
 This project is licensed under the [MIT license](./LICENSE.md).
 
 
 ***
 
-Packages from jawira
---------------------
+## Packages from jawira
 
 <dl>
 

@@ -42,29 +42,39 @@
   </target>
 
   <target name="gitignore" description="Create .gitignore">
-    <copy file="resources/gitignore.txt" tofile="${application.startdir}/.gitignore" overwrite="${force}"/>
+    <append file="resources/gitignore/gitignore.txt"
+            destFile="${application.startdir}/.gitignore"
+            overwrite="${force}" fixlastline="true"/>
   </target>
 
   <target name="gitattributes" description="Create .gitattributes">
-    <copy file="resources/gitattributes.txt" tofile="${application.startdir}/.gitattributes" overwrite="${force}"/>
+    <append file="resources/gitattributes/gitattributes.txt"
+            destFile="${application.startdir}/.gitattributes"
+            overwrite="false" fixlastline="true"/>
   </target>
 
   <target name="editorconfig" description="Create .editorconfig">
-    <copy file="resources/.editorconfig" tofile="${application.startdir}/.editorconfig" overwrite="${force}"/>
+    <copy file="resources/editorconfig/.editorconfig"
+          tofile="${application.startdir}/.editorconfig"
+          overwrite="${force}"/>
   </target>
 
   <target name="buildfile" description="Create Phing buildfile template">
-    <copy file="resources/build.xml" tofile="${application.startdir}/build.xml" overwrite="${force}"/>
+    <copy file="resources/buildfile/build.xml"
+          tofile="${application.startdir}/build.xml"
+          overwrite="${force}"/>
   </target>
 
   <target name="readme" description="Create README.md template">
-    <copy file="resources/README.md" tofile="${application.startdir}/README.md" overwrite="${force}"/>
+    <copy file="resources/readme/README.md"
+          tofile="${application.startdir}/README.md"
+          overwrite="${force}"/>
   </target>
 
   <target name="license" description="Create MIT license file">
     <!-- Create license file -->
     <php returnProperty="license.year" expression="date('Y')"/>
-    <copy file="resources/LICENSE.md" tofile="${application.startdir}/LICENSE.md" overwrite="${force}">
+    <copy file="resources/license/MIT.md" tofile="${application.startdir}/LICENSE.md" overwrite="${force}">
       <filterchain>
         <replacetokens>
           <token key="YEAR" value="${license.year}"/>
@@ -83,9 +93,7 @@
   <target name="help">
     <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
     <runtarget target="visualizer"/>
-    <exec executable="xdg-open" spawn="true">
-      <arg file="build.png"/>
-    </exec>
+    <open path="build.png"/>
   </target>
 
   <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
@@ -136,7 +144,7 @@
     <tempfile property="buildfile.copy"/>
     <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
-      <param name="buildfile.source" value="resources/composer.build.xml"/>
+      <param name="buildfile.source" value="resources/composer/build.xml"/>
     </xslt>
     <delete file="${buildfile.copy}"/>
   </target>
@@ -182,7 +190,8 @@
 
   <target name="dc" description="Install docker-compose files">
     <!-- Update gitignore -->
-    <echo append="true" file="${application.startdir}/.gitignore" message="/docker-compose.override.yaml${line.separator}"/>
+    <echo append="true" file="${application.startdir}/.gitignore"
+          message="/docker-compose.override.yaml${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/xdebug.log${line.separator}"/>
     <!-- Copy files -->
     <mkdir dir="${application.startdir}/resources/dc/fpm"/>
