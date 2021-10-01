@@ -11,7 +11,7 @@ ij_visual_guides         = 80, 120
 indent_size  = 2
 indent_style = space
 
-[*.{md, markdown}]
+[*.{md, markdown, feature}]
 trim_trailing_whitespace = false
 indent_size              = 2
 indent_style             = space
