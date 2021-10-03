@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="phpstan" default="phpstan:analyse">
+
+  <target name="phpstan:analyse" description="Analyse at max level">
+    <exec executable="vendor/bin/phpstan" passthru="true" checkreturn="true">
+      <arg value="analyse"/>
+      <arg line="--level=max"/>
+      <arg value="--no-progress"/>
+      <arg value="--no-interaction"/>
+      <arg value="--ansi"/>
+      <arg path="src"/>
+    </exec>
+  </target>
+
+</project>
