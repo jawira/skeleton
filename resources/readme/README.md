@@ -40,7 +40,25 @@ This library is licensed under the [MIT license](LICENSE.md).
 <dl>
 
 <dt>
-    <a href="https://packagist.org/packages/jawira/case-converter">jawira/case-converter 
+    <a href="https://packagist.org/packages/jawira/doctrine-diagram-bundle">jawira/doctrine-diagram-bundle
+    <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/doctrine-diagram-bundle?icon=github"/></a>
+</dt>
+<dd>Symfony Bundle to generate database diagrams.</dd>
+
+<dt>
+    <a href="https://packagist.org/packages/jawira/mysql-draw">jawira/mysql-draw
+    <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/mysql-draw?icon=github"/></a>
+</dt>
+<dd>Standalone tool to generate MySQL database diagrams.</dd>
+
+<dt>
+    <a href="https://packagist.org/packages/jawira/db-draw">jawira/db-draw
+    <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/db-draw?icon=github"/></a>
+</dt>
+<dd>Library to generate database diagrams.</dd>
+
+<dt>
+    <a href="https://packagist.org/packages/jawira/case-converter">jawira/case-converter
     <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/case-converter?icon=github"/></a>
 </dt>
 <dd>Convert strings between 13 naming conventions: Snake case, Camel case,
@@ -53,12 +71,6 @@ This library is licensed under the [MIT license](LICENSE.md).
     <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/emoji-catalog?icon=github"/></a>
 </dt>
 <dd>Get access to +3000 emojis as class constants.</dd>
-
-<dt>
-    <a href="https://packagist.org/packages/jawira/phing-open-task">jawira/phing-open-task
-    <img alt="Gitlab stars" src="https://badgen.net/gitlab/stars/jawira/phing-open-task?icon=gitlab"/></a>
-</dt>
-<dd>Phing task to open files, directories, and URLs with your favorite software.</dd>
 
 <dt>
     <a href="https://packagist.org/packages/jawira/plantuml">jawira/plantuml
