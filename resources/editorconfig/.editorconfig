@@ -11,6 +11,16 @@ ij_visual_guides         = 80, 120
 indent_size  = 2
 indent_style = space
 
+[*.php]
+ij_php_align_assignments                   = true
+ij_php_align_key_value_pairs               = true
+ij_php_align_multiline_chained_methods     = true
+ij_php_align_multiline_parameters          = true
+ij_php_align_phpdoc_comments               = true
+ij_php_align_phpdoc_param_names            = true
+ij_php_blank_lines_before_return_statement = 1
+ij_php_phpdoc_use_fqcn                     = true
+
 [*.{md, markdown, feature}]
 trim_trailing_whitespace = false
 indent_size              = 2
