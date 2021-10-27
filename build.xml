@@ -229,4 +229,24 @@
     <delete file="${buildfile.copy}"/>
   </target>
 
+  <target name="psalm" description="Install Psalm target &amp; dependencies">
+    <!--Copy config-->
+    <copy file="resources/psalm/psalm.xml" todir="${application.startdir}" overwrite="${force}"/>
+    <!--Install dependencies-->
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg line="--no-interaction --no-progress --ansi"/>
+      <arg value="vimeo/psalm"/>
+      <arg value="--dev"/>
+    </composer>
+    <!-- Add targets -->
+    <tempfile property="buildfile.copy"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/psalm/build.xml"/>
+    </xslt>
+    <delete file="${buildfile.copy}"/>
+  </target>
+
 </project>
