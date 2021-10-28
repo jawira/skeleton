@@ -34,7 +34,7 @@
     </exec>
     <!--Update buildfile-->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/phpunit/build.xml"/>
     </xslt>
@@ -130,7 +130,7 @@
       <arg value="sort-packages"/>
       <arg value="true"/>
     </composer>
-    <!--Install dependencies-->
+    <!-- Install dependencies -->
     <composer command="require">
       <arg value="--working-dir"/>
       <arg file="${application.startdir}"/>
@@ -142,7 +142,7 @@
     </composer>
     <!--Update buildfile-->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/composer/build.xml"/>
     </xslt>
@@ -156,7 +156,7 @@
     <!--Update .gitignore-->
     <echo append="true" file="${application.startdir}/.gitignore" message="/.php-cs-fixer.php${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/.php-cs-fixer.cache${line.separator}"/>
-    <!--Install dependencies-->
+    <!-- Install dependencies -->
     <composer command="require">
       <arg value="--working-dir"/>
       <arg file="${application.startdir}"/>
@@ -164,9 +164,9 @@
       <arg value="friendsofphp/php-cs-fixer"/>
       <arg value="--dev"/>
     </composer>
-    <!--Add target-->
+    <!-- Add target -->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/php-cs-fixer/php-cs-fixer.build.xml"/>
     </xslt>
@@ -179,9 +179,9 @@
     <copy file="resources/mkdocs/mkdocs.yml" todir="${application.startdir}" overwrite="${force}"/>
     <!-- Update gitignore -->
     <echo append="true" file="${application.startdir}/.gitignore" message="/site/${line.separator}"/>
-    <!--Add target-->
+    <!-- Add target -->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/mkdocs/build.xml"/>
     </xslt>
@@ -204,7 +204,7 @@
     </copy>
     <!-- Add targets -->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/dc/build.xml"/>
     </xslt>
@@ -212,7 +212,7 @@
   </target>
 
   <target name="phpstan" description="Install PHPStan target &amp; dependencies">
-    <!--Install dependencies-->
+    <!-- Install dependencies -->
     <composer command="require">
       <arg value="--working-dir"/>
       <arg file="${application.startdir}"/>
@@ -222,7 +222,7 @@
     </composer>
     <!-- Add targets -->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/phpstan/build.xml"/>
     </xslt>
@@ -232,7 +232,7 @@
   <target name="psalm" description="Install Psalm target &amp; dependencies">
     <!--Copy config-->
     <copy file="resources/psalm/psalm.xml" todir="${application.startdir}" overwrite="${force}"/>
-    <!--Install dependencies-->
+    <!-- Install dependencies -->
     <composer command="require">
       <arg value="--working-dir"/>
       <arg file="${application.startdir}"/>
@@ -242,11 +242,28 @@
     </composer>
     <!-- Add targets -->
     <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
     <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/psalm/build.xml"/>
     </xslt>
     <delete file="${buildfile.copy}"/>
   </target>
 
+  <target name="unused" description="Check unused composer dependencies">
+    <!-- Install dependencies -->
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg line="--no-interaction --no-progress --ansi"/>
+      <arg value="icanhazstring/composer-unused"/>
+      <arg value="--dev"/>
+    </composer>
+    <!-- Add targets -->
+    <tempfile property="buildfile.copy"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
+    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/unused/build.xml"/>
+    </xslt>
+    <delete file="${buildfile.copy}"/>
+  </target>
 </project>

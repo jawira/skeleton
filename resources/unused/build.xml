@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Composer unused" default="composer:unused">
+
+  <target name="composer:unused" description="Check unused composer dependencies">
+    <composer command="unused">
+      <arg line="--no-progress --ansi --no-interaction"/>
+    </composer>
+  </target>
+
+</project>
