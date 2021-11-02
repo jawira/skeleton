@@ -9,8 +9,7 @@ https://isitmaintained.com/
 http://hits.dwyl.io/
 -->
 
-[![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
-[![Issues](https://img.shields.io/github/issues/@username@/@repository@.svg?label=HuBoard&color=694DC2)](https://huboard.com/@username@/@repository@)
+<https://shields.io/>
 
 ## Usage
 
@@ -26,7 +25,10 @@ http://hits.dwyl.io/
 
 ## Contributing
 
-If you liked this project, ⭐ star it on GitHub.
+- If you liked this project, ⭐ star it on GitHub.
+- Or follow me on Twitter. 
+  [![Twitter Follow](https://img.shields.io/twitter/follow/jawira?style=social)](https://twitter.com/jawira)
+
 
 ## License
 
