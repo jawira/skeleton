@@ -1,27 +1,15 @@
-;https://EditorConfig.org
-;https://github.com/editorconfig/editorconfig/wiki
-
 root = true
 
-[*]
+[*.{php, yml, yaml, neon, xml, svg, json, md}]
 charset = utf-8
-trim_trailing_whitespace = true
+indent_size = 2
 end_of_line = lf
+indent_style = space
 insert_final_newline = true
+trim_trailing_whitespace = true
 ij_visual_guides = 80, 120
+ij_php_phpdoc_use_fqcn = true
 
-[*.php]
-indent_size = 4
-indent_style = space
-
-[*.{yml, yaml, neon, xml, json}]
-indent_size = 2
-indent_style = space
-
-[*.md]
-trim_trailing_whitespace = false
-indent_size = 2
-indent_style = space
-
-[{Makefile, *.mk}]
+[{Makefile, *.mk, .gitattributes}]
 indent_style = tab
+indent_size = 4
