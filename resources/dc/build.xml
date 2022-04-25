@@ -15,28 +15,28 @@
   </target>
 
   <target name="dc:up" description="Launch containers">
-    <exec executable="docker-compose" passthru="true" checkreturn="true">
+    <exec executable="docker" passthru="true" checkreturn="true">
+      <arg value="compose"/>
       <arg line="--project-name ${dc.project-name}"/>
       <arg value="up"/>
-      <arg value="--detach"/>
-      <arg value="--remove-orphans"/>
+      <arg line="--detach --remove-orphans"/>
     </exec>
   </target>
 
   <target name="dc:stop" description="Stop containers">
-    <exec executable="docker-compose" passthru="true">
+    <exec executable="docker" passthru="true">
+      <arg value="compose"/>
       <arg line="--project-name ${dc.project-name}"/>
       <arg value="stop"/>
     </exec>
   </target>
 
   <target name="dc:down" description="Take down containers, networks, images, and volumes">
-    <exec executable="docker-compose" passthru="true">
+    <exec executable="docker" passthru="true">
+      <arg value="compose"/>
       <arg line="--project-name ${dc.project-name}"/>
       <arg value="down"/>
-      <arg value="--volumes"/>
-      <arg value="--remove-orphans"/>
-      <arg value="--rmi=local"/>
+      <arg line="--volumes --remove-orphans --rmi=all"/>
     </exec>
   </target>
 
