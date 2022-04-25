@@ -3,9 +3,7 @@
 <project name="LibreOffice targets" default="libre-office:open">
 
   <target name="libre-office:open" description="Open LibreOffice file for edition">
-    <exec executable="xdg-open" checkreturn="true" spawn="true">
-      <arg file="src/my-file.fodt"/>
-    </exec>
+    <open path="src/my-file.fodt"/>
   </target>
 
   <target name="libre-office:pdf" description="Convert LibreOffice file to PDF">

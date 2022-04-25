@@ -5,7 +5,7 @@
   <property name="dc.project-name" value="foobar"/>
   <property name="dc.override" value="docker-compose.dev.yaml"/>
   <property name="app.env" value="dev"/>
-  <property name="app.url" value="http://web.${dc.project-name}.test"/>
+  <property name="app.url" value="http://web.${dc.project-name}.localhost"/>
   <property name="db.database" value="${dc.project-name}"/>
   <property name="db.password" value="groot"/>
   <property name="db.user" value="groot"/>
@@ -15,35 +15,33 @@
   </target>
 
   <target name="dc:up" description="Launch containers">
-    <exec executable="docker-compose" passthru="true" checkreturn="true">
+    <exec executable="docker" passthru="true" checkreturn="true">
+      <arg value="compose"/>
       <arg line="--project-name ${dc.project-name}"/>
       <arg value="up"/>
-      <arg value="--detach"/>
-      <arg value="--remove-orphans"/>
+      <arg line="--detach --remove-orphans"/>
     </exec>
   </target>
 
   <target name="dc:stop" description="Stop containers">
-    <exec executable="docker-compose" passthru="true">
+    <exec executable="docker" passthru="true">
+      <arg value="compose"/>
       <arg line="--project-name ${dc.project-name}"/>
       <arg value="stop"/>
     </exec>
   </target>
 
   <target name="dc:down" description="Take down containers, networks, images, and volumes">
-    <exec executable="docker-compose" passthru="true">
+    <exec executable="docker" passthru="true">
+      <arg value="compose"/>
       <arg line="--project-name ${dc.project-name}"/>
       <arg value="down"/>
-      <arg value="--volumes"/>
-      <arg value="--remove-orphans"/>
-      <arg value="--rmi=local"/>
+      <arg line="--volumes --remove-orphans --rmi=all"/>
     </exec>
   </target>
 
   <target name="dc:open" description="Open dev sites">
-    <exec executable="xdg-open" spawn="true">
-      <arg value="${app.url}"/>
-    </exec>
+    <open path="${app.url}"/>
   </target>
 
   <target name="dc:shell" description="Tunnel to container">

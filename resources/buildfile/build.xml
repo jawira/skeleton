@@ -2,30 +2,24 @@
 
 <project name="Project name" description="Project description" default="help" phingVersion="3">
 
-  <defaultexcludes default="true"/><!--Initializing default excludes-->
-  <defaultexcludes add="**/.idea"/>
-  <defaultexcludes add="**/.idea/**"/>
-
-  <property name="phing.http.proxy" value="${env.http_proxy}"/>
-
-  <target name="phive:install" description="Install phar files">
-    <exec executable="phive" checkreturn="true" passthru="true">
-      <arg value="--no-progress"/>
-      <arg value="install"/>
-      <arg value="--force-accept-unsigned"/>
-      <arg value="--trust-gpg-keys"/>
-      <arg value="4AA394086372C20A,8E730BA25823D8B5,2420BAE0A3BE25C6,31C7E470E2138192,A3A2E8F226F0BC06"/>
-    </exec>
+  <target name="php:lint" description="Check PHP syntax">
+    <phplint haltonfailure="true">
+      <fileset dir="${project.basedir}">
+        <include name="src/**/*.php"/>
+        <include name="tests/**/*.php"/>
+        <include name="migrations/**/*.php"/>
+      </fileset>
+    </phplint>
   </target>
 
   <target name="help">
-    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
+    <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.svg"/>
     <runtarget target="visualizer"/>
-    <open path="build.png"/>
+    <open path="build.svg"/>
   </target>
 
   <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
-    <visualizer/>
+    <visualizer format="svg"/>
   </target>
 
 </project>
