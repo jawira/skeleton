@@ -41,9 +41,7 @@
   </target>
 
   <target name="dc:open" description="Open dev sites">
-    <exec executable="xdg-open" spawn="true">
-      <arg value="${app.url}"/>
-    </exec>
+    <open path="${app.url}"/>
   </target>
 
   <target name="dc:shell" description="Tunnel to container">
