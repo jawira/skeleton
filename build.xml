@@ -92,11 +92,11 @@
 
   <target name="help">
     <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
-    <runtarget target="visualizer"/>
+    <runtarget target="map"/>
     <open path="build.png"/>
   </target>
 
-  <target name="visualizer" unless="uptodate.visualizer" description="Create buildfile map">
+  <target name="map" unless="uptodate.visualizer" description="Create buildfile map">
     <visualizer/>
   </target>
 
