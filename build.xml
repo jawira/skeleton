@@ -93,11 +93,11 @@
   <target name="help">
     <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.png"/>
     <runtarget target="map"/>
-    <open path="build.png"/>
+    <open path="build.svg"/>
   </target>
 
   <target name="map" unless="uptodate.visualizer" description="Create buildfile map">
-    <visualizer/>
+    <visualizer format="svg"/>
   </target>
 
   <target name="libre-office" description="Install target to create pdf with libre-office">

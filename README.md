@@ -7,7 +7,7 @@
 
 ## Phing targets
 
-![targets](build.png)
+![targets](build.svg)
 
 ## Examples
 
@@ -41,7 +41,7 @@ This project is licensed under the [MIT license](./LICENSE.md).
 <dl>
 
 <dt>
-    <a href="https://packagist.org/packages/jawira/case-converter">jawira/case-converter 
+    <a href="https://packagist.org/packages/jawira/case-converter">jawira/case-converter
     <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/case-converter?icon=github"/></a>
 </dt>
 <dd>Convert strings between 13 naming conventions: Snake case, Camel case,
