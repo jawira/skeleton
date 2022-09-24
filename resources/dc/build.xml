@@ -51,7 +51,7 @@
     <exec executable="docker" passthru="true">
       <arg value="exec"/>
       <arg value="-it"/>
-      <arg value="${dc.project-name}_fpm_1"/>
+      <arg value="${dc.project-name}-fpm-1"/>
       <arg value="/bin/bash"/>
     </exec>
   </target>
@@ -81,7 +81,7 @@
   <target name="db:remote-refresh" description="Diff on docker container">
     <exec executable="docker" passthru="true" checkreturn="true">
       <arg value="exec"/>
-      <arg value="${dc.project-name}_fpm_1"/>
+      <arg value="${dc.project-name}-fpm-1"/>
       <arg line="phing -longtargets -logger \\Phing\\Listener\\AnsiColorLogger db:refresh"/>
     </exec>
   </target>
