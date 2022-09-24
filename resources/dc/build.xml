@@ -40,7 +40,10 @@
     </exec>
   </target>
 
-  <target name="dc:open" description="Open dev sites">
+  <target name="dc:open" description="Open site in browser">
+    <waitfor maxwait="10" maxwaitunit="second">
+      <http url="${app.url}"/>
+    </waitfor>
     <open path="${app.url}"/>
   </target>
 
