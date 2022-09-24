@@ -24,7 +24,7 @@ RUN set -ex \
         libpng-dev
 RUN set -ex \
     && echo "### Phing ###" \
-    && wget -nv -O /usr/local/bin/phing https://github.com/phingofficial/phing/releases/download/3.0.0-RC1/phing-3.0.0-RC2.phar \
+    && wget -nv -O /usr/local/bin/phing https://github.com/phingofficial/phing/releases/download/3.0.0-RC3/phing-3.0.0-RC3.phar \
     && chmod +x /usr/local/bin/phing
 RUN set -ex \
     && echo "### PHP extensions ###" \
