@@ -59,9 +59,9 @@
     <exec executable="docker" checkreturn="true" passthru="true">
       <arg value="inspect"/>
       <arg line="${dc.format}"/>
-      <arg value="${dc.project-name}_web_1"/>
-      <arg value="${dc.project-name}_fpm_1"/>
-      <arg value="${dc.project-name}_db_1"/>
+      <arg value="${dc.project-name}-web-1"/>
+      <arg value="${dc.project-name}-fpm-1"/>
+      <arg value="${dc.project-name}-db-1"/>
     </exec>
   </target>
 
