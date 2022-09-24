@@ -22,10 +22,12 @@ RUN set -ex \
         gdebi \
         zlib1g-dev \
         libpng-dev
+
 RUN set -ex \
     && echo "### Phing ###" \
     && wget -nv -O /usr/local/bin/phing https://github.com/phingofficial/phing/releases/download/3.0.0-RC3/phing-3.0.0-RC3.phar \
     && chmod +x /usr/local/bin/phing
+
 RUN set -ex \
     && echo "### PHP extensions ###" \
     && docker-php-source extract \
@@ -51,6 +53,13 @@ RUN set -ex \
         libzip-dev \
     && docker-php-ext-install \
         zip
+
+RUN set -ex \
+    && echo "### SSH2 extension ###" \
+    && apt-get install -y libssh2-1-dev libssh2-1 \
+    && pecl install ssh2-1.3.1 \
+    && docker-php-ext-enable ssh2
+
 RUN set -ex \
     && echo "### Cleaning ###" \
     && docker-php-source delete \
