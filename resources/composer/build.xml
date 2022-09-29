@@ -18,12 +18,14 @@
   <target name="composer:validate" description="Validate composer.json">
     <composer command="validate">
       <arg value="--ansi"/>
+      <arg value="--no-interaction"/>
     </composer>
   </target>
 
   <target name="composer:normalize" description="Normalize composer.json">
     <composer command="normalize">
       <arg value="--ansi"/>
+      <arg value="--no-interaction"/>
       <arg value="--diff"/>
       <arg value="--indent-size=2"/>
       <arg value="--indent-style=space"/>
