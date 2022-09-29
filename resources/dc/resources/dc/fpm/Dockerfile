@@ -24,7 +24,7 @@ RUN set -ex \
         intl \
         xsl \
         xml \
-        zip \
+        zip
 
 
 RUN set -ex \
