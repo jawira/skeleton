@@ -16,6 +16,7 @@ RUN set -ex \
         wget \
         gdebi
 
+
 RUN set -ex \
     && echo "### Extensions without requirements ###" \
     && docker-php-ext-install \
@@ -24,6 +25,7 @@ RUN set -ex \
         xsl \
         xml \
         zip \
+
 
 RUN set -ex \
     && echo "### Phing ###" \
@@ -68,6 +70,13 @@ RUN set -ex \
 
 
 RUN set -ex \
+    && echo "### SSH2 extension ###" \
+    && apt-get install -y libssh2-1-dev libssh2-1 \
+    && pecl install ssh2-1.3.1 \
+    && docker-php-ext-enable ssh2
+
+
+RUN set -ex \
     && echo "### CA Certificates ###" \
     && apt-get --yes --no-install-recommends install \
         ca-certificates
@@ -88,5 +97,5 @@ RUN set -ex \
         /usr/share/doc/*
 
 
-COPY resources/dc/fpm/zzz-php-settings.ini /usr/local/etc/php/conf.d/
+COPY resources/dc/fpm/99-php-settings.ini /usr/local/etc/php/conf.d/
 COPY . /app
