@@ -47,7 +47,7 @@
     <open path="${app.url}"/>
   </target>
 
-  <target name="dc:shell" description="Tunnel to container">
+  <target name="remote:shell" description="Tunnel to container">
     <exec executable="docker" passthru="true">
       <arg value="exec"/>
       <arg value="-it"/>
@@ -68,7 +68,7 @@
     </exec>
   </target>
 
-  <target name="db:wait" description="Wait for DB">
+  <target name="db:wait" description="Wait for DB to be up &amp; running">
     <echo>Waiting for database.</echo>
     <waitfor timeoutproperty="db.timeout" maxwait="60" maxwaitunit="second">
       <pdosqlexec url="mysql:host=db;dbname=${db.database};port=3306"
@@ -78,7 +78,7 @@
     <fail if="db.timeout">Cannot reach ${db.database} database</fail>
   </target>
 
-  <target name="db:remote-refresh" description="Diff on docker container">
+  <target name="remote:db:refresh" description="Execute target db:refresh in docker container">
     <exec executable="docker" passthru="true" checkreturn="true">
       <arg value="exec"/>
       <arg value="${dc.project-name}-fpm-1"/>
@@ -109,13 +109,22 @@
     </SymfonyConsole>
   </target>
 
-  <target name="db:diff" description="Checks if DB has changed" depends="db:wait">
+  <target name="db:diff" description="Generate migration file if database structure has changed" depends="db:wait">
     <SymfonyConsole command="doctrine:migrations:diff" checkReturn="true">
       <arg value="--allow-empty-diff"/>
       <arg value="--no-interaction"/>
       <arg value="--formatted"/>
       <arg value="--ansi"/>
     </SymfonyConsole>
+  </target>
+
+  <target name="remote:db:diff" description="Execute target db:diff in docker container">
+    <exec executable="docker" passthru="true" checkreturn="true">
+      <arg value="exec"/>
+      <arg value="${dc.project-name}-web-1"/>
+      <arg line="phing db:diff"/>
+      <arg line="-longtargets -logger \\Phing\\Listener\\AnsiColorLogger"/>
+    </exec>
   </target>
 
   <target name="xdebug:clean" description="Empty xdebug.log">
