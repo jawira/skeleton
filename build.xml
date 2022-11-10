@@ -47,10 +47,20 @@
             overwrite="${force}" fixlastline="true"/>
   </target>
 
+  <target name="github-actions" description="Add github actions files in .github dir">
+    <property name="github.actions.dir" value="${application.startdir}/.github/workflows"/>
+    <mkdir dir="${github.actions.dir}"/>
+    <copy todir="${github.actions.dir}">
+      <fileset dir="resources/github-actions">
+        <include name="*.yaml"/>
+      </fileset>
+    </copy>
+  </target>
+
   <target name="gitattributes" description="Create .gitattributes">
     <append file="resources/gitattributes/gitattributes.txt"
             destFile="${application.startdir}/.gitattributes"
-            overwrite="false" fixlastline="true"/>
+            overwrite="${force}" fixlastline="true"/>
   </target>
 
   <target name="editorconfig" description="Create .editorconfig">
