@@ -1,0 +1,7 @@
+<?php
+// Config for vendor/bin/conventional-changelog
+return [
+  'skipBump' => false,
+  'skipTag' => false,
+  'packageBump' => false,
+];
