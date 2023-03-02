@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="changelog" description="Generate changelog" default="changelog:generate">
+
+  <target name="changelog:generate" description="Generate changelog file using conventional-changelog">
+    <delete file="CHANGELOG.md" failonerror="false"/>
+    <exec executable="vendor/bin/conventional-changelog" checkreturn="true" passthru="true">
+      <arg value="--history"/>
+      <arg value="--no-interaction"/>
+      <arg value="--ansi"/>
+    </exec>
+  </target>
+
+</project>
