@@ -1,36 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project name="Project name" description="Project description" default="help" phingVersion="3">
-
-  <target name="php:lint" description="Check PHP syntax">
-    <phplint haltonfailure="true">
-      <fileset dir="${project.basedir}">
-        <include name="src/**/*.php"/>
-        <include name="tests/**/*.php"/>
-        <include name="migrations/**/*.php"/>
-      </fileset>
-    </phplint>
-  </target>
-
-  <target name="symfony:lint:yaml" description="Validate YAML files in project">
-    <SymfonyConsole command="lint:yaml">
-      <arg value="--parse-tags"/>
-      <arg value="--no-debug"/>
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="${phing.dir}"/>
-    </SymfonyConsole>
-  </target>
-
-  <target name="symfony:lint:twig" description="Validate twig templates in project">
-    <SymfonyConsole command="lint:twig">
-      <arg value="--show-deprecations"/>
-      <arg value="--no-debug"/>
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="${phing.dir}/templates"/>
-    </SymfonyConsole>
-  </target>
 
   <target name="help">
     <uptodate property="uptodate.visualizer" srcfile="build.xml" targetfile="build.svg"/>
