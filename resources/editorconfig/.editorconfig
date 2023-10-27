@@ -20,6 +20,9 @@ ij_php_align_multiline_chained_methods = true
 ij_php_blank_lines_before_return_statement = 1
 ij_php_comma_after_last_array_element = true
 
+[config/**/*.{yaml,yml}]
+indent_size = 4
+
 [.gitattributes]
 indent_style = tab
 indent_size = 4
