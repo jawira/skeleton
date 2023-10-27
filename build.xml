@@ -157,7 +157,7 @@
       <arg value="--no-interaction"/>
       <arg value="--no-progress"/>
       <arg value="--ansi"/>
-      <arg value="ergebnis/composer-normalize"/>
+      <arg value="ergebnis/composer-normalize:v2.30"/>
       <arg value="--dev"/>
     </composer>
     <composer command="config">
