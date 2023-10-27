@@ -33,22 +33,22 @@
       <arg value="--version"/>
     </exec>
     <!--Update buildfile-->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.phpunit"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.phpunit}" overwrite="true"/>
+    <xslt file="${buildfile.copy.phpunit}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/phpunit/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.phpunit}"/>
   </target>
 
   <target name="lints" description="Install lint targets">
     <!--Update buildfile-->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.lints"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.lints}" overwrite="true"/>
+    <xslt file="${buildfile.copy.lints}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/lints/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.lints}"/>
   </target>
 
   <target name="gitignore" description="Create .gitignore">
@@ -122,12 +122,12 @@
 
   <target name="libre-office" description="Install target to create pdf with libre-office">
     <!--Update buildfile-->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.lo"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.lo}"/>
+    <xslt file="${buildfile.copy.lo}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/libre-office/libre-office.build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.lo}"/>
   </target>
 
   <target name="composer" description="Add composer targets &amp; config">
@@ -161,12 +161,12 @@
       <arg value="--dev"/>
     </composer>
     <!--Update buildfile-->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.composer"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.composer}" overwrite="true"/>
+    <xslt file="${buildfile.copy.composer}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/composer/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.composer}"/>
   </target>
 
 
@@ -185,12 +185,12 @@
       <arg value="--dev"/>
     </composer>
     <!-- Add target -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.cs"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.cs}" overwrite="true"/>
+    <xslt file="${buildfile.copy.cs}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/php-cs-fixer/php-cs-fixer.build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.cs}"/>
   </target>
 
   <target name="mkdocs" description="Mkdocs targets and config file">
@@ -200,12 +200,12 @@
     <!-- Update gitignore -->
     <echo append="true" file="${application.startdir}/.gitignore" message="/site/${line.separator}"/>
     <!-- Add target -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.mkdocs"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.mkdocs}" overwrite="true"/>
+    <xslt file="${buildfile.copy.mkdocs}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/mkdocs/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.mkdocs}"/>
   </target>
 
   <target name="dc" description="Install docker-compose files">
@@ -223,12 +223,12 @@
       </fileset>
     </copy>
     <!-- Add targets -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.dc"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.dc}" overwrite="true"/>
+    <xslt file="${buildfile.copy.dc}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/dc/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.dc}"/>
   </target>
 
   <target name="phpstan" description="Install PHPStan target &amp; dependencies">
@@ -241,12 +241,12 @@
       <arg value="--dev"/>
     </composer>
     <!-- Add targets -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.phpstan"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.phpstan}" overwrite="true"/>
+    <xslt file="${buildfile.copy.phpstan}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/phpstan/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.phpstan}"/>
   </target>
 
   <target name="psalm" description="Install Psalm target &amp; dependencies">
@@ -261,12 +261,12 @@
       <arg value="--dev"/>
     </composer>
     <!-- Add targets -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.psalm"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.psalm}" overwrite="true"/>
+    <xslt file="${buildfile.copy.psalm}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/psalm/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.psalm}"/>
   </target>
 
   <target name="unused" description="Check unused composer dependencies">
@@ -279,12 +279,12 @@
       <arg value="--dev"/>
     </composer>
     <!-- Add targets -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.unused"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.unused}" overwrite="true"/>
+    <xslt file="${buildfile.copy.unused}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/unused/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.unused}"/>
   </target>
 
 
@@ -300,12 +300,12 @@
       <arg value="--dev"/>
     </composer>
     <!-- Add targets -->
-    <tempfile property="buildfile.copy"/>
-    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy}" overwrite="true"/>
-    <xslt file="${buildfile.copy}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <tempfile property="buildfile.copy.changelog"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.changelog}" overwrite="true"/>
+    <xslt file="${buildfile.copy.changelog}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/changelog/build.xml"/>
     </xslt>
-    <delete file="${buildfile.copy}"/>
+    <delete file="${buildfile.copy.changelog}"/>
   </target>
 
 </project>
