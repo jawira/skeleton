@@ -4,3 +4,4 @@
 /.makerc
 /composer-setup.php
 /side-suite-*
+*Zone.Identifier
