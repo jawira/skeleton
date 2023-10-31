@@ -29,7 +29,7 @@ RUN set -ex \
 
 RUN set -ex \
     && echo "### Phing ###" \
-    && wget -nv -O /usr/local/bin/phing https://github.com/phingofficial/phing/releases/download/3.0.0-RC3/phing-3.0.0-RC3.phar \
+    && wget -nv -O /usr/local/bin/phing https://github.com/phingofficial/phing/releases/download/3.0.0-rc5/phing-3.0.0-RC5.phar \
     && chmod +x /usr/local/bin/phing
 
 
