@@ -278,6 +278,23 @@
     <delete file="${buildfile.copy.psalm}"/>
   </target>
 
+  <target name="psalm-symfony" description="Psalm Symfony plugin">
+    <!-- Install dependencies -->
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg line="--no-interaction --no-progress --ansi"/>
+      <arg value="psalm/plugin-symfony"/>
+      <arg value="--dev"/>
+    </composer>
+    <!-- Enable plugin -->
+    <exec executable="vendor/bin/psalm-plugin" passthru="true" checkreturn="true" dir="${application.startdir}">
+      <arg value="enable"/>
+      <arg value="psalm/plugin-symfony"/>
+    </exec>
+    <echo>Docs: https://github.com/psalm/psalm-plugin-symfony</echo>
+  </target>
+
   <target name="unused" description="Check unused composer dependencies">
     <!-- Install dependencies -->
     <composer command="require">
