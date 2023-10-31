@@ -151,15 +151,6 @@
       <arg value="true"/>
     </composer>
     <!-- Install composer normalizer -->
-    <composer command="require">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="--no-interaction"/>
-      <arg value="--no-progress"/>
-      <arg value="--ansi"/>
-      <arg value="ergebnis/composer-normalize:v2.30"/>
-      <arg value="--dev"/>
-    </composer>
     <composer command="config">
       <arg value="--working-dir"/>
       <arg file="${application.startdir}"/>
@@ -168,6 +159,15 @@
       <arg value="--ansi"/>
       <arg value="allow-plugins.ergebnis/composer-normalize"/>
       <arg value="true"/>
+    </composer>
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="--no-interaction"/>
+      <arg value="--no-progress"/>
+      <arg value="--ansi"/>
+      <arg value="ergebnis/composer-normalize:v2.30"/>
+      <arg value="--dev"/>
     </composer>
     <!--Update buildfile-->
     <tempfile property="buildfile.copy.composer"/>
