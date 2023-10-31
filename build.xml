@@ -220,14 +220,14 @@
   <target name="dc" description="Install docker-compose files">
     <!-- Update gitignore -->
     <echo append="true" file="${application.startdir}/.gitignore"
-          message="/docker-compose.override.yaml${line.separator}"/>
+          message="/compose.override.yaml${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/xdebug.log${line.separator}"/>
     <!-- Copy files -->
     <mkdir dir="${application.startdir}/resources/dc/fpm"/>
     <mkdir dir="${application.startdir}/resources/dc/web"/>
     <copy todir="${application.startdir}" overwrite="${force}">
       <fileset dir="resources/dc">
-        <include name="docker-compose.*"/>
+        <include name="compose.*"/>
         <include name="resources/**/*"/>
       </fileset>
     </copy>
