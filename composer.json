@@ -1,7 +1,7 @@
 {
   "name": "jawira/skeleton",
   "type": "library",
-  "description": "Common files I use in all my projects",
+  "description": " Common Phing targets I use in all my projects",
   "license": "MIT",
   "authors": [
     {

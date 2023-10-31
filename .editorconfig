@@ -10,6 +10,6 @@ trim_trailing_whitespace = true
 ij_visual_guides = 80, 120
 ij_php_phpdoc_use_fqcn = true
 
-[{Makefile, *.mk, .gitattributes}]
+[.gitattributes]
 indent_style = tab
 indent_size = 4
