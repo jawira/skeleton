@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="PHP Coding Standards Fixer" description="" default="">
+<project name="PHP Coding Standards Fixer" default="php-cs-fixer:fix">
 
   <target name="php-cs-fixer:fix" description="Validate code style (ideal for CI)">
     <!--https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/doc/usage.rst-->

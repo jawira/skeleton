@@ -182,7 +182,7 @@
   <target name="php-cs-fixer" description="Install PHP Coding Standards Fixer">
     <!--Copy config file-->
     <copy file="resources/php-cs-fixer/.php-cs-fixer.dist.php" todir="${application.startdir}" overwrite="${force}"/>
-    <!--Update .gitignore-->
+    <!--Update .gitignore (not required in Symfony Flex projects)-->
     <echo append="true" file="${application.startdir}/.gitignore" message="/.php-cs-fixer.php${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/.php-cs-fixer.cache${line.separator}"/>
     <!-- Install dependencies -->
