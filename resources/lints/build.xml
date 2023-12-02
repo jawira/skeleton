@@ -12,7 +12,7 @@
     </target>
 
     <target name="symfony:lint:yaml" description="Validate YAML files in project">
-        <SymfonyConsole command="lint:yaml">
+        <SymfonyConsole command="lint:yaml" checkReturn="true">
             <arg value="--parse-tags"/>
             <arg value="--no-debug"/>
             <arg value="--ansi"/>
@@ -22,7 +22,7 @@
     </target>
 
     <target name="symfony:lint:twig" description="Validate twig templates in project">
-        <SymfonyConsole command="lint:twig">
+        <SymfonyConsole command="lint:twig" checkReturn="true">
             <arg value="--show-deprecations"/>
             <arg value="--no-debug"/>
             <arg value="--ansi"/>
@@ -32,7 +32,7 @@
     </target>
 
     <target name="symfony:lint:container" description="Validate services' arguments">
-        <SymfonyConsole command="lint:container">
+        <SymfonyConsole command="lint:container" checkReturn="true">
             <arg value="--no-debug"/>
             <arg value="--ansi"/>
             <arg value="--no-interaction"/>
