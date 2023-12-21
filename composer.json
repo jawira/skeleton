@@ -1,8 +1,11 @@
 {
   "name": "jawira/skeleton",
-  "type": "library",
   "description": " Common Phing targets I use in all my projects",
   "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "dev"
+  ],
   "authors": [
     {
       "name": "Jawira Portugal",
