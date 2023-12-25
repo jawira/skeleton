@@ -17,6 +17,9 @@
   <forbiddenFunctions>
     <function name="dd"/>
     <function name="dump"/>
+    <function name="var_dump"/>
+    <function name="die"/>
+    <function name="exit"/>
   </forbiddenFunctions>
 
 </psalm>
