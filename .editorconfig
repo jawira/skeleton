@@ -1,6 +1,6 @@
 root = true
 
-[*.{php, yml, yaml, neon, xml, svg, json, md}]
+[*.{php, yml, yaml, neon, xml, svg, json, md, html}]
 charset = utf-8
 indent_size = 2
 end_of_line = lf
@@ -9,6 +9,9 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 ij_visual_guides = 80, 120
 ij_php_phpdoc_use_fqcn = true
+
+[*.html]
+max_line_length = 80
 
 [.gitattributes]
 indent_style = tab
