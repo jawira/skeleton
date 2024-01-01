@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>My slides | Jawira Portugal</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-colors/1.2.6/colors.var.css">
+  <style>
+    :root {
+      --r-heading-color: var(--md-orange-600);
+      --r-link-color: var(--md-orange-100);
+      --r-link-color-hover: var(--md-orange-300);
+      --r-selection-color: var(--md-blue-a700);
+      --r-selection-background-color: orange;
+      --r-heading-text-transform: none;
+      --r-heading-text-shadow: 3px 3px 10px #10101055;
+    }
+
+    .reveal-viewport {
+      /* Get gradients from https://uigradients.com */
+      background: linear-gradient(to bottom right, var(--md-blue-a700), var(--md-indigo-900)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .reveal ul.fa-ul {
+      list-style-type: none;
+    }
+
+    .columns {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+      grid-column-gap: 30px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <section>
+      <h1>Sample slides</h1>
+      <img src="favicon.png" alt="phpdoc logo" width="200">
+      <h3>Jawira Portugal</h3>
+      <p>2022-05-23</p>
+    </section>
+
+    <section>
+      <h3>Simple list</h3>
+      <ul>
+        <li>Hana</li>
+        <li class="fragment">Dul</li>
+        <li class="fragment">Set</li>
+        <li class="fragment">Net</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>To do list</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-solid fa-circle-check fa-li"></i>Element with check</li>
+        <li class="fragment"><i class="fa-solid fa-circle-check fa-li"></i>Element with check</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Ordered list</h3>
+      <ol>
+        <li>Summary</li>
+        <li>Description</li>
+        <li>Tags and annotations</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>DocBlock 🙅</h3>
+      <pre><code data-trim>
+        &lt;?php
+        /*
+         * Replaces spaces with sybmol '%20'
+         * But then in some cases we need to ensure that folder
+         *  or files contain ' ' and not '%20'.
+         *
+         * With proper use of this method, users will be able
+         * to create folders or files with blank spaces.
+         *
+         * @example $name = "My%20Folder%20With%20Spaces";
+         * @param string $name
+         * @return  string $name ()= "My Folder With Spaces")
+         */
+        private function getBlankSpacesBack($name)
+        {
+          $name = str_replace('%20', ' ', $name);
+          return $name;
+        }
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Lorem ipsum</h3>
+      <p style="text-align: left">Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Dolor, ipsam sit. Assumenda
+        autem, eaque excepturi
+        laudantium modi neque numquam quas, quod repellendus, reprehenderit
+        totam vel vitae voluptates! Placeat, quam,
+        unde!</p>
+      <a
+        href="https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference">
+        <small>https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference</small>
+      </a>
+    </section>
+
+    <section>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolor
+      facere nam nihil possimus similique suscipit ullam. Atque consectetur
+      cupiditate deserunt dolores eveniet hic iure quaerat quos repellendus
+      unde, velit?
+    </section>
+
+    <section>
+      <h3>Two columns</h3>
+      <div class="columns">
+        <div class="col" style="text-align: right">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+        <div class="col" style="text-align: left">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Exercitationem laboriosam magnam quidem!
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <h3>Install phpDocumentor</h3>
+      <pre><code data-trim>
+        $ wget https://phpdoc.org/phpDocumentor.phar
+        $ chmod +x phpDocumentor.phar
+        $ mv ./phpDocumentor.phar /usr/local/bin/phpdoc
+      </code></pre>
+    </section>
+
+
+    <section
+      data-background-image="https://www.grieksegids.nl/fotos/zuid-evia/groot/zuid-evia-680.jpg">
+    </section>
+
+    <section>
+      <img src="favicon.png" alt="fireplan phpdoc homepage">
+      <p><small><a href="http://phpdoc.fireplan.fireplan.dev.lan/">http://phpdoc.fireplan.fireplan.dev.lan/</a></small>
+      </p>
+    </section>
+
+    <section>
+      <h1>Thank you</h1>
+      <ul class="fa-ul">
+        <li><i class="fa-brands fa-x-twitter fa-li"></i>@jawira</li>
+        <li><i class="fa-brands fa-github fa-li"></i>@jawira</li>
+        <li><i class="fa-brands fa-linkedin fa-li"></i>@jawira</li>
+        <li><i class="fa-solid fa-globe fa-li"></i>jawira.com</li>
+      </ul>
+    </section>
+
+  </div>
+</div>
+
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+<script>
+  Reveal.initialize({
+    controls: false,
+    hash: true,
+    slideNumber: false,
+    mouseWheel: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    plugins: [RevealHighlight]
+  });
+</script>
+</body>
+</html>
