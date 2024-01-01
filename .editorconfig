@@ -10,9 +10,6 @@ trim_trailing_whitespace = true
 ij_visual_guides = 80, 120
 ij_php_phpdoc_use_fqcn = true
 
-[*.html]
-max_line_length = 80
-
 [.gitattributes]
 indent_style = tab
 indent_size = 4

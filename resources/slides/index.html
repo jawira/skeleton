@@ -4,32 +4,27 @@
   <title>My slides | Jawira Portugal</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <meta charset="utf-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/zenburn.min.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/colors/3.0.0/css/colors.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-colors/1.2.6/colors.var.css">
   <style>
     :root {
-      --r-heading-color: orange;
-      --r-link-color: silver;
-      --r-link-color-hover: orange;
-      --r-selection-color: purple;
+      --r-heading-color: var(--md-orange-600);
+      --r-link-color: var(--md-orange-100);
+      --r-link-color-hover: var(--md-orange-300);
+      --r-selection-color: var(--md-blue-a700);
       --r-selection-background-color: orange;
+      --r-heading-text-transform: none;
+      --r-heading-text-shadow: 3px 3px 10px #10101055;
     }
 
     .reveal-viewport {
       /* Get gradients from https://uigradients.com */
-      background: linear-gradient(to bottom right, #41295a, #2F0743); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to bottom right, var(--md-blue-a700), var(--md-indigo-900)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 
     .reveal ul.fa-ul {
@@ -39,6 +34,8 @@
     .columns {
       display: grid;
       grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+      grid-column-gap: 30px;
     }
   </style>
 </head>
@@ -67,23 +64,12 @@
     <section>
       <h3>To do list</h3>
       <ul class="fa-ul">
-        <li><i class="fa-solid fa-circle-check fa-li"></i>Element with check
-        </li>
-        <li class="fragment"><i class="fa-solid fa-circle-check fa-li"></i>Element
-          with check
-        </li>
-        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element
-          with cross
-        </li>
-        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element
-          with cross
-        </li>
-        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element
-          with cross
-        </li>
-        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element
-          with cross
-        </li>
+        <li><i class="fa-solid fa-circle-check fa-li"></i>Element with check</li>
+        <li class="fragment"><i class="fa-solid fa-circle-check fa-li"></i>Element with check</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
+        <li class="fragment"><i class="fa-solid fa-circle-xmark fa-li"></i>Element with cross</li>
       </ul>
     </section>
 
@@ -135,19 +121,21 @@
     </section>
 
     <section>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolor
+      facere nam nihil possimus similique suscipit ullam. Atque consectetur
+      cupiditate deserunt dolores eveniet hic iure quaerat quos repellendus
+      unde, velit?
+    </section>
+
+    <section>
       <h3>Two columns</h3>
       <div class="columns">
-        <div class="col">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi
-          autem delectus dicta dolorem explicabo fuga hic magni nostrum numquam
-          obcaecati porro, quaerat quo repellendus saepe similique voluptas
-          voluptate voluptatibus.
-        </div>
-        <div class="col">
+        <div class="col" style="text-align: right">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Exercitationem laboriosam magnam quidem! Atque delectus error
-          expedita, nostrum sed veritatis voluptatibus! Accusantium commodi
-          dolor ducimus ea exercitationem nemo quibusdam, suscipit voluptate.
+        </div>
+        <div class="col" style="text-align: left">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Exercitationem laboriosam magnam quidem!
         </div>
       </div>
 
@@ -163,7 +151,8 @@
     </section>
 
 
-    <section data-background-image="https://www.grieksegids.nl/fotos/zuid-evia/groot/zuid-evia-680.jpg">
+    <section
+      data-background-image="https://www.grieksegids.nl/fotos/zuid-evia/groot/zuid-evia-680.jpg">
     </section>
 
     <section>
@@ -173,9 +162,13 @@
     </section>
 
     <section>
-      <h3>Thank you</h3>
-      <p><a href="http://hesvgit01.us.local/jportugal/slides/">http://hesvgit01.us.local/jportugal/slides/</a>
-      </p>
+      <h1>Thank you</h1>
+      <ul class="fa-ul">
+        <li><i class="fa-brands fa-x-twitter fa-li"></i>@jawira</li>
+        <li><i class="fa-brands fa-github fa-li"></i>@jawira</li>
+        <li><i class="fa-brands fa-linkedin fa-li"></i>@jawira</li>
+        <li><i class="fa-solid fa-globe fa-li"></i>jawira.com</li>
+      </ul>
     </section>
 
   </div>
@@ -190,8 +183,8 @@
   Reveal.initialize({
     controls: false,
     hash: true,
-    slideNumber: true,
-    mouseWheel: true,
+    slideNumber: false,
+    mouseWheel: false,
     transition: 'fade',
     transitionSpeed: 'fast',
     plugins: [RevealHighlight]

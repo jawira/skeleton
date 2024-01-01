@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <project name="jawira/skeleton" default="help" phingVersion="3">
 
   <property name="force" value="false"/>
@@ -172,12 +171,12 @@
     <!--Update buildfile-->
     <tempfile property="buildfile.copy.composer"/>
     <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.composer}" overwrite="true"/>
-    <xslt file="${buildfile.copy.composer}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <xslt file="${buildfile.copy.composer}" style="resources/xslt/merger.xsl"
+          tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/composer/build.xml"/>
     </xslt>
     <delete file="${buildfile.copy.composer}"/>
   </target>
-
 
   <target name="php-cs-fixer" description="Install PHP Coding Standards Fixer">
     <!--Copy config file-->
@@ -313,7 +312,6 @@
     <delete file="${buildfile.copy.unused}"/>
   </target>
 
-
   <target name="changelog" description="Install target &amp; dependencies to generate a changelog file">
     <!--Copy config-->
     <copy file="resources/changelog/.changelog" todir="${application.startdir}" overwrite="${force}"/>
@@ -328,10 +326,17 @@
     <!-- Add targets -->
     <tempfile property="buildfile.copy.changelog"/>
     <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.changelog}" overwrite="true"/>
-    <xslt file="${buildfile.copy.changelog}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+    <xslt file="${buildfile.copy.changelog}" style="resources/xslt/merger.xsl"
+          tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/changelog/build.xml"/>
     </xslt>
     <delete file="${buildfile.copy.changelog}"/>
+  </target>
+
+  <target name="slides" description="Install Reveal.js template">
+    <mkdir dir="${application.startdir}/public"/>
+    <copy file="resources/slides/index.html" todir="${application.startdir}/public" overwrite="${force}"/>
+    <copy file="resources/slides/favicon.png" todir="${application.startdir}/public" overwrite="${force}"/>
   </target>
 
 </project>
