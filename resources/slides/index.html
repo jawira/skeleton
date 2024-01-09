@@ -1,30 +1,30 @@
 <!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <title>My slides | Jawira Portugal</title>
+  <title>Jawira Portugal</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reset.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/moon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/devibeans.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-colors/1.2.6/colors.var.css">
   <style>
     :root {
+      /* See colors at https://materialui.co/colors */
       --r-heading-color: var(--md-orange-600);
-      --r-link-color: var(--md-orange-100);
-      --r-link-color-hover: var(--md-orange-300);
-      --r-selection-color: var(--md-blue-a700);
-      --r-selection-background-color: orange;
-      --r-heading-text-transform: none;
+      --r-heading-font-weight: bold;
+      --r-heading-font: Helvetica, Arial, sans-serif;
       --r-heading-text-shadow: 3px 3px 10px #10101055;
-    }
-
-    .reveal-viewport {
-      /* Get gradients from https://uigradients.com */
-      background: linear-gradient(to bottom right, var(--md-blue-a700), var(--md-indigo-900)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      --r-heading-text-transform: none;
+      --r-heading1-size: 2.50em;
+      --r-heading2-size: 2em;
+      --r-heading3-size: 1.50em;
+      --r-main-color: var(--md-yellow-100);
+      --r-main-font: Helvetica, Arial, sans-serif;
+      --r-selection-background-color: orange;
     }
 
     .reveal ul.fa-ul {
@@ -36,6 +36,10 @@
       grid-auto-flow: column;
       grid-auto-columns: minmax(0, 1fr);
       grid-column-gap: 30px;
+    }
+
+    .reveal blockquote {
+      background: rgba(0, 0, 0, 0.25);
     }
   </style>
 </head>
@@ -62,6 +66,15 @@
     </section>
 
     <section>
+      <h3>Blockquote</h3>
+      <blockquote cite="https://www.huxley.net/bnw/four.html">
+        <p>Words can be like X-rays, if you use them properly—they’ll go through anything.
+          You read and you’re pierced.</p>
+        <footer>—Aldous Huxley, <cite>Brave New World</cite></footer>
+      </blockquote>
+    </section>
+
+    <section>
       <h3>To do list</h3>
       <ul class="fa-ul">
         <li><i class="fa-solid fa-circle-check fa-li"></i>Element with check</li>
@@ -84,25 +97,18 @@
 
     <section>
       <h3>DocBlock 🙅</h3>
-      <pre><code data-trim>
+      <pre><code data-trim data-noescape>
         &lt;?php
-        /*
-         * Replaces spaces with sybmol '%20'
-         * But then in some cases we need to ensure that folder
-         *  or files contain ' ' and not '%20'.
-         *
-         * With proper use of this method, users will be able
-         * to create folders or files with blank spaces.
-         *
-         * @example $name = "My%20Folder%20With%20Spaces";
-         * @param string $name
-         * @return  string $name ()= "My Folder With Spaces")
-         */
-        private function getBlankSpacesBack($name)
-        {
+          /**
+          * Replaces spaces with sybmol '%20'
+          * But then in some cases we need to ensure that folder
+          *  or files contain ' ' and not '%20'.
+          */
+          private function getBlankSpacesBack($name)
+          {
           $name = str_replace('%20', ' ', $name);
           return $name;
-        }
+          }
       </code></pre>
     </section>
 
@@ -115,7 +121,7 @@
         totam vel vitae voluptates! Placeat, quam,
         unde!</p>
       <a
-        href="https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference">
+          href="https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference">
         <small>https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference</small>
       </a>
     </section>
@@ -152,12 +158,13 @@
 
 
     <section
-      data-background-image="https://www.grieksegids.nl/fotos/zuid-evia/groot/zuid-evia-680.jpg">
+        data-background-image="https://www.grieksegids.nl/fotos/zuid-evia/groot/zuid-evia-680.jpg">
     </section>
 
     <section>
-      <img src="favicon.png" alt="fireplan phpdoc homepage">
-      <p><small><a href="http://phpdoc.fireplan.fireplan.dev.lan/">http://phpdoc.fireplan.fireplan.dev.lan/</a></small>
+      <img src="favicon.png" alt="This is an example">
+      <p><small><a
+          href="https://jawira.com">https://jawira.com</a></small>
       </p>
     </section>
 
@@ -166,7 +173,6 @@
       <ul class="fa-ul">
         <li><i class="fa-brands fa-x-twitter fa-li"></i>@jawira</li>
         <li><i class="fa-brands fa-github fa-li"></i>@jawira</li>
-        <li><i class="fa-brands fa-linkedin fa-li"></i>@jawira</li>
         <li><i class="fa-solid fa-globe fa-li"></i>jawira.com</li>
       </ul>
     </section>
@@ -175,20 +181,18 @@
 </div>
 
 
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.js"></script>
 <script>
-  Reveal.initialize({
-    controls: false,
-    hash: true,
-    slideNumber: false,
-    mouseWheel: false,
-    transition: 'fade',
-    transitionSpeed: 'fast',
-    plugins: [RevealHighlight]
-  });
+    Reveal.initialize({
+        controls: false,
+        hash: true,
+        slideNumber: false,
+        mouseWheel: false,
+        transition: 'fade',
+        transitionSpeed: 'fast',
+        plugins: [RevealHighlight]
+    });
 </script>
 </body>
 </html>
