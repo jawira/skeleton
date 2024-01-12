@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<project name="PHP Coding Standards Fixer" default="cs:fix">
 
-<project name="PHP Coding Standards Fixer" default="php-cs-fixer:fix">
-
-  <target name="php-cs-fixer:fix" description="Validate code style (ideal for CI)">
-    <!--https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/3.0/doc/usage.rst-->
+  <target name="cs:fix" description="Fixes code style in src dir.">
     <exec executable="vendor/bin/php-cs-fixer" passthru="true" checkreturn="true">
       <arg value="--ansi"/>
       <arg value="--no-interaction"/>
+      <arg value="--allow-risky=yes"/>
       <arg value="fix"/>
+      <arg file="src"/>
+    </exec>
+  </target>
+
+  <target name="cs:check" description="Checks if configured files/directories comply with configured rules.">
+    <exec executable="vendor/bin/php-cs-fixer" passthru="true" checkreturn="true">
+      <arg value="--ansi"/>
+      <arg value="--no-interaction"/>
+      <arg value="--allow-risky=yes"/>
+      <arg value="check"/>
       <arg file="src"/>
     </exec>
   </target>
