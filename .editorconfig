@@ -1,6 +1,6 @@
 root = true
 
-[*.{php, yml, yaml, neon, xml, svg, json, md, html}]
+[*.{php,yml,yaml,neon,xml,svg,json,md,html}]
 charset = utf-8
 indent_size = 2
 end_of_line = lf
