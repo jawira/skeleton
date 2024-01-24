@@ -1,6 +1,4 @@
 <?php declare(strict_types=1);
-$finder = PhpCsFixer\Finder::create()->in(__DIR__ . DIRECTORY_SEPARATOR . 'src');
-$config = new PhpCsFixer\Config();
 
 $rules = [
   'braces' => true,
@@ -16,4 +14,5 @@ $rules = [
   'single_quote' => true,
   'switch_case_space' => true,
 ];
-return $config->setRules($rules)->setFinder($finder)->setHideProgress(true)->setIndent('  ');
+
+return (new \PhpCsFixer\Config())->setRules($rules)->setHideProgress(true)->setIndent('  ');
