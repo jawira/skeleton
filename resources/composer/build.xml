@@ -4,7 +4,7 @@
 
   <property name="composer.flags" value="--dev"/>
 
-  <target name="composer:install" description="PHP dependencies">
+  <target name="composer:install" description="Installs the project dependencies">
     <!-- Use &#45;&#45;no-dev for prod -->
     <composer command="install">
       <arg value="--no-interaction"/>
@@ -15,14 +15,22 @@
     </composer>
   </target>
 
-  <target name="composer:validate" description="Validate composer.json">
+  <target name="composer:validate" description="Validates a composer.json and composer.lock">
     <composer command="validate">
       <arg value="--ansi"/>
       <arg value="--no-interaction"/>
     </composer>
   </target>
 
-  <target name="composer:normalize" description="Normalize composer.json">
+  <target name="composer:audit" description="Checks for security vulnerability advisories for installed packages">
+    <composer command="audit">
+      <arg value="--ansi"/>
+      <arg value="--no-interaction"/>
+      <arg value="--no-dev"/>
+    </composer>
+  </target>
+
+  <target name="composer:normalize" description="Normalizes composer.json according to its JSON schema">
     <composer command="normalize">
       <arg value="--ansi"/>
       <arg value="--no-interaction"/>
