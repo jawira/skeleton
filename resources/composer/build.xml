@@ -2,17 +2,15 @@
 
 <project name="Composer" description="Composer dependency manager" default="composer:validate">
 
-  <property name="composer.flags" value="--dev"/>
+  <property name="composer.flags" value="--ansi"/>
 
   <target name="composer:install" description="Installs the project dependencies">
-    <!-- Use &#45;&#45;no-dev for prod -->
-    <composer command="install">
-      <arg value="--no-interaction"/>
-      <arg value="--prefer-dist"/>
-      <arg value="--no-progress"/>
-      <arg value="--ansi"/>
+    <exec executable="composer" checkreturn="true" passthru="true">
+      <env key="XDEBUG_MODE" value="off"/>
+      <arg value="install"/>
+      <arg line="--no-interaction --prefer-dist --no-progress --ansi"/>
       <arg line="${composer.flags}"/>
-    </composer>
+    </exec>
   </target>
 
   <target name="composer:validate" description="Validates a composer.json and composer.lock">
