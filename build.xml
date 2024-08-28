@@ -129,52 +129,7 @@
     <delete file="${buildfile.copy.lo}"/>
   </target>
 
-  <target name="composer" description="Add composer targets &amp; config">
-    <!--composer.json config-->
-    <composer command="config">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="platform-check"/>
-      <arg value="true"/>
-    </composer>
-    <composer command="config">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="preferred-install"/>
-      <arg value="dist"/>
-    </composer>
-    <composer command="config">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="sort-packages"/>
-      <arg value="true"/>
-    </composer>
-    <composer command="config">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="extra.symfony.allow-contrib"/>
-      <arg value="true"/>
-    </composer>
-    <!-- Install composer normalizer -->
-    <composer command="config">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="--no-plugins"/>
-      <arg value="--no-interaction"/>
-      <arg value="--ansi"/>
-      <arg value="allow-plugins.ergebnis/composer-normalize"/>
-      <arg value="true"/>
-    </composer>
-    <composer command="require">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="--no-interaction"/>
-      <arg value="--no-progress"/>
-      <arg value="--ansi"/>
-      <arg value="ergebnis/composer-normalize:v2.30"/>
-      <arg value="--dev"/>
-    </composer>
-    <!--Update buildfile-->
+  <target name="composer-targets" description="Add composer targets in build.xml">
     <tempfile property="buildfile.copy.composer"/>
     <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.composer}" overwrite="true"/>
     <xslt file="${buildfile.copy.composer}" style="resources/xslt/merger.xsl"
@@ -214,27 +169,6 @@
       <arg file="${application.startdir}"/>
       <arg value="extra.symfony.docker"/>
       <arg value="false"/>
-    </composer>
-  </target>
-
-  <target name="composer-normalize" description="Install composer normalize v2.30">
-    <composer command="config">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="--no-plugins"/>
-      <arg value="--no-interaction"/>
-      <arg value="--ansi"/>
-      <arg value="allow-plugins.ergebnis/composer-normalize"/>
-      <arg value="true"/>
-    </composer>
-    <composer command="require">
-      <arg value="--working-dir"/>
-      <arg file="${application.startdir}"/>
-      <arg value="--no-interaction"/>
-      <arg value="--no-progress"/>
-      <arg value="--ansi"/>
-      <arg value="ergebnis/composer-normalize:v2.30"/>
-      <arg value="--dev"/>
     </composer>
   </target>
 
