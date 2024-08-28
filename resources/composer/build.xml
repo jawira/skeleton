@@ -25,16 +25,7 @@
       <arg value="--ansi"/>
       <arg value="--no-interaction"/>
       <arg value="--no-dev"/>
-    </composer>
-  </target>
-
-  <target name="composer:normalize" description="Normalizes composer.json according to its JSON schema">
-    <composer command="normalize">
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="--diff"/>
-      <arg value="--indent-size=2"/>
-      <arg value="--indent-style=space"/>
+      <arg value="--locked"/>
     </composer>
   </target>
 
