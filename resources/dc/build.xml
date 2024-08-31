@@ -52,7 +52,7 @@
       <arg value="exec"/>
       <arg value="-it"/>
       <arg value="${dc.project-name}-fpm-1"/>
-      <arg value="/bin/bash"/>
+      <arg value="/bin/sh"/>
     </exec>
   </target>
 
