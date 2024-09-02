@@ -15,6 +15,7 @@
 
   <target name="composer:validate" description="Validates a composer.json and composer.lock">
     <composer command="validate">
+      <arg value="--strict"/>
       <arg value="--ansi"/>
       <arg value="--no-interaction"/>
     </composer>
