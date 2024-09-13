@@ -126,8 +126,4 @@
       <arg line="-longtargets -logger \\Phing\\Listener\\AnsiColorLogger"/>
     </exec>
   </target>
-
-  <target name="xdebug:clean" description="Empty xdebug.log">
-    <truncate file="xdebug.log" length="0" create="true"/>
-  </target>
 </project>
