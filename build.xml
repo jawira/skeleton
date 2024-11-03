@@ -294,7 +294,7 @@
       <arg value="--working-dir"/>
       <arg file="${application.startdir}"/>
       <arg line="--no-interaction --no-progress --ansi"/>
-      <arg value="icanhazstring/composer-unused"/>
+      <arg value="shipmonk/composer-dependency-analyser"/>
       <arg value="--dev"/>
     </composer>
     <!-- Add targets -->
