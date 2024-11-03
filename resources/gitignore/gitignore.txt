@@ -1,7 +1,10 @@
-/.idea/
-/site/
-/vendor/
+/.idea
 /.makerc
+/.vscode
 /composer-setup.php
 /side-suite-*
+/site
+/vendor
 *Zone.Identifier
+.DS_Store
+Thumbs.db
