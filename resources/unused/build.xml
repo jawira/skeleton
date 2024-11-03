@@ -2,9 +2,8 @@
 <project name="Composer unused" default="composer:unused">
 
   <target name="composer:unused" description="Check unused composer dependencies">
-    <composer command="unused">
-      <arg line="--no-progress --ansi --no-interaction"/>
-    </composer>
+    <exec executable="vendor/bin/composer-dependency-analyser"
+          passthru="true" checkreturn="true"/>
   </target>
 
 </project>
