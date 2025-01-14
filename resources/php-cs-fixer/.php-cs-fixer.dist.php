@@ -1,7 +1,6 @@
 <?php declare(strict_types=1);
 
 $rules = [
-  'braces' => true,
   'declare_strict_types' => true,
   'heredoc_to_nowdoc' => true,
   'no_binary_string' => true,
