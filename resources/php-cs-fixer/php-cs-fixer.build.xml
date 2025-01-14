@@ -3,9 +3,7 @@
 
   <target name="cs:fix" description="Fixes code style in src dir.">
     <exec executable="vendor/bin/php-cs-fixer" passthru="true" checkreturn="true">
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="--allow-risky=yes"/>
+      <arg line="--ansi --no-interaction --allow-risky=yes --verbose"/>
       <arg value="fix"/>
       <arg file="src"/>
     </exec>
@@ -13,9 +11,7 @@
 
   <target name="cs:check" description="Checks if configured files/directories comply with configured rules.">
     <exec executable="vendor/bin/php-cs-fixer" passthru="true" checkreturn="true">
-      <arg value="--ansi"/>
-      <arg value="--no-interaction"/>
-      <arg value="--allow-risky=yes"/>
+      <arg line="--ansi --no-interaction --allow-risky=yes --verbose"/>
       <arg value="check"/>
       <arg file="src"/>
     </exec>
