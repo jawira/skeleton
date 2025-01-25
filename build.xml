@@ -333,4 +333,9 @@
     <copy file="resources/slides/favicon.png" todir="${application.startdir}/public" overwrite="${force}"/>
   </target>
 
+  <target name="dependabot" description="Create dependabot config file">
+    <mkdir dir="${application.startdir}/.github"/>
+    <copy file="resources/dependabot/dependabot.yml" todir="${application.startdir}/.github" overwrite="${force}"/>
+  </target>
+
 </project>
