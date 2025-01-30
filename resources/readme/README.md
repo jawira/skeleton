@@ -26,8 +26,8 @@ http://hits.dwyl.io/
 ## Contributing
 
 - If you liked this project, ⭐ star it on GitHub.
-- Or follow me on Twitter. 
-  [![Twitter Follow](https://img.shields.io/twitter/follow/jawira?style=social)](https://twitter.com/jawira)
+- Or follow me on 𝕏.
+  [![𝕏 Follow](https://img.shields.io/twitter/follow/jawira?style=social)](https://twitter.com/jawira)
 
 
 ## License
@@ -46,18 +46,6 @@ This library is licensed under the [MIT license](LICENSE.md).
     <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/doctrine-diagram-bundle?icon=github"/></a>
 </dt>
 <dd>Symfony Bundle to generate database diagrams.</dd>
-
-<dt>
-    <a href="https://packagist.org/packages/jawira/mysql-draw">jawira/mysql-draw
-    <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/mysql-draw?icon=github"/></a>
-</dt>
-<dd>Standalone tool to generate MySQL database diagrams.</dd>
-
-<dt>
-    <a href="https://packagist.org/packages/jawira/db-draw">jawira/db-draw
-    <img alt="GitHub stars" src="https://badgen.net/github/stars/jawira/db-draw?icon=github"/></a>
-</dt>
-<dd>Library to generate database diagrams.</dd>
 
 <dt>
     <a href="https://packagist.org/packages/jawira/case-converter">jawira/case-converter
