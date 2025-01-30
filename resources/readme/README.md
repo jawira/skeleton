@@ -27,6 +27,7 @@ http://hits.dwyl.io/
 - If you liked this project, ⭐ star it on GitHub.
 - Or follow me on 𝕏.
   [![𝕏 Follow](https://img.shields.io/twitter/follow/jawira?style=social)](https://x.com/jawira)
+- Found a bug? Please report it by opening an issue!
 
 ## License
 
