@@ -30,4 +30,13 @@
     </composer>
   </target>
 
+  <target name="composer:outdated" description="Packages that have updates available">
+    <composer command="outdated">
+      <arg value="--ansi"/>
+      <arg value="--no-interaction"/>
+      <arg value="--strict"/>
+      <arg value="--sort-by-age"/>
+    </composer>
+  </target>
+
 </project>
