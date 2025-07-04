@@ -1,16 +1,14 @@
 <?php declare(strict_types=1);
 
 $rules = [
+  '@PSR12' => true,
+  '@PHP83Migration' => true,
+  '@PhpCsFixer' => true,
+  'return_assignment' => false,
   'declare_strict_types' => true,
-  'heredoc_to_nowdoc' => true,
-  'no_binary_string' => true,
-  'no_trailing_whitespace' => true,
-  'no_unused_imports' => true,
-  'simple_to_complex_string_variable' => true,
-  'simplified_if_return' => true,
-  'single_blank_line_at_eof' => true,
-  'single_quote' => true,
-  'switch_case_space' => true,
+  'linebreak_after_opening_tag' => false,
+  'blank_line_after_opening_tag' => false,
+  'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
 ];
 
 return (new \PhpCsFixer\Config())->setRules($rules)->setHideProgress(true)->setIndent('  ');
