@@ -22,4 +22,8 @@
     <function name="exit"/>
   </forbiddenFunctions>
 
+  <issueHandlers>
+    <ClassMustBeFinal errorLevel="suppress"/>
+  </issueHandlers>
+
 </psalm>
