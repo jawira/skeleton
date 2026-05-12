@@ -16,10 +16,17 @@
 /phpunit.xml.dist	export-ignore
 /tests				export-ignore
 
-*.php	text	eol=lf	diff=php
-*.js	text	eol=lf
-*.svg	text	eol=lf
-*.bat	text	eol=crlf
+# Linux
+*	text=auto eol=lf
+
+# Windows
+*.bat	text eol=crlf
+*.cmd	text eol=crlf
+
+# Binary
 *.phar	binary
 *.png	binary
 *.jpg	binary
+*.gif	binary
+*.pdf	binary
+*.zip	binary
