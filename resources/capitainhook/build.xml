@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="CaptainHook" description="CaptainHook target" default="captainhook:install"  phingVersion="3">
+
+  <target name="captainhook:install" description="Install git hooks">
+    <exec executable="vendor/bin/captainhook" passthru="true" checkreturn="true">
+      <arg line="install --no-interaction --ansi --force"/>
+    </exec>
+  </target>
+
+</project>

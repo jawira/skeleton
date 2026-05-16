@@ -328,4 +328,40 @@
     <copy file="resources/dependabot/dependabot.yml" todir="${application.startdir}/.github" overwrite="${force}"/>
   </target>
 
+  <target name="captainhook" description="Install CapitainHook">
+    <!-- Enable CaptainHook plugin -->
+    <composer command="config">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg value="--no-plugins"/>
+      <arg value="allow-plugins.captainhook/captainhook-phar"/>
+      <arg value="true"/>
+    </composer>
+    <!-- Install dependencies -->
+    <composer command="require">
+      <arg value="--working-dir"/>
+      <arg file="${application.startdir}"/>
+      <arg line="--no-interaction --no-progress --ansi"/>
+      <arg value="captainhook/captainhook-phar"/>
+      <arg value="--dev"/>
+    </composer>
+    <!-- Copy config file -->
+    <copy file="resources/capitainhook/captainhook.json" todir="${application.startdir}" overwrite="${force}"/>
+    <!-- Update buildfile -->
+    <tempfile property="buildfile.copy.captainhook" deleteonexit="true"/>
+    <copy file="${application.startdir}/build.xml" tofile="${buildfile.copy.captainhook}" overwrite="true"/>
+    <xslt file="${buildfile.copy.captainhook}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
+      <param name="buildfile.source" value="resources/capitainhook/build.xml"/>
+    </xslt>
+    <echo level="warning">
+    --------------------------------------------------
+    IMPORTANT: Update `capitainhook.json` and execute:
+
+    👉👉👉 phing captainhook:install
+
+    Docs: https://php.captainhook.info/
+    --------------------------------------------------
+    </echo>
+  </target>
+
 </project>
