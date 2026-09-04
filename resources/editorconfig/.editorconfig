@@ -1,3 +1,5 @@
+# editorconfig.org
+
 root = true
 
 [*]
@@ -8,6 +10,9 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 ij_visual_guides = 80, 120
+
+[*.md]
+trim_trailing_whitespace = false
 
 [*.php]
 ij_php_import_sorting = alphabetic
@@ -20,6 +25,7 @@ ij_php_align_multiline_chained_methods = true
 ij_php_blank_lines_before_return_statement = 1
 ij_php_comma_after_last_array_element = true
 
+# Important when updating Symfony recipes
 [config/**/*.{yaml,yml}]
 indent_size = 4
 
