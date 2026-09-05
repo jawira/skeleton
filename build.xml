@@ -26,7 +26,6 @@
     <echo append="true" file="${application.startdir}/.gitignore" message="/phpunit.result.cache${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/resources/report${line.separator}"/>
     <echo append="true" file="${application.startdir}/.gitignore" message="/cobertura.xml${line.separator}"/>
-    <echo level="warning">@todo: composer.json add 'tests' dir to 'autoload-dev'</echo>
     <!--Smoke-->
     <exec executable="vendor/bin/phpunit" passthru="true" dir="${application.startdir}">
       <arg value="--version"/>
@@ -37,6 +36,11 @@
     <xslt file="${buildfile.copy.phpunit}" style="resources/xslt/merger.xsl" tofile="${application.startdir}/build.xml">
       <param name="buildfile.source" value="resources/phpunit/build.xml"/>
     </xslt>
+    <!--Update configuration-->
+    <exec executable="vendor/bin/phpunit" passthru="true" dir="${application.startdir}">
+      <arg value="--migrate-configuration"/>
+    </exec>
+    <echo level="warning">&gt;&gt;&gt;&gt;&gt;&gt; PENDING: composer.json add 'tests' dir to 'autoload-dev'</echo>
   </target>
 
   <target name="lints" description="Install lint targets">
@@ -180,7 +184,7 @@
       <arg file="${application.startdir}"/>
       <arg line="--no-interaction --no-progress --ansi"/>
       <arg value="friendsofphp/php-cs-fixer"/>
-      <arg value="konradmichalik/php-doc-block-header-fixer"/>
+      <arg value="jawira/annotation-updater"/>
       <arg value="--dev"/>
     </composer>
     <!-- Add target -->

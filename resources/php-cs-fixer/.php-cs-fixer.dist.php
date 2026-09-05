@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
 
+use Jawira\AnnotationUpdater\AnnotationUpdater;
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+$year = date('Y') === '2026' ? date('Y') : '2026-' . date('Y');
 $rules = [
   '@PSR12' => true,
   '@PHP8x5Migration' => true, // Update this according to your PHP version
@@ -8,27 +13,23 @@ $rules = [
   'declare_strict_types' => true,
   'linebreak_after_opening_tag' => false,
   'blank_line_after_opening_tag' => false,
+  'native_function_invocation' => ['include' => ['@all']],
   'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
-];
-
-$headerRules = [
-  'KonradMichalik/docblock_header_comment' => [
-    'annotations' => [
-      'author' => 'Jawira Portugal <dev@tugal.be>',
-      'copyright' => "2026 Jawira Portugal",
-      'license' => 'MIT',
+  AnnotationUpdater::NAME => [
+    AnnotationUpdater::ANNOTATIONS => [
+      ['tag' => 'author', 'value' => 'Jawira Portugal <dev@tugal.be>', 'mode' => 'preserve'],
+      ['tag' => 'copyright', 'value' => "© $year Jawira Portugal", 'mode' => 'replace'],
+      ['tag' => 'throws', 'mode' => 'remove'],
     ],
-    'preserve_existing' => false,
-    'separate' => 'none',
-    'add_structure_name' => true,
   ],
 ];
+$finder = Finder::create()->in([__DIR__ . '/src', __DIR__ . '/tests'])->name('*.php');
 
-return (new \PhpCsFixer\Config())
-  ->setRules($rules)
+
+return (new Config())
   ->setHideProgress(true)
+  ->setRiskyAllowed(true)
   ->setIndent('  ')
-  ->registerCustomFixers([
-    new \KonradMichalik\PhpDocBlockHeaderFixer\Rules\DocBlockHeaderFixer(),
-  ])
-  ->setRules($rules + $headerRules);
+  ->setFinder($finder)
+  ->registerCustomFixers([new AnnotationUpdater()])
+  ->setRules($rules);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="phpstan" default="phpstan:analyse">
+<project name="phpstan" default="phpstan:check">
 
-  <target name="phpstan:analyse" description="Analyse at max level">
+  <target name="phpstan:check" description="Analyse at max level">
     <exec executable="vendor/bin/phpstan" passthru="true" checkreturn="true">
       <arg value="analyse"/>
       <arg line="--level=max"/>
