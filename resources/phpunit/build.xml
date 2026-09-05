@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="PHPUnit" description="PHPUnit targets" default="phpunit:run">
+<project name="PHPUnit" description="PHPUnit targets" default="phpunit:check">
 
-  <target name="phpunit:run" description="Run unitary tests">
+  <target name="phpunit:check" description="Run unitary tests">
     <exec executable="vendor/bin/phpunit" checkreturn="true" passthru="true">
       <env key="XDEBUG_MODE" value="coverage"/>
     </exec>
