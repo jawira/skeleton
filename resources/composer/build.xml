@@ -36,6 +36,7 @@
       <arg value="--no-interaction"/>
       <arg value="--strict"/>
       <arg value="--sort-by-age"/>
+      <arg value="--direct"/>
     </composer>
   </target>
 
