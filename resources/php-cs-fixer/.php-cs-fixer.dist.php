@@ -15,6 +15,7 @@ $rules = [
   'blank_line_after_opening_tag' => false,
   'native_function_invocation' => ['include' => ['@all']],
   'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
+  'phpdoc_to_comment' => ['ignored_tags' => ['var', 'param']], // Used to fix Psalm complaints
   AnnotationUpdater::NAME => [
     AnnotationUpdater::ANNOTATIONS => [
       ['tag' => 'author', 'value' => 'Jawira Portugal <dev@tugal.be>', 'mode' => 'preserve'],
